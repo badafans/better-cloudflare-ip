@@ -2,9 +2,9 @@
 
 适合中国大陆用户查找适合自己当前网络环境的优选cloudflare anycast IP
 
-linux shell脚本，自动化筛选
+Linux版本参考下面过程：
 
-  
+linux shell脚本，自动化筛选
 
 具体使用流程，需要编译里面 fping 4.2 修改版本，另外需要系统安装curl支持。
 
@@ -31,3 +31,14 @@ sudo ./cf.sh
 对于测速结果，自行判断是否跟你的本地宽带接近。如果不满意测速结果，再次运行./cf.sh shell脚本再次测速，测试到满意为止。
 
 下面是我自己测试的一段视频 https://raw.githubusercontent.com/badafans/better-cloudflare-ip/master/root%40ubuntu_%20~%202020-07-27%2016-38-05.mp4
+
+以上使用只针对Linux用户
+
+
+Windows版本全自动无门槛操作
+
+fping-4.2 for win32 修改版（基于 msys2.0 修改编译）点击下载  https://raw.githubusercontent.com/badafans/better-cloudflare-ip/master/better-cloudflare-ip-win32.zip
+
+解压后运行 自动查找优选CF节点.bat 批处理文件，等待结束，全程大概两分多钟。（对于 Windows 10 以下用户或者 cmd 命令行里面不支持curl命令的，自己下载curl程序到该程序解压后的目录即可）
+
+对于测速结果，自行判断是否跟你的本地宽带接近。如果不满意测速结果，再次运行 自动查找优选CF节点.bat 再次测速，测试到满意为止。
