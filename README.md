@@ -31,3 +31,5 @@ cd src
 其中的cf.sh是由本人编写，测速服务器用的文件是cloudflare workers的反代到苹果官网的一个视频文件。由于cloudflare workers的每天请求次数的限制，请大家不要恶意反复使用。
 
 对于测速结果，自行判断是否跟你的本地宽带接近。如果不满意测速结果，再次运行./cf.sh shell脚本再次测速，测试到满意为止。
+
+下面是我自己测试的一段视频 https://raw.githubusercontent.com/badafans/better-cloudflare-ip/master/root%40ubuntu_%20~%202020-07-27%2016-38-05.mp4
