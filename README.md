@@ -23,7 +23,7 @@ make
 
 cd src
 
-./cf.sh
+sudo ./cf.sh
 
   
 其中的cf.sh是由本人编写，测速服务器用的文件是cloudflare workers的反代到苹果官网的一个视频文件。由于cloudflare workers的每天请求次数的限制，请大家不要恶意反复使用。
