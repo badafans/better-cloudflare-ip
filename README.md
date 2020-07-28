@@ -39,6 +39,10 @@ Windows版本全自动无门槛操作
 
 fping-4.2 for win32 修改版（基于 msys2.0 修改编译）点击下载  https://raw.githubusercontent.com/badafans/better-cloudflare-ip/master/better-cloudflare-ip-win32.zip
 
-解压后运行 自动查找优选CF节点.bat 批处理文件，等待结束，全程大概两分多钟。（对于 Windows 10 以下用户或者 cmd 命令行里面不支持curl命令的，自己下载curl程序到该程序解压后的目录即可）
+解压后运行 自动查找优选CF节点.bat 批处理文件，等待结束，全程大概两分多钟。（对于 Windows 7 用户或者 cmd 命令行里面不支持curl命令的，自己下载curl全部解压到该程序解压后的目录即可）
+
+点击下载curl  https://raw.githubusercontent.com/badafans/better-cloudflare-ip/master/curl.zip
 
 对于测速结果，自行判断是否跟你的本地宽带接近。如果不满意测速结果，再次运行 自动查找优选CF节点.bat 再次测速，测试到满意为止。
+
+使用反馈，欢迎加入 Telegram 群组进行沟通 https://t.me/better_cloudflare_ip
