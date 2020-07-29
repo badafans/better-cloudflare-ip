@@ -39,10 +39,15 @@ Windows版本全自动无门槛操作
 
 fping-4.2 for win32 修改版（基于 msys2.0 修改编译）点击下载  https://raw.githubusercontent.com/badafans/better-cloudflare-ip/master/better-cloudflare-ip-win32.zip
 
-解压后运行 自动查找优选CF节点.bat 批处理文件，等待结束，全程大概两分多钟。（对于 Windows 7 用户或者 cmd 命令行里面不支持curl命令的，自己下载curl全部解压到该程序解压后的目录即可）
+1.解压后运行 自动查找优选CF节点.bat 批处理文件（对于 Windows 7 用户或者 cmd 命令行里面不支持curl命令的，自己下载curl全部解压到该程序解压后的目录即可 点击下载curl  https://raw.githubusercontent.com/badafans/better-cloudflare-ip/master/curl.zip ）
 
-点击下载curl  https://raw.githubusercontent.com/badafans/better-cloudflare-ip/master/curl.zip
+2.根据你当前带宽设置一个期望的CF速度的大小，比如说家里宽带100兆，如果想要CF单线程下载速度达到50兆的宽带效果，直接输入数值 50 并按回车键
 
-对于测速结果，自行判断是否跟你的本地宽带接近。如果不满意测速结果，再次运行 自动查找优选CF节点.bat 再次测速，测试到满意为止。
+3.等待程序全自动测试结束，找到符合条件的 IP 会在控制台窗口里面输出结果（可以结合里面的单IP测速的批处理来做校验测试）
+
+4.如果你当前网络环境非常差，建议调低期望的带宽值，不然程序会一直停留在查找筛选的过程中
+
+5.目前Windows版本内置的 anycast ip 数量为 725985 个，运气好的话一两分钟就能获取到自己想要的优选 IP
+
 
 使用反馈，欢迎加入 Telegram 群组进行沟通 https://t.me/better_cloudflare_ip
