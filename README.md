@@ -47,7 +47,7 @@ fping-4.2 for win32 修改版（基于 msys2.0 修改编译）点击下载  http
 
 4.如果你当前网络环境非常差，建议调低期望的带宽值，不然程序会一直停留在查找筛选的过程中
 
-5.目前Windows版本内置的 anycast ip 数量为 725985 个，运气好的话一两分钟就能获取到自己想要的优选 IP
+5.目前Windows版本内置的 anycast ip 数量为 725985 个，运气好的话三分钟就能获取到自己想要的优选 IP
 
 
 使用反馈，欢迎加入 Telegram 群组进行沟通 https://t.me/better_cloudflare_ip
