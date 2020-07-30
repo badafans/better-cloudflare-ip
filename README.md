@@ -45,7 +45,7 @@ windows批处理全自动无门槛操作，自动化筛选
 
 fping-4.2 for win32 修改版（基于 msys2.0 修改编译）点击下载  https://raw.githubusercontent.com/badafans/better-cloudflare-ip/master/better-cloudflare-ip-win32.zip
 
-1.解压后运行 自动查找优选CF节点.bat 批处理文件（对于 Windows 7 用户或者 cmd 命令行里面不支持curl命令的，自己下载curl全部解压到该程序解压后的目录即可 点击下载curl  https://raw.githubusercontent.com/badafans/better-cloudflare-ip/master/curl.zip ）
+1.解压后运行(注意：目录名称或整个目录路径中不允许有空格，否则运行会出错！) 自动查找优选CF节点.bat 批处理文件（对于 Windows 7 用户或者 cmd 命令行里面不支持curl命令的，自己下载curl全部解压到该程序解压后的目录即可 点击下载curl  https://raw.githubusercontent.com/badafans/better-cloudflare-ip/master/curl.zip ）
 
 2.根据你当前带宽设置一个期望的CF速度的大小，比如说家里宽带100兆，如果想要CF单线程下载速度达到20兆的宽带效果，直接输入数值 20 并按回车键
 
