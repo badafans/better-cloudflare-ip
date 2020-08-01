@@ -3,7 +3,7 @@
 declare -i bandwidth
 declare -i filesize
 read -p "请设置期望到 CloudFlare 服务器的带宽大小(单位 Mbps):" bandwidth
-filesize=bandwidth*1000
+filesize=bandwidth*640
 while true
 do
 	while true
@@ -45568,15 +45568,16 @@ do
 		done
 		cat icmp/*.log | sed -n '3~5p;4~5p' | sed -n '{N;s/\n/\t/p}' | cut -f1 -d'%' | awk '{print $2,$NF}' | sort -k 2 -n | awk '{print $1}' | sed '51,$d' > ip.txt
 		rm -rf icmp
+		echo 选取丢包率最少的50个IP地址下载测速
 		mkdir temp
 		for i in `cat ip.txt`
 		do
-			echo 正在测试 $i
-			curl --resolve apple.freecdn.workers.dev:443:$i https://apple.freecdn.workers.dev/105/media/us/iphone-11-pro/2019/3bd902e4-0752-4ac1-95f8-6225c32aec6d/films/product/iphone-11-pro-product-tpl-cc-us-2019_1280x720h.mp4 -o temp/$i -s --connect-timeout 2 --max-time 10&
+			echo $i 启动测速
+			curl --resolve speed.cloudflare.com:443:$i https://speed.cloudflare.com/__down?bytes=1000000000 -o temp/$i -s --connect-timeout 2 --max-time 10&
 			sleep 0.5
 		done
-		echo 10秒后筛选出三个优选的IP
-		sleep 10
+		echo 等待测速完成,15秒后筛选出3个速度最好的IP
+		sleep 15
 		ls -S temp > ip.txt
 		rm -rf temp
 		n=$(wc -l ip.txt | awk '{print $1}')
@@ -45585,46 +45586,70 @@ do
 			second=$(sed -n '2p' ip.txt)
 			third=$(sed -n '3p' ip.txt)
 			rm -rf ip.txt
-			echo 优选的CF地址为 $first - $second - $third
+			echo 优选的IP地址为 $first - $second - $third
 			echo 第一次测试 $first
-			curl --resolve apple.freecdn.workers.dev:443:$first https://apple.freecdn.workers.dev/105/media/us/iphone-11-pro/2019/3bd902e4-0752-4ac1-95f8-6225c32aec6d/films/product/iphone-11-pro-product-tpl-cc-us-2019_1280x720h.mp4 -o tmp --connect-timeout 5 --max-time 10
-			n=$(du tmp | awk '{print $1}')
-			if [ $n -ge $filesize ]; then
+			curl --resolve speed.cloudflare.com:443:$first https://speed.cloudflare.com/__down?bytes=1000000000 -o tmp --connect-timeout 5 --max-time 15&
+			sleep 10
+			a=$(du tmp | awk '{print $1}')
+			sleep 5
+			b=$(du tmp | awk '{print $1}')
+			c=$[$b-$a]
+			if [ $c -ge $filesize ]; then
 				anycast=$first
 				break
 			fi
 			echo 第二次测试 $first
-			curl --resolve apple.freecdn.workers.dev:443:$first https://apple.freecdn.workers.dev/105/media/us/iphone-11-pro/2019/3bd902e4-0752-4ac1-95f8-6225c32aec6d/films/product/iphone-11-pro-product-tpl-cc-us-2019_1280x720h.mp4 -o tmp --connect-timeout 5 --max-time 10
-			n=$(du tmp | awk '{print $1}')
-			if [ $n -ge $filesize ]; then
+			curl --resolve speed.cloudflare.com:443:$first https://speed.cloudflare.com/__down?bytes=1000000000 -o tmp --connect-timeout 5 --max-time 15&
+			sleep 10
+			a=$(du tmp | awk '{print $1}')
+			sleep 5
+			b=$(du tmp | awk '{print $1}')
+			c=$[$b-$a]
+			if [ $c -ge $filesize ]; then
 				anycast=$first
 				break
 			fi
 			echo 第一次测试 $second
-			curl --resolve apple.freecdn.workers.dev:443:$second https://apple.freecdn.workers.dev/105/media/us/iphone-11-pro/2019/3bd902e4-0752-4ac1-95f8-6225c32aec6d/films/product/iphone-11-pro-product-tpl-cc-us-2019_1280x720h.mp4 -o tmp --connect-timeout 5 --max-time 10
-			n=$(du tmp | awk '{print $1}')
-			if [ $n -ge $filesize ]; then
+			curl --resolve speed.cloudflare.com:443:$second https://speed.cloudflare.com/__down?bytes=1000000000 -o tmp --connect-timeout 5 --max-time 15&
+			sleep 10
+			a=$(du tmp | awk '{print $1}')
+			sleep 5
+			b=$(du tmp | awk '{print $1}')
+			c=$[$b-$a]
+			if [ $c -ge $filesize ]; then
 				anycast=$second
 				break
 			fi
 			echo 第二次测试 $second
-			curl --resolve apple.freecdn.workers.dev:443:$second https://apple.freecdn.workers.dev/105/media/us/iphone-11-pro/2019/3bd902e4-0752-4ac1-95f8-6225c32aec6d/films/product/iphone-11-pro-product-tpl-cc-us-2019_1280x720h.mp4 -o tmp --connect-timeout 5 --max-time 10
-			n=$(du tmp | awk '{print $1}')
-			if [ $n -ge $filesize ]; then
+			curl --resolve speed.cloudflare.com:443:$second https://speed.cloudflare.com/__down?bytes=1000000000 -o tmp --connect-timeout 5 --max-time 15&
+			sleep 10
+			a=$(du tmp | awk '{print $1}')
+			sleep 5
+			b=$(du tmp | awk '{print $1}')
+			c=$[$b-$a]
+			if [ $c -ge $filesize ]; then
 				anycast=$second
 				break
 			fi
 			echo 第一次测试 $third
-			curl --resolve apple.freecdn.workers.dev:443:$third https://apple.freecdn.workers.dev/105/media/us/iphone-11-pro/2019/3bd902e4-0752-4ac1-95f8-6225c32aec6d/films/product/iphone-11-pro-product-tpl-cc-us-2019_1280x720h.mp4 -o tmp --connect-timeout 5 --max-time 10
-			n=$(du tmp | awk '{print $1}')
-			if [ $n -ge $filesize ]; then
+			curl --resolve speed.cloudflare.com:443:$third https://speed.cloudflare.com/__down?bytes=1000000000 -o tmp --connect-timeout 5 --max-time 15&
+			sleep 10
+			a=$(du tmp | awk '{print $1}')
+			sleep 5
+			b=$(du tmp | awk '{print $1}')
+			c=$[$b-$a]
+			if [ $c -ge $filesize ]; then
 				anycast=$third
 				break
 			fi
 			echo 第二次测试 $third
-			curl --resolve apple.freecdn.workers.dev:443:$third https://apple.freecdn.workers.dev/105/media/us/iphone-11-pro/2019/3bd902e4-0752-4ac1-95f8-6225c32aec6d/films/product/iphone-11-pro-product-tpl-cc-us-2019_1280x720h.mp4 -o tmp --connect-timeout 5 --max-time 10
-			n=$(du tmp | awk '{print $1}')
-			if [ $n -ge $filesize ]; then
+			curl --resolve speed.cloudflare.com:443:$third https://speed.cloudflare.com/__down?bytes=1000000000 -o tmp --connect-timeout 5 --max-time 15&
+			sleep 10
+			a=$(du tmp | awk '{print $1}')
+			sleep 5
+			b=$(du tmp | awk '{print $1}')
+			c=$[$b-$a]
+			if [ $c -ge $filesize ]; then
 				anycast=$third
 				break
 			fi
@@ -45632,6 +45657,7 @@ do
 	done
 		break
 done
+	avg=$[$c/5]
 	rm -rf tmp
 	clear
-	echo $anycast 满足带宽需求
+	echo $anycast 满足 $bandwidth Mbps带宽需求,当前平均速度 $avg KB/s
