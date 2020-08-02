@@ -4,13 +4,14 @@ declare -i bandwidth
 declare -i filesize
 read -p "请设置期望到 CloudFlare 服务器的带宽大小(单位 Mbps):" bandwidth
 filesize=bandwidth*640
+starttime=`date +'%Y-%m-%d %H:%M:%S'`
 while true
 do
 	while true
 	do
 		declare -i n
 		declare -i per
-		rm -rf ip.txt ping.txt tmp temp icmp
+		rm -rf icmp temp tmp
 		mkdir icmp
 		n=0
 		i=$[($RANDOM*2+1)%255]
@@ -20,7 +21,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -36,7 +37,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -52,7 +53,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -68,7 +69,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -84,7 +85,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -100,7 +101,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -116,7 +117,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -132,7 +133,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -148,7 +149,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -164,7 +165,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -180,7 +181,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -196,7 +197,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -212,7 +213,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -228,7 +229,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -244,7 +245,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -260,7 +261,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -276,7 +277,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -292,7 +293,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -308,7 +309,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -324,7 +325,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -340,7 +341,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -356,7 +357,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -372,7 +373,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -388,7 +389,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -404,7 +405,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -420,7 +421,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -436,7 +437,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -452,7 +453,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -468,7 +469,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -484,7 +485,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -500,7 +501,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -516,7 +517,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -532,7 +533,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -548,7 +549,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -564,7 +565,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -580,7 +581,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -596,7 +597,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -612,7 +613,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -628,7 +629,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -644,7 +645,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -660,7 +661,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -676,7 +677,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -692,7 +693,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -708,7 +709,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -724,7 +725,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -740,7 +741,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -756,7 +757,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -772,7 +773,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -788,7 +789,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -804,7 +805,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -820,7 +821,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -836,7 +837,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -852,7 +853,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -868,7 +869,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -884,7 +885,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -900,7 +901,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -916,7 +917,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -932,7 +933,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -948,7 +949,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -964,7 +965,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -980,7 +981,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -996,7 +997,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -1012,7 +1013,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -1028,7 +1029,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -1044,7 +1045,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -1060,7 +1061,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -1076,7 +1077,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -1092,7 +1093,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -1108,7 +1109,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -1124,7 +1125,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -1140,7 +1141,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -1156,7 +1157,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -1172,7 +1173,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -1188,7 +1189,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -1204,7 +1205,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -1220,7 +1221,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -1236,7 +1237,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -1252,7 +1253,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -1268,7 +1269,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -1284,7 +1285,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -1300,7 +1301,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -1316,7 +1317,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -1332,7 +1333,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -1348,7 +1349,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -1364,7 +1365,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -1380,7 +1381,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -1396,7 +1397,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -1412,7 +1413,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -1428,7 +1429,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -1444,7 +1445,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -1460,7 +1461,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -1476,7 +1477,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -1492,7 +1493,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -1508,7 +1509,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -1524,7 +1525,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -1540,7 +1541,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -1556,7 +1557,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -1572,7 +1573,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -1588,7 +1589,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -1604,7 +1605,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -1620,7 +1621,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -1636,7 +1637,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -1652,7 +1653,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -1668,7 +1669,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -1684,7 +1685,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -1700,7 +1701,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -1716,7 +1717,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -1732,7 +1733,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -1748,7 +1749,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -1764,7 +1765,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -1780,7 +1781,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -1796,7 +1797,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -1812,7 +1813,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -1828,7 +1829,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -1844,7 +1845,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -1860,7 +1861,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -1876,7 +1877,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -1892,7 +1893,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -1908,7 +1909,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -1924,7 +1925,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -1940,7 +1941,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -1956,7 +1957,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -1972,7 +1973,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -1988,7 +1989,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -2004,7 +2005,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -2020,7 +2021,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -2036,7 +2037,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -2052,7 +2053,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -2068,7 +2069,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -2084,7 +2085,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -2100,7 +2101,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -2116,7 +2117,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -2132,7 +2133,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -2148,7 +2149,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -2164,7 +2165,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -2180,7 +2181,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -2196,7 +2197,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -2212,7 +2213,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -2228,7 +2229,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -2244,7 +2245,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -2260,7 +2261,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -2276,7 +2277,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -2292,7 +2293,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -2308,7 +2309,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -2324,7 +2325,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -2340,7 +2341,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -2356,7 +2357,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -2372,7 +2373,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -2388,7 +2389,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -2404,7 +2405,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -2420,7 +2421,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -2436,7 +2437,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -2452,7 +2453,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -2468,7 +2469,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -2484,7 +2485,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -2500,7 +2501,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -2516,7 +2517,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -2532,7 +2533,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -2548,7 +2549,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -2564,7 +2565,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -2580,7 +2581,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -2596,7 +2597,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -2612,7 +2613,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -2628,7 +2629,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -2644,7 +2645,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -2660,7 +2661,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -2676,7 +2677,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -2692,7 +2693,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -2708,7 +2709,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -2724,7 +2725,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -2740,7 +2741,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -2756,7 +2757,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -2772,7 +2773,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -2788,7 +2789,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -2804,7 +2805,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -2820,7 +2821,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -2836,7 +2837,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -2852,7 +2853,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -2868,7 +2869,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -2884,7 +2885,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -2900,7 +2901,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -2916,7 +2917,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -2932,7 +2933,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -2948,7 +2949,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -2964,7 +2965,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -2980,7 +2981,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -2996,7 +2997,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -3012,7 +3013,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -3028,7 +3029,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -3044,7 +3045,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -3060,7 +3061,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -3076,7 +3077,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -3092,7 +3093,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -3108,7 +3109,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -3124,7 +3125,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -3140,7 +3141,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -3156,7 +3157,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -3172,7 +3173,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -3188,7 +3189,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -3204,7 +3205,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -3220,7 +3221,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -3236,7 +3237,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -3252,7 +3253,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -3268,7 +3269,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -3284,7 +3285,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -3300,7 +3301,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -3316,7 +3317,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -3332,7 +3333,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -3348,7 +3349,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -3364,7 +3365,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -3380,7 +3381,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -3396,7 +3397,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -3412,7 +3413,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -3428,7 +3429,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -3444,7 +3445,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -3460,7 +3461,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -3476,7 +3477,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -3492,7 +3493,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -3508,7 +3509,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -3524,7 +3525,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -3540,7 +3541,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -3556,7 +3557,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -3572,7 +3573,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -3588,7 +3589,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -3604,7 +3605,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -3620,7 +3621,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -3636,7 +3637,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -3652,7 +3653,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -3668,7 +3669,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -3684,7 +3685,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -3700,7 +3701,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -3716,7 +3717,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -3732,7 +3733,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -3748,7 +3749,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -3764,7 +3765,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -3780,7 +3781,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -3796,7 +3797,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -3812,7 +3813,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -3828,7 +3829,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -3844,7 +3845,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -3860,7 +3861,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -3876,7 +3877,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -3892,7 +3893,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -3908,7 +3909,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -3924,7 +3925,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -3940,7 +3941,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -3956,7 +3957,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -3972,7 +3973,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -3988,7 +3989,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -4004,7 +4005,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -4020,7 +4021,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -4036,7 +4037,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -4052,7 +4053,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -4068,7 +4069,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -4084,7 +4085,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -4100,7 +4101,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -4116,7 +4117,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -4132,7 +4133,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -4148,7 +4149,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -4164,7 +4165,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -4180,7 +4181,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -4196,7 +4197,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -4212,7 +4213,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -4228,7 +4229,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -4244,7 +4245,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -4260,7 +4261,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -4276,7 +4277,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -4292,7 +4293,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -4308,7 +4309,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -4324,7 +4325,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -4340,7 +4341,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -4356,7 +4357,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -4372,7 +4373,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -4388,7 +4389,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -4404,7 +4405,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -4420,7 +4421,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -4436,7 +4437,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -4452,7 +4453,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -4468,7 +4469,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -4484,7 +4485,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -4500,7 +4501,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -4516,7 +4517,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -4532,7 +4533,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -4548,7 +4549,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -4564,7 +4565,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -4580,7 +4581,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -4596,7 +4597,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -4612,7 +4613,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -4628,7 +4629,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -4644,7 +4645,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -4660,7 +4661,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -4676,7 +4677,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -4692,7 +4693,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -4708,7 +4709,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -4724,7 +4725,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -4740,7 +4741,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -4756,7 +4757,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -4772,7 +4773,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -4788,7 +4789,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -4804,7 +4805,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -4820,7 +4821,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -4836,7 +4837,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -4852,7 +4853,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -4868,7 +4869,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -4884,7 +4885,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -4900,7 +4901,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -4916,7 +4917,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -4932,7 +4933,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -4948,7 +4949,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -4964,7 +4965,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -4980,7 +4981,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -4996,7 +4997,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -5012,7 +5013,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -5028,7 +5029,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -5044,7 +5045,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -5060,7 +5061,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -5076,7 +5077,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -5092,7 +5093,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -5108,7 +5109,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -5124,7 +5125,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -5140,7 +5141,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -5156,7 +5157,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -5172,7 +5173,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -5188,7 +5189,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -5204,7 +5205,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -5220,7 +5221,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -5236,7 +5237,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -5252,7 +5253,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -5268,7 +5269,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -5284,7 +5285,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -5300,7 +5301,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -5316,7 +5317,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -5332,7 +5333,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -5348,7 +5349,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -5364,7 +5365,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -5380,7 +5381,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -5396,7 +5397,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -5412,7 +5413,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -5428,7 +5429,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -5444,7 +5445,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -5460,7 +5461,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -5476,7 +5477,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -5492,7 +5493,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -5508,7 +5509,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -5524,7 +5525,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -5540,7 +5541,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -5556,7 +5557,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -5572,7 +5573,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -5588,7 +5589,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -5604,7 +5605,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -5620,7 +5621,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -5636,7 +5637,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -5652,7 +5653,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -5668,7 +5669,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -5684,7 +5685,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -5700,7 +5701,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -5716,7 +5717,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -5732,7 +5733,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -5748,7 +5749,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -5764,7 +5765,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -5780,7 +5781,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -5796,7 +5797,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -5812,7 +5813,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -5828,7 +5829,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -5844,7 +5845,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -5860,7 +5861,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -5876,7 +5877,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -5892,7 +5893,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -5908,7 +5909,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -5924,7 +5925,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -5940,7 +5941,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -5956,7 +5957,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -5972,7 +5973,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -5988,7 +5989,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -6004,7 +6005,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -6020,7 +6021,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -6036,7 +6037,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -6052,7 +6053,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -6068,7 +6069,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -6084,7 +6085,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -6100,7 +6101,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -6116,7 +6117,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -6132,7 +6133,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -6148,7 +6149,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -6164,7 +6165,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -6180,7 +6181,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -6196,7 +6197,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -6212,7 +6213,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -6228,7 +6229,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -6244,7 +6245,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -6260,7 +6261,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -6276,7 +6277,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -6292,7 +6293,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -6308,7 +6309,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -6324,7 +6325,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -6340,7 +6341,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -6356,7 +6357,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -6372,7 +6373,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -6388,7 +6389,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -6404,7 +6405,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -6420,7 +6421,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -6436,7 +6437,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -6452,7 +6453,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -6468,7 +6469,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -6484,7 +6485,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -6500,7 +6501,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -6516,7 +6517,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -6532,7 +6533,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -6548,7 +6549,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -6564,7 +6565,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -6580,7 +6581,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -6596,7 +6597,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -6612,7 +6613,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -6628,7 +6629,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -6644,7 +6645,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -6660,7 +6661,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -6676,7 +6677,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -6692,7 +6693,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -6708,7 +6709,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -6724,7 +6725,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -6740,7 +6741,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -6756,7 +6757,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -6772,7 +6773,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -6788,7 +6789,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -6804,7 +6805,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -6820,7 +6821,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -6836,7 +6837,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -6852,7 +6853,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -6868,7 +6869,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -6884,7 +6885,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -6900,7 +6901,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -6916,7 +6917,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -6932,7 +6933,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -6948,7 +6949,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -6964,7 +6965,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -6980,7 +6981,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -6996,7 +6997,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -7012,7 +7013,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -7028,7 +7029,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -7044,7 +7045,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -7060,7 +7061,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -7076,7 +7077,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -7092,7 +7093,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -7108,7 +7109,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -7124,7 +7125,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -7140,7 +7141,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -7156,7 +7157,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -7172,7 +7173,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -7188,7 +7189,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -7204,7 +7205,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -7220,7 +7221,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -7236,7 +7237,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -7252,7 +7253,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -7268,7 +7269,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -7284,7 +7285,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -7300,7 +7301,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -7316,7 +7317,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -7332,7 +7333,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -7348,7 +7349,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -7364,7 +7365,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -7380,7 +7381,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -7396,7 +7397,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -7412,7 +7413,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -7428,7 +7429,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -7444,7 +7445,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -7460,7 +7461,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -7476,7 +7477,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -7492,7 +7493,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -7508,7 +7509,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -7524,7 +7525,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -7540,7 +7541,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -7556,7 +7557,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -7572,7 +7573,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -7588,7 +7589,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -7604,7 +7605,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -7620,7 +7621,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -7636,7 +7637,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -7652,7 +7653,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -7668,7 +7669,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -7684,7 +7685,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -7700,7 +7701,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -7716,7 +7717,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -7732,7 +7733,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -7748,7 +7749,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -7764,7 +7765,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -7780,7 +7781,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -7796,7 +7797,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -7812,7 +7813,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -7828,7 +7829,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -7844,7 +7845,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -7860,7 +7861,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -7876,7 +7877,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -7892,7 +7893,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -7908,7 +7909,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -7924,7 +7925,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -7940,7 +7941,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -7956,7 +7957,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -7972,7 +7973,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -7988,7 +7989,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -8004,7 +8005,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -8020,7 +8021,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -8036,7 +8037,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -8052,7 +8053,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -8068,7 +8069,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -8084,7 +8085,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -8100,7 +8101,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -8116,7 +8117,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -8132,7 +8133,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -8148,7 +8149,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -8164,7 +8165,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -8180,7 +8181,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -8196,7 +8197,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -8212,7 +8213,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -8228,7 +8229,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -8244,7 +8245,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -8260,7 +8261,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -8276,7 +8277,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -8292,7 +8293,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -8308,7 +8309,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -8324,7 +8325,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -8340,7 +8341,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -8356,7 +8357,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -8372,7 +8373,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -8388,7 +8389,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -8404,7 +8405,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -8420,7 +8421,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -8436,7 +8437,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -8452,7 +8453,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -8468,7 +8469,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -8484,7 +8485,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -8500,7 +8501,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -8516,7 +8517,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -8532,7 +8533,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -8548,7 +8549,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -8564,7 +8565,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -8580,7 +8581,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -8596,7 +8597,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -8612,7 +8613,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -8628,7 +8629,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -8644,7 +8645,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -8660,7 +8661,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -8676,7 +8677,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -8692,7 +8693,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -8708,7 +8709,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -8724,7 +8725,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -8740,7 +8741,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -8756,7 +8757,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -8772,7 +8773,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -8788,7 +8789,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -8804,7 +8805,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -8820,7 +8821,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -8836,7 +8837,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -8852,7 +8853,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -8868,7 +8869,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -8884,7 +8885,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -8900,7 +8901,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -8916,7 +8917,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -8932,7 +8933,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -8948,7 +8949,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -8964,7 +8965,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -8980,7 +8981,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -8996,7 +8997,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -9012,7 +9013,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -9028,7 +9029,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -9044,7 +9045,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -9060,7 +9061,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -9076,7 +9077,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -9092,7 +9093,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -9108,7 +9109,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -9124,7 +9125,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -9140,7 +9141,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -9156,7 +9157,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -9172,7 +9173,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -9188,7 +9189,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -9204,7 +9205,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -9220,7 +9221,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -9236,7 +9237,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -9252,7 +9253,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -9268,7 +9269,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -9284,7 +9285,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -9300,7 +9301,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -9316,7 +9317,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -9332,7 +9333,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -9348,7 +9349,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -9364,7 +9365,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -9380,7 +9381,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -9396,7 +9397,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -9412,7 +9413,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -9428,7 +9429,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -9444,7 +9445,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -9460,7 +9461,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -9476,7 +9477,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -9492,7 +9493,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -9508,7 +9509,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -9524,7 +9525,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -9540,7 +9541,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -9556,7 +9557,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -9572,7 +9573,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -9588,7 +9589,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -9604,7 +9605,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -9620,7 +9621,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -9636,7 +9637,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -9652,7 +9653,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -9668,7 +9669,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -9684,7 +9685,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -9700,7 +9701,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -9716,7 +9717,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -9732,7 +9733,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -9748,7 +9749,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -9764,7 +9765,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -9780,7 +9781,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -9796,7 +9797,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -9812,7 +9813,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -9828,7 +9829,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -9844,7 +9845,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -9860,7 +9861,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -9876,7 +9877,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -9892,7 +9893,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -9908,7 +9909,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -9924,7 +9925,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -9940,7 +9941,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -9956,7 +9957,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -9972,7 +9973,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -9988,7 +9989,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -10004,7 +10005,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -10020,7 +10021,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -10036,7 +10037,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -10052,7 +10053,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -10068,7 +10069,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -10084,7 +10085,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -10100,7 +10101,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -10116,7 +10117,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -10132,7 +10133,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -10148,7 +10149,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -10164,7 +10165,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -10180,7 +10181,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -10196,7 +10197,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -10212,7 +10213,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -10228,7 +10229,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -10244,7 +10245,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -10260,7 +10261,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -10276,7 +10277,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -10292,7 +10293,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -10308,7 +10309,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -10324,7 +10325,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -10340,7 +10341,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -10356,7 +10357,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -10372,7 +10373,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -10388,7 +10389,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -10404,7 +10405,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -10420,7 +10421,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -10436,7 +10437,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -10452,7 +10453,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -10468,7 +10469,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -10484,7 +10485,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -10500,7 +10501,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -10516,7 +10517,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -10532,7 +10533,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -10548,7 +10549,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -10564,7 +10565,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -10580,7 +10581,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -10596,7 +10597,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -10612,7 +10613,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -10628,7 +10629,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -10644,7 +10645,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -10660,7 +10661,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -10676,7 +10677,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -10692,7 +10693,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -10708,7 +10709,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -10724,7 +10725,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -10740,7 +10741,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -10756,7 +10757,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -10772,7 +10773,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -10788,7 +10789,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -10804,7 +10805,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -10820,7 +10821,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -10836,7 +10837,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -10852,7 +10853,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -10868,7 +10869,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -10884,7 +10885,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -10900,7 +10901,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -10916,7 +10917,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -10932,7 +10933,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -10948,7 +10949,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -10964,7 +10965,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -10980,7 +10981,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -10996,7 +10997,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -11012,7 +11013,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -11028,7 +11029,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -11044,7 +11045,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -11060,7 +11061,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -11076,7 +11077,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -11092,7 +11093,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -11108,7 +11109,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -11124,7 +11125,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -11140,7 +11141,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -11156,7 +11157,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -11172,7 +11173,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -11188,7 +11189,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -11204,7 +11205,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -11220,7 +11221,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -11236,7 +11237,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -11252,7 +11253,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -11268,7 +11269,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -11284,7 +11285,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -11300,7 +11301,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -11316,7 +11317,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -11332,7 +11333,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -11348,7 +11349,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -11364,7 +11365,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -11380,7 +11381,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -11396,7 +11397,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -11412,7 +11413,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -11428,7 +11429,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -11444,7 +11445,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -11460,7 +11461,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -11476,7 +11477,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -11492,7 +11493,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -11508,7 +11509,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -11524,7 +11525,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -11540,7 +11541,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -11556,7 +11557,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -11572,7 +11573,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -11588,7 +11589,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -11604,7 +11605,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -11620,7 +11621,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -11636,7 +11637,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -11652,7 +11653,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -11668,7 +11669,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -11684,7 +11685,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -11700,7 +11701,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -11716,7 +11717,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -11732,7 +11733,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -11748,7 +11749,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -11764,7 +11765,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -11780,7 +11781,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -11796,7 +11797,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -11812,7 +11813,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -11828,7 +11829,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -11844,7 +11845,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -11860,7 +11861,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -11876,7 +11877,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -11892,7 +11893,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -11908,7 +11909,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -11924,7 +11925,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -11940,7 +11941,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -11956,7 +11957,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -11972,7 +11973,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -11988,7 +11989,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -12004,7 +12005,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -12020,7 +12021,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -12036,7 +12037,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -12052,7 +12053,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -12068,7 +12069,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -12084,7 +12085,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -12100,7 +12101,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -12116,7 +12117,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -12132,7 +12133,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -12148,7 +12149,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -12164,7 +12165,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -12180,7 +12181,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -12196,7 +12197,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -12212,7 +12213,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -12228,7 +12229,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -12244,7 +12245,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -12260,7 +12261,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -12276,7 +12277,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -12292,7 +12293,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -12308,7 +12309,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -12324,7 +12325,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -12340,7 +12341,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -12356,7 +12357,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -12372,7 +12373,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -12388,7 +12389,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -12404,7 +12405,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -12420,7 +12421,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -12436,7 +12437,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -12452,7 +12453,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -12468,7 +12469,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -12484,7 +12485,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -12500,7 +12501,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -12516,7 +12517,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -12532,7 +12533,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -12548,7 +12549,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -12564,7 +12565,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -12580,7 +12581,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -12596,7 +12597,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -12612,7 +12613,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -12628,7 +12629,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -12644,7 +12645,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -12660,7 +12661,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -12676,7 +12677,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -12692,7 +12693,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -12708,7 +12709,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -12724,7 +12725,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -12740,7 +12741,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -12756,7 +12757,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -12772,7 +12773,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -12788,7 +12789,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -12804,7 +12805,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -12820,7 +12821,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -12836,7 +12837,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -12852,7 +12853,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -12868,7 +12869,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -12884,7 +12885,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -12900,7 +12901,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -12916,7 +12917,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -12932,7 +12933,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -12948,7 +12949,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -12964,7 +12965,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -12980,7 +12981,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -12996,7 +12997,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -13012,7 +13013,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -13028,7 +13029,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -13044,7 +13045,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -13060,7 +13061,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -13076,7 +13077,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -13092,7 +13093,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -13108,7 +13109,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -13124,7 +13125,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -13140,7 +13141,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -13156,7 +13157,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -13172,7 +13173,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -13188,7 +13189,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -13204,7 +13205,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -13220,7 +13221,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -13236,7 +13237,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -13252,7 +13253,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -13268,7 +13269,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -13284,7 +13285,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -13300,7 +13301,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -13316,7 +13317,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -13332,7 +13333,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -13348,7 +13349,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -13364,7 +13365,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -13380,7 +13381,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -13396,7 +13397,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -13412,7 +13413,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -13428,7 +13429,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -13444,7 +13445,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -13460,7 +13461,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -13476,7 +13477,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -13492,7 +13493,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -13508,7 +13509,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -13524,7 +13525,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -13540,7 +13541,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -13556,7 +13557,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -13572,7 +13573,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -13588,7 +13589,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -13604,7 +13605,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -13620,7 +13621,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -13636,7 +13637,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -13652,7 +13653,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -13668,7 +13669,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -13684,7 +13685,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -13700,7 +13701,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -13716,7 +13717,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -13732,7 +13733,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -13748,7 +13749,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -13764,7 +13765,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -13780,7 +13781,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -13796,7 +13797,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -13812,7 +13813,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -13828,7 +13829,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -13844,7 +13845,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -13860,7 +13861,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -13876,7 +13877,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -13892,7 +13893,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -13908,7 +13909,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -13924,7 +13925,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -13940,7 +13941,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -13956,7 +13957,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -13972,7 +13973,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -13988,7 +13989,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -14004,7 +14005,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -14020,7 +14021,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -14036,7 +14037,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -14052,7 +14053,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -14068,7 +14069,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -14084,7 +14085,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -14100,7 +14101,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -14116,7 +14117,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -14132,7 +14133,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -14148,7 +14149,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -14164,7 +14165,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -14180,7 +14181,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -14196,7 +14197,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -14212,7 +14213,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -14228,7 +14229,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -14244,7 +14245,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -14260,7 +14261,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -14276,7 +14277,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -14292,7 +14293,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -14308,7 +14309,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -14324,7 +14325,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -14340,7 +14341,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -14356,7 +14357,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -14372,7 +14373,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -14388,7 +14389,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -14404,7 +14405,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -14420,7 +14421,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -14436,7 +14437,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -14452,7 +14453,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -14468,7 +14469,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -14484,7 +14485,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -14500,7 +14501,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -14516,7 +14517,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -14532,7 +14533,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -14548,7 +14549,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -14564,7 +14565,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -14580,7 +14581,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -14596,7 +14597,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -14612,7 +14613,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -14628,7 +14629,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -14644,7 +14645,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -14660,7 +14661,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -14676,7 +14677,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -14692,7 +14693,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -14708,7 +14709,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -14724,7 +14725,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -14740,7 +14741,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -14756,7 +14757,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -14772,7 +14773,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -14788,7 +14789,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -14804,7 +14805,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -14820,7 +14821,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -14836,7 +14837,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -14852,7 +14853,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -14868,7 +14869,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -14884,7 +14885,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -14900,7 +14901,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -14916,7 +14917,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -14932,7 +14933,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -14948,7 +14949,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -14964,7 +14965,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -14980,7 +14981,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -14996,7 +14997,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -15012,7 +15013,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -15028,7 +15029,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -15044,7 +15045,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -15060,7 +15061,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -15076,7 +15077,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -15092,7 +15093,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -15108,7 +15109,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -15124,7 +15125,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -15140,7 +15141,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -15156,7 +15157,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -15172,7 +15173,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -15188,7 +15189,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -15204,7 +15205,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -15220,7 +15221,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -15236,7 +15237,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -15252,7 +15253,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -15268,7 +15269,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -15284,7 +15285,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -15300,7 +15301,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -15316,7 +15317,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -15332,7 +15333,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -15348,7 +15349,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -15364,7 +15365,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -15380,7 +15381,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -15396,7 +15397,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -15412,7 +15413,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -15428,7 +15429,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -15444,7 +15445,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -15460,7 +15461,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -15476,7 +15477,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -15492,7 +15493,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -15508,7 +15509,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -15524,7 +15525,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -15540,7 +15541,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -15556,7 +15557,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -15572,7 +15573,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -15588,7 +15589,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -15604,7 +15605,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -15620,7 +15621,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -15636,7 +15637,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -15652,7 +15653,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -15668,7 +15669,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -15684,7 +15685,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -15700,7 +15701,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -15716,7 +15717,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -15732,7 +15733,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -15748,7 +15749,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -15764,7 +15765,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -15780,7 +15781,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -15796,7 +15797,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -15812,7 +15813,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -15828,7 +15829,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -15844,7 +15845,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -15860,7 +15861,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -15876,7 +15877,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -15892,7 +15893,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -15908,7 +15909,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -15924,7 +15925,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -15940,7 +15941,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -15956,7 +15957,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -15972,7 +15973,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -15988,7 +15989,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -16004,7 +16005,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -16020,7 +16021,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -16036,7 +16037,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -16052,7 +16053,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -16068,7 +16069,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -16084,7 +16085,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -16100,7 +16101,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -16116,7 +16117,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -16132,7 +16133,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -16148,7 +16149,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -16164,7 +16165,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -16180,7 +16181,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -16196,7 +16197,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -16212,7 +16213,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -16228,7 +16229,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -16244,7 +16245,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -16260,7 +16261,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -16276,7 +16277,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -16292,7 +16293,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -16308,7 +16309,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -16324,7 +16325,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -16340,7 +16341,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -16356,7 +16357,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -16372,7 +16373,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -16388,7 +16389,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -16404,7 +16405,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -16420,7 +16421,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -16436,7 +16437,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -16452,7 +16453,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -16468,7 +16469,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -16484,7 +16485,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -16500,7 +16501,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -16516,7 +16517,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -16532,7 +16533,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -16548,7 +16549,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -16564,7 +16565,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -16580,7 +16581,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -16596,7 +16597,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -16612,7 +16613,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -16628,7 +16629,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -16644,7 +16645,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -16660,7 +16661,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -16676,7 +16677,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -16692,7 +16693,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -16708,7 +16709,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -16724,7 +16725,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -16740,7 +16741,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -16756,7 +16757,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -16772,7 +16773,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -16788,7 +16789,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -16804,7 +16805,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -16820,7 +16821,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -16836,7 +16837,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -16852,7 +16853,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -16868,7 +16869,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -16884,7 +16885,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -16900,7 +16901,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -16916,7 +16917,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -16932,7 +16933,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -16948,7 +16949,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -16964,7 +16965,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -16980,7 +16981,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -16996,7 +16997,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -17012,7 +17013,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -17028,7 +17029,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -17044,7 +17045,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -17060,7 +17061,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -17076,7 +17077,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -17092,7 +17093,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -17108,7 +17109,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -17124,7 +17125,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -17140,7 +17141,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -17156,7 +17157,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -17172,7 +17173,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -17188,7 +17189,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -17204,7 +17205,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -17220,7 +17221,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -17236,7 +17237,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -17252,7 +17253,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -17268,7 +17269,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -17284,7 +17285,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -17300,7 +17301,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -17316,7 +17317,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -17332,7 +17333,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -17348,7 +17349,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -17364,7 +17365,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -17380,7 +17381,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -17396,7 +17397,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -17412,7 +17413,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -17428,7 +17429,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -17444,7 +17445,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -17460,7 +17461,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -17476,7 +17477,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -17492,7 +17493,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -17508,7 +17509,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -17524,7 +17525,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -17540,7 +17541,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -17556,7 +17557,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -17572,7 +17573,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -17588,7 +17589,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -17604,7 +17605,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -17620,7 +17621,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -17636,7 +17637,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -17652,7 +17653,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -17668,7 +17669,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -17684,7 +17685,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -17700,7 +17701,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -17716,7 +17717,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -17732,7 +17733,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -17748,7 +17749,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -17764,7 +17765,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -17780,7 +17781,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -17796,7 +17797,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -17812,7 +17813,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -17828,7 +17829,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -17844,7 +17845,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -17860,7 +17861,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -17876,7 +17877,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -17892,7 +17893,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -17908,7 +17909,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -17924,7 +17925,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -17940,7 +17941,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -17956,7 +17957,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -17972,7 +17973,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -17988,7 +17989,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -18004,7 +18005,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -18020,7 +18021,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -18036,7 +18037,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -18052,7 +18053,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -18068,7 +18069,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -18084,7 +18085,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -18100,7 +18101,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -18116,7 +18117,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -18132,7 +18133,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -18148,7 +18149,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -18164,7 +18165,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -18180,7 +18181,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -18196,7 +18197,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -18212,7 +18213,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -18228,7 +18229,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -18244,7 +18245,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -18260,7 +18261,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -18276,7 +18277,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -18292,7 +18293,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -18308,7 +18309,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -18324,7 +18325,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -18340,7 +18341,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -18356,7 +18357,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -18372,7 +18373,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -18388,7 +18389,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -18404,7 +18405,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -18420,7 +18421,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -18436,7 +18437,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -18452,7 +18453,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -18468,7 +18469,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -18484,7 +18485,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -18500,7 +18501,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -18516,7 +18517,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -18532,7 +18533,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -18548,7 +18549,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -18564,7 +18565,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -18580,7 +18581,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -18596,7 +18597,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -18612,7 +18613,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -18628,7 +18629,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -18644,7 +18645,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -18660,7 +18661,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -18676,7 +18677,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -18692,7 +18693,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -18708,7 +18709,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -18724,7 +18725,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -18740,7 +18741,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -18756,7 +18757,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -18772,7 +18773,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -18788,7 +18789,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -18804,7 +18805,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -18820,7 +18821,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -18836,7 +18837,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -18852,7 +18853,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -18868,7 +18869,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -18884,7 +18885,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -18900,7 +18901,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -18916,7 +18917,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -18932,7 +18933,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -18948,7 +18949,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -18964,7 +18965,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -18980,7 +18981,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -18996,7 +18997,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -19012,7 +19013,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -19028,7 +19029,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -19044,7 +19045,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -19060,7 +19061,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -19076,7 +19077,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -19092,7 +19093,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -19108,7 +19109,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -19124,7 +19125,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -19140,7 +19141,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -19156,7 +19157,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -19172,7 +19173,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -19188,7 +19189,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -19204,7 +19205,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -19220,7 +19221,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -19236,7 +19237,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -19252,7 +19253,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -19268,7 +19269,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -19284,7 +19285,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -19300,7 +19301,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -19316,7 +19317,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -19332,7 +19333,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -19348,7 +19349,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -19364,7 +19365,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -19380,7 +19381,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -19396,7 +19397,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -19412,7 +19413,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -19428,7 +19429,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -19444,7 +19445,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -19460,7 +19461,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -19476,7 +19477,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -19492,7 +19493,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -19508,7 +19509,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -19524,7 +19525,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -19540,7 +19541,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -19556,7 +19557,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -19572,7 +19573,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -19588,7 +19589,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -19604,7 +19605,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -19620,7 +19621,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -19636,7 +19637,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -19652,7 +19653,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -19668,7 +19669,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -19684,7 +19685,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -19700,7 +19701,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -19716,7 +19717,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -19732,7 +19733,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -19748,7 +19749,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -19764,7 +19765,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -19780,7 +19781,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -19796,7 +19797,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -19812,7 +19813,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -19828,7 +19829,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -19844,7 +19845,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -19860,7 +19861,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -19876,7 +19877,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -19892,7 +19893,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -19908,7 +19909,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -19924,7 +19925,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -19940,7 +19941,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -19956,7 +19957,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -19972,7 +19973,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -19988,7 +19989,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -20004,7 +20005,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -20020,7 +20021,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -20036,7 +20037,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -20052,7 +20053,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -20068,7 +20069,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -20084,7 +20085,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -20100,7 +20101,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -20116,7 +20117,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -20132,7 +20133,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -20148,7 +20149,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -20164,7 +20165,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -20180,7 +20181,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -20196,7 +20197,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -20212,7 +20213,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -20228,7 +20229,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -20244,7 +20245,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -20260,7 +20261,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -20276,7 +20277,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -20292,7 +20293,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -20308,7 +20309,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -20324,7 +20325,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -20340,7 +20341,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -20356,7 +20357,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -20372,7 +20373,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -20388,7 +20389,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -20404,7 +20405,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -20420,7 +20421,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -20436,7 +20437,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -20452,7 +20453,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -20468,7 +20469,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -20484,7 +20485,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -20500,7 +20501,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -20516,7 +20517,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -20532,7 +20533,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -20548,7 +20549,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -20564,7 +20565,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -20580,7 +20581,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -20596,7 +20597,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -20612,7 +20613,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -20628,7 +20629,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -20644,7 +20645,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -20660,7 +20661,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -20676,7 +20677,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -20692,7 +20693,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -20708,7 +20709,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -20724,7 +20725,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -20740,7 +20741,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -20756,7 +20757,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -20772,7 +20773,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -20788,7 +20789,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -20804,7 +20805,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -20820,7 +20821,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -20836,7 +20837,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -20852,7 +20853,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -20868,7 +20869,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -20884,7 +20885,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -20900,7 +20901,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -20916,7 +20917,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -20932,7 +20933,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -20948,7 +20949,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -20964,7 +20965,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -20980,7 +20981,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -20996,7 +20997,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -21012,7 +21013,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -21028,7 +21029,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -21044,7 +21045,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -21060,7 +21061,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -21076,7 +21077,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -21092,7 +21093,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -21108,7 +21109,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -21124,7 +21125,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -21140,7 +21141,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -21156,7 +21157,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -21172,7 +21173,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -21188,7 +21189,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -21204,7 +21205,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -21220,7 +21221,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -21236,7 +21237,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -21252,7 +21253,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -21268,7 +21269,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -21284,7 +21285,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -21300,7 +21301,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -21316,7 +21317,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -21332,7 +21333,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -21348,7 +21349,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -21364,7 +21365,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -21380,7 +21381,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -21396,7 +21397,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -21412,7 +21413,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -21428,7 +21429,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -21444,7 +21445,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -21460,7 +21461,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -21476,7 +21477,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -21492,7 +21493,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -21508,7 +21509,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -21524,7 +21525,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -21540,7 +21541,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -21556,7 +21557,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -21572,7 +21573,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -21588,7 +21589,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -21604,7 +21605,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -21620,7 +21621,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -21636,7 +21637,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -21652,7 +21653,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -21668,7 +21669,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -21684,7 +21685,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -21700,7 +21701,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -21716,7 +21717,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -21732,7 +21733,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -21748,7 +21749,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -21764,7 +21765,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -21780,7 +21781,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -21796,7 +21797,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -21812,7 +21813,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -21828,7 +21829,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -21844,7 +21845,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -21860,7 +21861,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -21876,7 +21877,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -21892,7 +21893,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -21908,7 +21909,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -21924,7 +21925,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -21940,7 +21941,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -21956,7 +21957,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -21972,7 +21973,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -21988,7 +21989,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -22004,7 +22005,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -22020,7 +22021,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -22036,7 +22037,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -22052,7 +22053,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -22068,7 +22069,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -22084,7 +22085,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -22100,7 +22101,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -22116,7 +22117,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -22132,7 +22133,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -22148,7 +22149,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -22164,7 +22165,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -22180,7 +22181,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -22196,7 +22197,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -22212,7 +22213,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -22228,7 +22229,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -22244,7 +22245,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -22260,7 +22261,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -22276,7 +22277,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -22292,7 +22293,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -22308,7 +22309,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -22324,7 +22325,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -22340,7 +22341,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -22356,7 +22357,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -22372,7 +22373,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -22388,7 +22389,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -22404,7 +22405,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -22420,7 +22421,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -22436,7 +22437,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -22452,7 +22453,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -22468,7 +22469,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -22484,7 +22485,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -22500,7 +22501,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -22516,7 +22517,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -22532,7 +22533,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -22548,7 +22549,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -22564,7 +22565,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -22580,7 +22581,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -22596,7 +22597,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -22612,7 +22613,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -22628,7 +22629,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -22644,7 +22645,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -22660,7 +22661,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -22676,7 +22677,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -22692,7 +22693,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -22708,7 +22709,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -22724,7 +22725,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -22740,7 +22741,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -22756,7 +22757,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -22772,7 +22773,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -22788,7 +22789,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -22804,7 +22805,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -22820,7 +22821,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -22836,7 +22837,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -22852,7 +22853,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -22868,7 +22869,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -22884,7 +22885,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -22900,7 +22901,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -22916,7 +22917,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -22932,7 +22933,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -22948,7 +22949,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -22964,7 +22965,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -22980,7 +22981,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -22996,7 +22997,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -23012,7 +23013,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -23028,7 +23029,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -23044,7 +23045,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -23060,7 +23061,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -23076,7 +23077,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -23092,7 +23093,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -23108,7 +23109,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -23124,7 +23125,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -23140,7 +23141,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -23156,7 +23157,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -23172,7 +23173,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -23188,7 +23189,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -23204,7 +23205,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -23220,7 +23221,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -23236,7 +23237,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -23252,7 +23253,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -23268,7 +23269,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -23284,7 +23285,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -23300,7 +23301,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -23316,7 +23317,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -23332,7 +23333,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -23348,7 +23349,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -23364,7 +23365,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -23380,7 +23381,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -23396,7 +23397,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -23412,7 +23413,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -23428,7 +23429,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -23444,7 +23445,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -23460,7 +23461,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -23476,7 +23477,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -23492,7 +23493,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -23508,7 +23509,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -23524,7 +23525,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -23540,7 +23541,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -23556,7 +23557,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -23572,7 +23573,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -23588,7 +23589,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -23604,7 +23605,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -23620,7 +23621,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -23636,7 +23637,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -23652,7 +23653,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -23668,7 +23669,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -23684,7 +23685,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -23700,7 +23701,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -23716,7 +23717,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -23732,7 +23733,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -23748,7 +23749,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -23764,7 +23765,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -23780,7 +23781,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -23796,7 +23797,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -23812,7 +23813,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -23828,7 +23829,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -23844,7 +23845,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -23860,7 +23861,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -23876,7 +23877,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -23892,7 +23893,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -23908,7 +23909,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -23924,7 +23925,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -23940,7 +23941,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -23956,7 +23957,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -23972,7 +23973,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -23988,7 +23989,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -24004,7 +24005,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -24020,7 +24021,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -24036,7 +24037,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -24052,7 +24053,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -24068,7 +24069,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -24084,7 +24085,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -24100,7 +24101,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -24116,7 +24117,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -24132,7 +24133,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -24148,7 +24149,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -24164,7 +24165,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -24180,7 +24181,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -24196,7 +24197,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -24212,7 +24213,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -24228,7 +24229,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -24244,7 +24245,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -24260,7 +24261,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -24276,7 +24277,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -24292,7 +24293,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -24308,7 +24309,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -24324,7 +24325,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -24340,7 +24341,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -24356,7 +24357,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -24372,7 +24373,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -24388,7 +24389,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -24404,7 +24405,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -24420,7 +24421,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -24436,7 +24437,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -24452,7 +24453,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -24468,7 +24469,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -24484,7 +24485,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -24500,7 +24501,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -24516,7 +24517,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -24532,7 +24533,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -24548,7 +24549,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -24564,7 +24565,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -24580,7 +24581,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -24596,7 +24597,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -24612,7 +24613,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -24628,7 +24629,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -24644,7 +24645,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -24660,7 +24661,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -24676,7 +24677,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -24692,7 +24693,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -24708,7 +24709,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -24724,7 +24725,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -24740,7 +24741,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -24756,7 +24757,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -24772,7 +24773,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -24788,7 +24789,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -24804,7 +24805,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -24820,7 +24821,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -24836,7 +24837,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -24852,7 +24853,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -24868,7 +24869,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -24884,7 +24885,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -24900,7 +24901,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -24916,7 +24917,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -24932,7 +24933,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -24948,7 +24949,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -24964,7 +24965,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -24980,7 +24981,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -24996,7 +24997,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -25012,7 +25013,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -25028,7 +25029,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -25044,7 +25045,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -25060,7 +25061,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -25076,7 +25077,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -25092,7 +25093,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -25108,7 +25109,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -25124,7 +25125,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -25140,7 +25141,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -25156,7 +25157,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -25172,7 +25173,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -25188,7 +25189,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -25204,7 +25205,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -25220,7 +25221,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -25236,7 +25237,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -25252,7 +25253,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -25268,7 +25269,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -25284,7 +25285,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -25300,7 +25301,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -25316,7 +25317,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -25332,7 +25333,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -25348,7 +25349,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -25364,7 +25365,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -25380,7 +25381,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -25396,7 +25397,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -25412,7 +25413,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -25428,7 +25429,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -25444,7 +25445,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -25460,7 +25461,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -25476,7 +25477,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -25492,7 +25493,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -25508,7 +25509,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -25524,7 +25525,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -25540,7 +25541,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -25556,7 +25557,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -25572,7 +25573,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -25588,7 +25589,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -25604,7 +25605,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -25620,7 +25621,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -25636,7 +25637,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -25652,7 +25653,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -25668,7 +25669,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -25684,7 +25685,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -25700,7 +25701,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -25716,7 +25717,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -25732,7 +25733,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -25748,7 +25749,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -25764,7 +25765,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -25780,7 +25781,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -25796,7 +25797,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -25812,7 +25813,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -25828,7 +25829,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -25844,7 +25845,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -25860,7 +25861,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -25876,7 +25877,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -25892,7 +25893,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -25908,7 +25909,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -25924,7 +25925,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -25940,7 +25941,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -25956,7 +25957,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -25972,7 +25973,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -25988,7 +25989,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -26004,7 +26005,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -26020,7 +26021,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -26036,7 +26037,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -26052,7 +26053,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -26068,7 +26069,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -26084,7 +26085,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -26100,7 +26101,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -26116,7 +26117,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -26132,7 +26133,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -26148,7 +26149,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -26164,7 +26165,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -26180,7 +26181,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -26196,7 +26197,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -26212,7 +26213,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -26228,7 +26229,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -26244,7 +26245,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -26260,7 +26261,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -26276,7 +26277,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -26292,7 +26293,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -26308,7 +26309,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -26324,7 +26325,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -26340,7 +26341,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -26356,7 +26357,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -26372,7 +26373,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -26388,7 +26389,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -26404,7 +26405,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -26420,7 +26421,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -26436,7 +26437,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -26452,7 +26453,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -26468,7 +26469,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -26484,7 +26485,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -26500,7 +26501,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -26516,7 +26517,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -26532,7 +26533,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -26548,7 +26549,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -26564,7 +26565,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -26580,7 +26581,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -26596,7 +26597,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -26612,7 +26613,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -26628,7 +26629,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -26644,7 +26645,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -26660,7 +26661,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -26676,7 +26677,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -26692,7 +26693,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -26708,7 +26709,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -26724,7 +26725,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -26740,7 +26741,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -26756,7 +26757,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -26772,7 +26773,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -26788,7 +26789,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -26804,7 +26805,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -26820,7 +26821,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -26836,7 +26837,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -26852,7 +26853,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -26868,7 +26869,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -26884,7 +26885,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -26900,7 +26901,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -26916,7 +26917,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -26932,7 +26933,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -26948,7 +26949,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -26964,7 +26965,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -26980,7 +26981,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -26996,7 +26997,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -27012,7 +27013,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -27028,7 +27029,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -27044,7 +27045,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -27060,7 +27061,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -27076,7 +27077,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -27092,7 +27093,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -27108,7 +27109,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -27124,7 +27125,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -27140,7 +27141,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -27156,7 +27157,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -27172,7 +27173,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -27188,7 +27189,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -27204,7 +27205,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -27220,7 +27221,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -27236,7 +27237,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -27252,7 +27253,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -27268,7 +27269,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -27284,7 +27285,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -27300,7 +27301,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -27316,7 +27317,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -27332,7 +27333,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -27348,7 +27349,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -27364,7 +27365,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -27380,7 +27381,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -27396,7 +27397,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -27412,7 +27413,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -27428,7 +27429,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -27444,7 +27445,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -27460,7 +27461,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -27476,7 +27477,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -27492,7 +27493,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -27508,7 +27509,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -27524,7 +27525,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -27540,7 +27541,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -27556,7 +27557,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -27572,7 +27573,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -27588,7 +27589,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -27604,7 +27605,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -27620,7 +27621,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -27636,7 +27637,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -27652,7 +27653,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -27668,7 +27669,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -27684,7 +27685,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -27700,7 +27701,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -27716,7 +27717,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -27732,7 +27733,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -27748,7 +27749,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -27764,7 +27765,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -27780,7 +27781,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -27796,7 +27797,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -27812,7 +27813,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -27828,7 +27829,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -27844,7 +27845,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -27860,7 +27861,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -27876,7 +27877,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -27892,7 +27893,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -27908,7 +27909,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -27924,7 +27925,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -27940,7 +27941,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -27956,7 +27957,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -27972,7 +27973,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -27988,7 +27989,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -28004,7 +28005,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -28020,7 +28021,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -28036,7 +28037,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -28052,7 +28053,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -28068,7 +28069,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -28084,7 +28085,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -28100,7 +28101,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -28116,7 +28117,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -28132,7 +28133,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -28148,7 +28149,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -28164,7 +28165,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -28180,7 +28181,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -28196,7 +28197,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -28212,7 +28213,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -28228,7 +28229,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -28244,7 +28245,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -28260,7 +28261,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -28276,7 +28277,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -28292,7 +28293,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -28308,7 +28309,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -28324,7 +28325,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -28340,7 +28341,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -28356,7 +28357,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -28372,7 +28373,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -28388,7 +28389,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -28404,7 +28405,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -28420,7 +28421,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -28436,7 +28437,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -28452,7 +28453,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -28468,7 +28469,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -28484,7 +28485,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -28500,7 +28501,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -28516,7 +28517,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -28532,7 +28533,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -28548,7 +28549,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -28564,7 +28565,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -28580,7 +28581,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -28596,7 +28597,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -28612,7 +28613,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -28628,7 +28629,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -28644,7 +28645,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -28660,7 +28661,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -28676,7 +28677,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -28692,7 +28693,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -28708,7 +28709,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -28724,7 +28725,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -28740,7 +28741,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -28756,7 +28757,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -28772,7 +28773,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -28788,7 +28789,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -28804,7 +28805,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -28820,7 +28821,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -28836,7 +28837,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -28852,7 +28853,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -28868,7 +28869,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -28884,7 +28885,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -28900,7 +28901,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -28916,7 +28917,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -28932,7 +28933,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -28948,7 +28949,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -28964,7 +28965,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -28980,7 +28981,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -28996,7 +28997,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -29012,7 +29013,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -29028,7 +29029,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -29044,7 +29045,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -29060,7 +29061,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -29076,7 +29077,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -29092,7 +29093,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -29108,7 +29109,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -29124,7 +29125,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -29140,7 +29141,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -29156,7 +29157,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -29172,7 +29173,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -29188,7 +29189,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -29204,7 +29205,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -29220,7 +29221,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -29236,7 +29237,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -29252,7 +29253,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -29268,7 +29269,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -29284,7 +29285,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -29300,7 +29301,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -29316,7 +29317,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -29332,7 +29333,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -29348,7 +29349,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -29364,7 +29365,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -29380,7 +29381,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -29396,7 +29397,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -29412,7 +29413,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -29428,7 +29429,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -29444,7 +29445,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -29460,7 +29461,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -29476,7 +29477,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -29492,7 +29493,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -29508,7 +29509,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -29524,7 +29525,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -29540,7 +29541,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -29556,7 +29557,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -29572,7 +29573,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -29588,7 +29589,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -29604,7 +29605,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -29620,7 +29621,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -29636,7 +29637,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -29652,7 +29653,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -29668,7 +29669,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -29684,7 +29685,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -29700,7 +29701,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -29716,7 +29717,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -29732,7 +29733,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -29748,7 +29749,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -29764,7 +29765,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -29780,7 +29781,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -29796,7 +29797,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -29812,7 +29813,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -29828,7 +29829,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -29844,7 +29845,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -29860,7 +29861,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -29876,7 +29877,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -29892,7 +29893,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -29908,7 +29909,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -29924,7 +29925,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -29940,7 +29941,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -29956,7 +29957,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -29972,7 +29973,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -29988,7 +29989,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -30004,7 +30005,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -30020,7 +30021,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -30036,7 +30037,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -30052,7 +30053,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -30068,7 +30069,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -30084,7 +30085,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -30100,7 +30101,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -30116,7 +30117,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -30132,7 +30133,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -30148,7 +30149,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -30164,7 +30165,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -30180,7 +30181,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -30196,7 +30197,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -30212,7 +30213,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -30228,7 +30229,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -30244,7 +30245,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -30260,7 +30261,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -30276,7 +30277,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -30292,7 +30293,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -30308,7 +30309,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -30324,7 +30325,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -30340,7 +30341,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -30356,7 +30357,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -30372,7 +30373,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -30388,7 +30389,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -30404,7 +30405,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -30420,7 +30421,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -30436,7 +30437,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -30452,7 +30453,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -30468,7 +30469,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -30484,7 +30485,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -30500,7 +30501,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -30516,7 +30517,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -30532,7 +30533,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -30548,7 +30549,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -30564,7 +30565,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -30580,7 +30581,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -30596,7 +30597,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -30612,7 +30613,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -30628,7 +30629,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -30644,7 +30645,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -30660,7 +30661,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -30676,7 +30677,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -30692,7 +30693,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -30708,7 +30709,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -30724,7 +30725,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -30740,7 +30741,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -30756,7 +30757,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -30772,7 +30773,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -30788,7 +30789,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -30804,7 +30805,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -30820,7 +30821,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -30836,7 +30837,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -30852,7 +30853,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -30868,7 +30869,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -30884,7 +30885,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -30900,7 +30901,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -30916,7 +30917,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -30932,7 +30933,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -30948,7 +30949,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -30964,7 +30965,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -30980,7 +30981,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -30996,7 +30997,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -31012,7 +31013,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -31028,7 +31029,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -31044,7 +31045,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -31060,7 +31061,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -31076,7 +31077,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -31092,7 +31093,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -31108,7 +31109,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -31124,7 +31125,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -31140,7 +31141,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -31156,7 +31157,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -31172,7 +31173,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -31188,7 +31189,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -31204,7 +31205,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -31220,7 +31221,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -31236,7 +31237,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -31252,7 +31253,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -31268,7 +31269,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -31284,7 +31285,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -31300,7 +31301,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -31316,7 +31317,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -31332,7 +31333,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -31348,7 +31349,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -31364,7 +31365,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -31380,7 +31381,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -31396,7 +31397,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -31412,7 +31413,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -31428,7 +31429,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -31444,7 +31445,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -31460,7 +31461,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -31476,7 +31477,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -31492,7 +31493,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -31508,7 +31509,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -31524,7 +31525,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -31540,7 +31541,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -31556,7 +31557,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -31572,7 +31573,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -31588,7 +31589,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -31604,7 +31605,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -31620,7 +31621,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -31636,7 +31637,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -31652,7 +31653,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -31668,7 +31669,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -31684,7 +31685,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -31700,7 +31701,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -31716,7 +31717,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -31732,7 +31733,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -31748,7 +31749,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -31764,7 +31765,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -31780,7 +31781,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -31796,7 +31797,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -31812,7 +31813,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -31828,7 +31829,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -31844,7 +31845,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -31860,7 +31861,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -31876,7 +31877,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -31892,7 +31893,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -31908,7 +31909,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -31924,7 +31925,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -31940,7 +31941,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -31956,7 +31957,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -31972,7 +31973,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -31988,7 +31989,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -32004,7 +32005,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -32020,7 +32021,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -32036,7 +32037,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -32052,7 +32053,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -32068,7 +32069,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -32084,7 +32085,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -32100,7 +32101,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -32116,7 +32117,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -32132,7 +32133,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -32148,7 +32149,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -32164,7 +32165,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -32180,7 +32181,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -32196,7 +32197,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -32212,7 +32213,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -32228,7 +32229,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -32244,7 +32245,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -32260,7 +32261,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -32276,7 +32277,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -32292,7 +32293,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -32308,7 +32309,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -32324,7 +32325,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -32340,7 +32341,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -32356,7 +32357,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -32372,7 +32373,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -32388,7 +32389,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -32404,7 +32405,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -32420,7 +32421,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -32436,7 +32437,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -32452,7 +32453,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -32468,7 +32469,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -32484,7 +32485,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -32500,7 +32501,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -32516,7 +32517,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -32532,7 +32533,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -32548,7 +32549,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -32564,7 +32565,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -32580,7 +32581,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -32596,7 +32597,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -32612,7 +32613,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -32628,7 +32629,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -32644,7 +32645,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -32660,7 +32661,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -32676,7 +32677,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -32692,7 +32693,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -32708,7 +32709,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -32724,7 +32725,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -32740,7 +32741,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -32756,7 +32757,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -32772,7 +32773,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -32788,7 +32789,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -32804,7 +32805,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -32820,7 +32821,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -32836,7 +32837,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -32852,7 +32853,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -32868,7 +32869,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -32884,7 +32885,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -32900,7 +32901,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -32916,7 +32917,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -32932,7 +32933,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -32948,7 +32949,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -32964,7 +32965,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -32980,7 +32981,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -32996,7 +32997,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -33012,7 +33013,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -33028,7 +33029,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -33044,7 +33045,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -33060,7 +33061,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -33076,7 +33077,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -33092,7 +33093,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -33108,7 +33109,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -33124,7 +33125,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -33140,7 +33141,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -33156,7 +33157,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -33172,7 +33173,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -33188,7 +33189,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -33204,7 +33205,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -33220,7 +33221,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -33236,7 +33237,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -33252,7 +33253,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -33268,7 +33269,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -33284,7 +33285,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -33300,7 +33301,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -33316,7 +33317,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -33332,7 +33333,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -33348,7 +33349,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -33364,7 +33365,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -33380,7 +33381,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -33396,7 +33397,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -33412,7 +33413,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -33428,7 +33429,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -33444,7 +33445,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -33460,7 +33461,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -33476,7 +33477,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -33492,7 +33493,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -33508,7 +33509,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -33524,7 +33525,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -33540,7 +33541,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -33556,7 +33557,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -33572,7 +33573,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -33588,7 +33589,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -33604,7 +33605,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -33620,7 +33621,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -33636,7 +33637,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -33652,7 +33653,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -33668,7 +33669,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -33684,7 +33685,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -33700,7 +33701,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -33716,7 +33717,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -33732,7 +33733,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -33748,7 +33749,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -33764,7 +33765,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -33780,7 +33781,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -33796,7 +33797,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -33812,7 +33813,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -33828,7 +33829,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -33844,7 +33845,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -33860,7 +33861,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -33876,7 +33877,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -33892,7 +33893,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -33908,7 +33909,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -33924,7 +33925,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -33940,7 +33941,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -33956,7 +33957,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -33972,7 +33973,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -33988,7 +33989,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -34004,7 +34005,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -34020,7 +34021,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -34036,7 +34037,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -34052,7 +34053,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -34068,7 +34069,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -34084,7 +34085,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -34100,7 +34101,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -34116,7 +34117,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -34132,7 +34133,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -34148,7 +34149,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -34164,7 +34165,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -34180,7 +34181,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -34196,7 +34197,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -34212,7 +34213,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -34228,7 +34229,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -34244,7 +34245,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -34260,7 +34261,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -34276,7 +34277,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -34292,7 +34293,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -34308,7 +34309,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -34324,7 +34325,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -34340,7 +34341,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -34356,7 +34357,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -34372,7 +34373,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -34388,7 +34389,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -34404,7 +34405,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -34420,7 +34421,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -34436,7 +34437,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -34452,7 +34453,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -34468,7 +34469,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -34484,7 +34485,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -34500,7 +34501,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -34516,7 +34517,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -34532,7 +34533,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -34548,7 +34549,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -34564,7 +34565,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -34580,7 +34581,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -34596,7 +34597,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -34612,7 +34613,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -34628,7 +34629,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -34644,7 +34645,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -34660,7 +34661,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -34676,7 +34677,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -34692,7 +34693,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -34708,7 +34709,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -34724,7 +34725,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -34740,7 +34741,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -34756,7 +34757,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -34772,7 +34773,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -34788,7 +34789,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -34804,7 +34805,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -34820,7 +34821,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -34836,7 +34837,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -34852,7 +34853,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -34868,7 +34869,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -34884,7 +34885,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -34900,7 +34901,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -34916,7 +34917,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -34932,7 +34933,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -34948,7 +34949,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -34964,7 +34965,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -34980,7 +34981,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -34996,7 +34997,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -35012,7 +35013,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -35028,7 +35029,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -35044,7 +35045,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -35060,7 +35061,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -35076,7 +35077,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -35092,7 +35093,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -35108,7 +35109,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -35124,7 +35125,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -35140,7 +35141,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -35156,7 +35157,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -35172,7 +35173,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -35188,7 +35189,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -35204,7 +35205,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -35220,7 +35221,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -35236,7 +35237,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -35252,7 +35253,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -35268,7 +35269,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -35284,7 +35285,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -35300,7 +35301,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -35316,7 +35317,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -35332,7 +35333,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -35348,7 +35349,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -35364,7 +35365,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -35380,7 +35381,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -35396,7 +35397,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -35412,7 +35413,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -35428,7 +35429,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -35444,7 +35445,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -35460,7 +35461,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -35476,7 +35477,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -35492,7 +35493,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -35508,7 +35509,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -35524,7 +35525,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -35540,7 +35541,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -35556,7 +35557,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -35572,7 +35573,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -35588,7 +35589,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -35604,7 +35605,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -35620,7 +35621,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -35636,7 +35637,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -35652,7 +35653,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -35668,7 +35669,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -35684,7 +35685,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -35700,7 +35701,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -35716,7 +35717,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -35732,7 +35733,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -35748,7 +35749,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -35764,7 +35765,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -35780,7 +35781,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -35796,7 +35797,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -35812,7 +35813,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -35828,7 +35829,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -35844,7 +35845,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -35860,7 +35861,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -35876,7 +35877,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -35892,7 +35893,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -35908,7 +35909,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -35924,7 +35925,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -35940,7 +35941,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -35956,7 +35957,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -35972,7 +35973,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -35988,7 +35989,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -36004,7 +36005,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -36020,7 +36021,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -36036,7 +36037,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -36052,7 +36053,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -36068,7 +36069,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -36084,7 +36085,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -36100,7 +36101,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -36116,7 +36117,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -36132,7 +36133,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -36148,7 +36149,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -36164,7 +36165,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -36180,7 +36181,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -36196,7 +36197,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -36212,7 +36213,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -36228,7 +36229,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -36244,7 +36245,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -36260,7 +36261,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -36276,7 +36277,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -36292,7 +36293,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -36308,7 +36309,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -36324,7 +36325,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -36340,7 +36341,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -36356,7 +36357,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -36372,7 +36373,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -36388,7 +36389,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -36404,7 +36405,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -36420,7 +36421,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -36436,7 +36437,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -36452,7 +36453,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -36468,7 +36469,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -36484,7 +36485,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -36500,7 +36501,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -36516,7 +36517,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -36532,7 +36533,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -36548,7 +36549,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -36564,7 +36565,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -36580,7 +36581,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -36596,7 +36597,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -36612,7 +36613,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -36628,7 +36629,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -36644,7 +36645,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -36660,7 +36661,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -36676,7 +36677,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -36692,7 +36693,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -36708,7 +36709,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -36724,7 +36725,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -36740,7 +36741,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -36756,7 +36757,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -36772,7 +36773,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -36788,7 +36789,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -36804,7 +36805,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -36820,7 +36821,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -36836,7 +36837,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -36852,7 +36853,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -36868,7 +36869,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -36884,7 +36885,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -36900,7 +36901,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -36916,7 +36917,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -36932,7 +36933,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -36948,7 +36949,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -36964,7 +36965,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -36980,7 +36981,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -36996,7 +36997,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -37012,7 +37013,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -37028,7 +37029,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -37044,7 +37045,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -37060,7 +37061,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -37076,7 +37077,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -37092,7 +37093,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -37108,7 +37109,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -37124,7 +37125,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -37140,7 +37141,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -37156,7 +37157,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -37172,7 +37173,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -37188,7 +37189,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -37204,7 +37205,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -37220,7 +37221,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -37236,7 +37237,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -37252,7 +37253,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -37268,7 +37269,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -37284,7 +37285,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -37300,7 +37301,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -37316,7 +37317,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -37332,7 +37333,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -37348,7 +37349,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -37364,7 +37365,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -37380,7 +37381,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -37396,7 +37397,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -37412,7 +37413,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -37428,7 +37429,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -37444,7 +37445,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -37460,7 +37461,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -37476,7 +37477,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -37492,7 +37493,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -37508,7 +37509,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -37524,7 +37525,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -37540,7 +37541,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -37556,7 +37557,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -37572,7 +37573,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -37588,7 +37589,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -37604,7 +37605,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -37620,7 +37621,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -37636,7 +37637,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -37652,7 +37653,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -37668,7 +37669,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -37684,7 +37685,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -37700,7 +37701,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -37716,7 +37717,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -37732,7 +37733,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -37748,7 +37749,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -37764,7 +37765,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -37780,7 +37781,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -37796,7 +37797,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -37812,7 +37813,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -37828,7 +37829,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -37844,7 +37845,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -37860,7 +37861,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -37876,7 +37877,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -37892,7 +37893,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -37908,7 +37909,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -37924,7 +37925,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -37940,7 +37941,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -37956,7 +37957,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -37972,7 +37973,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -37988,7 +37989,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -38004,7 +38005,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -38020,7 +38021,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -38036,7 +38037,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -38052,7 +38053,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -38068,7 +38069,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -38084,7 +38085,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -38100,7 +38101,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -38116,7 +38117,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -38132,7 +38133,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -38148,7 +38149,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -38164,7 +38165,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -38180,7 +38181,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -38196,7 +38197,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -38212,7 +38213,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -38228,7 +38229,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -38244,7 +38245,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -38260,7 +38261,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -38276,7 +38277,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -38292,7 +38293,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -38308,7 +38309,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -38324,7 +38325,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -38340,7 +38341,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -38356,7 +38357,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -38372,7 +38373,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -38388,7 +38389,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -38404,7 +38405,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -38420,7 +38421,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -38436,7 +38437,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -38452,7 +38453,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -38468,7 +38469,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -38484,7 +38485,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -38500,7 +38501,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -38516,7 +38517,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -38532,7 +38533,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -38548,7 +38549,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -38564,7 +38565,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -38580,7 +38581,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -38596,7 +38597,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -38612,7 +38613,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -38628,7 +38629,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -38644,7 +38645,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -38660,7 +38661,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -38676,7 +38677,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -38692,7 +38693,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -38708,7 +38709,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -38724,7 +38725,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -38740,7 +38741,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -38756,7 +38757,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -38772,7 +38773,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -38788,7 +38789,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -38804,7 +38805,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -38820,7 +38821,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -38836,7 +38837,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -38852,7 +38853,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -38868,7 +38869,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -38884,7 +38885,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -38900,7 +38901,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -38916,7 +38917,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -38932,7 +38933,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -38948,7 +38949,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -38964,7 +38965,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -38980,7 +38981,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -38996,7 +38997,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -39012,7 +39013,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -39028,7 +39029,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -39044,7 +39045,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -39060,7 +39061,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -39076,7 +39077,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -39092,7 +39093,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -39108,7 +39109,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -39124,7 +39125,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -39140,7 +39141,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -39156,7 +39157,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -39172,7 +39173,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -39188,7 +39189,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -39204,7 +39205,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -39220,7 +39221,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -39236,7 +39237,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -39252,7 +39253,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -39268,7 +39269,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -39284,7 +39285,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -39300,7 +39301,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -39316,7 +39317,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -39332,7 +39333,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -39348,7 +39349,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -39364,7 +39365,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -39380,7 +39381,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -39396,7 +39397,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -39412,7 +39413,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -39428,7 +39429,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -39444,7 +39445,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -39460,7 +39461,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -39476,7 +39477,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -39492,7 +39493,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -39508,7 +39509,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -39524,7 +39525,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -39540,7 +39541,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -39556,7 +39557,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -39572,7 +39573,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -39588,7 +39589,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -39604,7 +39605,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -39620,7 +39621,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -39636,7 +39637,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -39652,7 +39653,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -39668,7 +39669,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -39684,7 +39685,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -39700,7 +39701,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -39716,7 +39717,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -39732,7 +39733,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -39748,7 +39749,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -39764,7 +39765,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -39780,7 +39781,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -39796,7 +39797,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -39812,7 +39813,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -39828,7 +39829,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -39844,7 +39845,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -39860,7 +39861,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -39876,7 +39877,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -39892,7 +39893,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -39908,7 +39909,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -39924,7 +39925,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -39940,7 +39941,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -39956,7 +39957,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -39972,7 +39973,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -39988,7 +39989,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -40004,7 +40005,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -40020,7 +40021,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -40036,7 +40037,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -40052,7 +40053,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -40068,7 +40069,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -40084,7 +40085,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -40100,7 +40101,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -40116,7 +40117,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -40132,7 +40133,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -40148,7 +40149,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -40164,7 +40165,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -40180,7 +40181,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -40196,7 +40197,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -40212,7 +40213,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -40228,7 +40229,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -40244,7 +40245,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -40260,7 +40261,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -40276,7 +40277,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -40292,7 +40293,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -40308,7 +40309,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -40324,7 +40325,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -40340,7 +40341,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -40356,7 +40357,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -40372,7 +40373,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -40388,7 +40389,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -40404,7 +40405,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -40420,7 +40421,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -40436,7 +40437,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -40452,7 +40453,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -40468,7 +40469,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -40484,7 +40485,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -40500,7 +40501,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -40516,7 +40517,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -40532,7 +40533,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -40548,7 +40549,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -40564,7 +40565,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -40580,7 +40581,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -40596,7 +40597,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -40612,7 +40613,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -40628,7 +40629,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -40644,7 +40645,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -40660,7 +40661,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -40676,7 +40677,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -40692,7 +40693,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -40708,7 +40709,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -40724,7 +40725,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -40740,7 +40741,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -40756,7 +40757,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -40772,7 +40773,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -40788,7 +40789,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -40804,7 +40805,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -40820,7 +40821,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -40836,7 +40837,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -40852,7 +40853,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -40868,7 +40869,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -40884,7 +40885,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -40900,7 +40901,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -40916,7 +40917,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -40932,7 +40933,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -40948,7 +40949,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -40964,7 +40965,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -40980,7 +40981,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -40996,7 +40997,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -41012,7 +41013,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -41028,7 +41029,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -41044,7 +41045,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -41060,7 +41061,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -41076,7 +41077,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -41092,7 +41093,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -41108,7 +41109,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -41124,7 +41125,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -41140,7 +41141,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -41156,7 +41157,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -41172,7 +41173,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -41188,7 +41189,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -41204,7 +41205,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -41220,7 +41221,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -41236,7 +41237,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -41252,7 +41253,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -41268,7 +41269,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -41284,7 +41285,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -41300,7 +41301,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -41316,7 +41317,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -41332,7 +41333,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -41348,7 +41349,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -41364,7 +41365,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -41380,7 +41381,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -41396,7 +41397,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -41412,7 +41413,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -41428,7 +41429,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -41444,7 +41445,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -41460,7 +41461,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -41476,7 +41477,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -41492,7 +41493,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -41508,7 +41509,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -41524,7 +41525,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -41540,7 +41541,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -41556,7 +41557,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -41572,7 +41573,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -41588,7 +41589,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -41604,7 +41605,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -41620,7 +41621,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -41636,7 +41637,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -41652,7 +41653,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -41668,7 +41669,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -41684,7 +41685,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -41700,7 +41701,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -41716,7 +41717,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -41732,7 +41733,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -41748,7 +41749,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -41764,7 +41765,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -41780,7 +41781,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -41796,7 +41797,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -41812,7 +41813,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -41828,7 +41829,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -41844,7 +41845,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -41860,7 +41861,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -41876,7 +41877,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -41892,7 +41893,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -41908,7 +41909,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -41924,7 +41925,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -41940,7 +41941,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -41956,7 +41957,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -41972,7 +41973,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -41988,7 +41989,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -42004,7 +42005,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -42020,7 +42021,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -42036,7 +42037,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -42052,7 +42053,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -42068,7 +42069,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -42084,7 +42085,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -42100,7 +42101,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -42116,7 +42117,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -42132,7 +42133,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -42148,7 +42149,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -42164,7 +42165,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -42180,7 +42181,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -42196,7 +42197,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -42212,7 +42213,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -42228,7 +42229,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -42244,7 +42245,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -42260,7 +42261,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -42276,7 +42277,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -42292,7 +42293,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -42308,7 +42309,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -42324,7 +42325,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -42340,7 +42341,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -42356,7 +42357,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -42372,7 +42373,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -42388,7 +42389,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -42404,7 +42405,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -42420,7 +42421,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -42436,7 +42437,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -42452,7 +42453,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -42468,7 +42469,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -42484,7 +42485,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -42500,7 +42501,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -42516,7 +42517,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -42532,7 +42533,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -42548,7 +42549,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -42564,7 +42565,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -42580,7 +42581,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -42596,7 +42597,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -42612,7 +42613,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -42628,7 +42629,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -42644,7 +42645,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -42660,7 +42661,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -42676,7 +42677,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -42692,7 +42693,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -42708,7 +42709,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -42724,7 +42725,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -42740,7 +42741,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -42756,7 +42757,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -42772,7 +42773,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -42788,7 +42789,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -42804,7 +42805,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -42820,7 +42821,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -42836,7 +42837,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -42852,7 +42853,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -42868,7 +42869,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -42884,7 +42885,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -42900,7 +42901,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -42916,7 +42917,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -42932,7 +42933,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -42948,7 +42949,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -42964,7 +42965,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -42980,7 +42981,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -42996,7 +42997,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -43012,7 +43013,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -43028,7 +43029,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -43044,7 +43045,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -43060,7 +43061,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -43076,7 +43077,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -43092,7 +43093,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -43108,7 +43109,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -43124,7 +43125,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -43140,7 +43141,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -43156,7 +43157,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -43172,7 +43173,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -43188,7 +43189,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -43204,7 +43205,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -43220,7 +43221,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -43236,7 +43237,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -43252,7 +43253,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -43268,7 +43269,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -43284,7 +43285,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -43300,7 +43301,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -43316,7 +43317,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -43332,7 +43333,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -43348,7 +43349,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -43364,7 +43365,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -43380,7 +43381,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -43396,7 +43397,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -43412,7 +43413,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -43428,7 +43429,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -43444,7 +43445,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -43460,7 +43461,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -43476,7 +43477,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -43492,7 +43493,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -43508,7 +43509,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -43524,7 +43525,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -43540,7 +43541,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -43556,7 +43557,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -43572,7 +43573,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -43588,7 +43589,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -43604,7 +43605,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -43620,7 +43621,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -43636,7 +43637,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -43652,7 +43653,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -43668,7 +43669,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -43684,7 +43685,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -43700,7 +43701,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -43716,7 +43717,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -43732,7 +43733,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -43748,7 +43749,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -43764,7 +43765,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -43780,7 +43781,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -43796,7 +43797,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -43812,7 +43813,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -43828,7 +43829,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -43844,7 +43845,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -43860,7 +43861,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -43876,7 +43877,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -43892,7 +43893,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -43908,7 +43909,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -43924,7 +43925,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -43940,7 +43941,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -43956,7 +43957,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -43972,7 +43973,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -43988,7 +43989,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -44004,7 +44005,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -44020,7 +44021,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -44036,7 +44037,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -44052,7 +44053,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -44068,7 +44069,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -44084,7 +44085,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -44100,7 +44101,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -44116,7 +44117,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -44132,7 +44133,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -44148,7 +44149,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -44164,7 +44165,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -44180,7 +44181,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -44196,7 +44197,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -44212,7 +44213,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -44228,7 +44229,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -44244,7 +44245,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -44260,7 +44261,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -44276,7 +44277,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -44292,7 +44293,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -44308,7 +44309,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -44324,7 +44325,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -44340,7 +44341,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -44356,7 +44357,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -44372,7 +44373,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -44388,7 +44389,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -44404,7 +44405,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -44420,7 +44421,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -44436,7 +44437,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -44452,7 +44453,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -44468,7 +44469,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -44484,7 +44485,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -44500,7 +44501,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -44516,7 +44517,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -44532,7 +44533,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -44548,7 +44549,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -44564,7 +44565,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -44580,7 +44581,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -44596,7 +44597,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -44612,7 +44613,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -44628,7 +44629,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -44644,7 +44645,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -44660,7 +44661,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -44676,7 +44677,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -44692,7 +44693,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -44708,7 +44709,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -44724,7 +44725,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -44740,7 +44741,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -44756,7 +44757,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -44772,7 +44773,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -44788,7 +44789,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -44804,7 +44805,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -44820,7 +44821,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -44836,7 +44837,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -44852,7 +44853,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -44868,7 +44869,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -44884,7 +44885,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -44900,7 +44901,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -44916,7 +44917,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -44932,7 +44933,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -44948,7 +44949,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -44964,7 +44965,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -44980,7 +44981,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -44996,7 +44997,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -45012,7 +45013,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -45028,7 +45029,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -45044,7 +45045,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -45060,7 +45061,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -45076,7 +45077,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -45092,7 +45093,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -45108,7 +45109,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -45124,7 +45125,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -45140,7 +45141,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -45156,7 +45157,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -45172,7 +45173,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -45188,7 +45189,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -45204,7 +45205,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -45220,7 +45221,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -45236,7 +45237,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -45252,7 +45253,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -45268,7 +45269,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -45284,7 +45285,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -45300,7 +45301,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -45316,7 +45317,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -45332,7 +45333,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -45348,7 +45349,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -45364,7 +45365,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -45380,7 +45381,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -45396,7 +45397,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -45412,7 +45413,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -45428,7 +45429,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -45444,7 +45445,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -45460,7 +45461,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -45476,7 +45477,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -45492,7 +45493,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -45508,7 +45509,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -45524,7 +45525,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -45540,7 +45541,7 @@ do
 		while true
 		do
 			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
-			if [ $p -ge 100 ]
+			if [ $p -ge 200 ]
 			then
 				echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 				sleep 0.5
@@ -45566,18 +45567,35 @@ do
 				sleep 0.5
 			fi
 		done
-		cat icmp/*.log | sed -n '3~5p;4~5p' | sed -n '{N;s/\n/\t/p}' | cut -f1 -d'%' | awk '{print $2,$NF}' | sort -k 2 -n | awk '{print $1}' | sed '51,$d' > ip.txt
+		cat icmp/*.log | sed -n '3~5p;4~5p' | sed -n '{N;s/\n/\t/p}' | cut -f1 -d'%' | awk '{print $2,$NF}' | sort -k 2 -n | awk '{print $1}' | sed '101,$d' > ip.txt
 		rm -rf icmp
-		echo 选取丢包率最少的50个IP地址下载测速
+		echo 选取100个丢包率最少的IP地址下载测速
 		mkdir temp
 		for i in `cat ip.txt`
 		do
 			echo $i 启动测速
 			curl --resolve speed.cloudflare.com:443:$i https://speed.cloudflare.com/__down?bytes=1000000000 -o temp/$i -s --connect-timeout 2 --max-time 10&
+			while true
+			do
+			p=$(ps -ef | grep curl | grep -v "grep" | wc -l)
+			if [ $p -le 10 ]
+			then
+				break
+			fi
+			done
+		done
+		while true
+		do
+			p=$(ps -ef | grep curl | grep -v "grep" | wc -l)
+			if [ $p == 0 ]
+			then
+				等待测速进程结束,进程数 $p
+				break
+			fi
+			echo 等待测速进程结束,进程数 $p
 			sleep 0.5
 		done
-		echo 等待测速完成,15秒后筛选出3个速度最好的IP
-		sleep 15
+		echo 测速完成
 		ls -S temp > ip.txt
 		rm -rf temp
 		n=$(wc -l ip.txt | awk '{print $1}')
@@ -45588,8 +45606,8 @@ do
 			rm -rf ip.txt
 			echo 优选的IP地址为 $first - $second - $third
 			echo 第一次测试 $first
-			curl --resolve speed.cloudflare.com:443:$first https://speed.cloudflare.com/__down?bytes=1000000000 -o tmp --connect-timeout 5 --max-time 15&
-			sleep 10
+			curl --resolve speed.cloudflare.com:443:$first https://speed.cloudflare.com/__down?bytes=1000000000 -o tmp --connect-timeout 5 --max-time 10&
+			sleep 5
 			a=$(du tmp | awk '{print $1}')
 			sleep 5
 			b=$(du tmp | awk '{print $1}')
@@ -45598,9 +45616,11 @@ do
 				anycast=$first
 				break
 			fi
+			avg=$[$c/5]
+			echo 平均速度 $avg KB/s
 			echo 第二次测试 $first
-			curl --resolve speed.cloudflare.com:443:$first https://speed.cloudflare.com/__down?bytes=1000000000 -o tmp --connect-timeout 5 --max-time 15&
-			sleep 10
+			curl --resolve speed.cloudflare.com:443:$first https://speed.cloudflare.com/__down?bytes=1000000000 -o tmp --connect-timeout 5 --max-time 10&
+			sleep 5
 			a=$(du tmp | awk '{print $1}')
 			sleep 5
 			b=$(du tmp | awk '{print $1}')
@@ -45609,9 +45629,11 @@ do
 				anycast=$first
 				break
 			fi
+			avg=$[$c/5]
+			echo 平均速度 $avg KB/s
 			echo 第一次测试 $second
-			curl --resolve speed.cloudflare.com:443:$second https://speed.cloudflare.com/__down?bytes=1000000000 -o tmp --connect-timeout 5 --max-time 15&
-			sleep 10
+			curl --resolve speed.cloudflare.com:443:$second https://speed.cloudflare.com/__down?bytes=1000000000 -o tmp --connect-timeout 5 --max-time 10&
+			sleep 5
 			a=$(du tmp | awk '{print $1}')
 			sleep 5
 			b=$(du tmp | awk '{print $1}')
@@ -45620,9 +45642,11 @@ do
 				anycast=$second
 				break
 			fi
+			avg=$[$c/5]
+			echo 平均速度 $avg KB/s
 			echo 第二次测试 $second
-			curl --resolve speed.cloudflare.com:443:$second https://speed.cloudflare.com/__down?bytes=1000000000 -o tmp --connect-timeout 5 --max-time 15&
-			sleep 10
+			curl --resolve speed.cloudflare.com:443:$second https://speed.cloudflare.com/__down?bytes=1000000000 -o tmp --connect-timeout 5 --max-time 10&
+			sleep 5
 			a=$(du tmp | awk '{print $1}')
 			sleep 5
 			b=$(du tmp | awk '{print $1}')
@@ -45631,9 +45655,11 @@ do
 				anycast=$second
 				break
 			fi
+			avg=$[$c/5]
+			echo 平均速度 $avg KB/s
 			echo 第一次测试 $third
-			curl --resolve speed.cloudflare.com:443:$third https://speed.cloudflare.com/__down?bytes=1000000000 -o tmp --connect-timeout 5 --max-time 15&
-			sleep 10
+			curl --resolve speed.cloudflare.com:443:$third https://speed.cloudflare.com/__down?bytes=1000000000 -o tmp --connect-timeout 5 --max-time 10&
+			sleep 5
 			a=$(du tmp | awk '{print $1}')
 			sleep 5
 			b=$(du tmp | awk '{print $1}')
@@ -45642,9 +45668,11 @@ do
 				anycast=$third
 				break
 			fi
+			avg=$[$c/5]
+			echo 平均速度 $avg KB/s
 			echo 第二次测试 $third
-			curl --resolve speed.cloudflare.com:443:$third https://speed.cloudflare.com/__down?bytes=1000000000 -o tmp --connect-timeout 5 --max-time 15&
-			sleep 10
+			curl --resolve speed.cloudflare.com:443:$third https://speed.cloudflare.com/__down?bytes=1000000000 -o tmp --connect-timeout 5 --max-time 10&
+			sleep 5
 			a=$(du tmp | awk '{print $1}')
 			sleep 5
 			b=$(du tmp | awk '{print $1}')
@@ -45653,11 +45681,16 @@ do
 				anycast=$third
 				break
 			fi
+			avg=$[$c/5]
+			echo 平均速度 $avg KB/s
 		fi
 	done
 		break
 done
 	avg=$[$c/5]
+	endtime=`date +'%Y-%m-%d %H:%M:%S'`
+	start_seconds=$(date --date="$starttime" +%s)
+	end_seconds=$(date --date="$endtime" +%s)
 	rm -rf tmp
 	clear
-	echo $anycast 满足 $bandwidth Mbps带宽需求,当前平均速度 $avg KB/s
+	echo $anycast 满足 $bandwidth Mbps带宽需求,当前平均速度 $avg KB/s,总计用时 $((end_seconds-start_seconds)) 秒
