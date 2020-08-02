@@ -45589,7 +45589,7 @@ do
 			p=$(ps -ef | grep curl | grep -v "grep" | wc -l)
 			if [ $p == 0 ]
 			then
-				等待测速进程结束,进程数 $p
+				echo 等待测速进程结束,进程数 $p
 				break
 			fi
 			echo 等待测速进程结束,进程数 $p
