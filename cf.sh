@@ -45575,26 +45575,10 @@ do
 		do
 			echo $i 启动测速
 			curl --resolve speed.cloudflare.com:443:$i https://speed.cloudflare.com/__down?bytes=1000000000 -o temp/$i -s --connect-timeout 2 --max-time 10&
-			while true
-			do
-			p=$(ps -ef | grep curl | grep -v "grep" | wc -l)
-			if [ $p -le 10 ]
-			then
-				break
-			fi
-			done
-		done
-		while true
-		do
-			p=$(ps -ef | grep curl | grep -v "grep" | wc -l)
-			if [ $p == 0 ]
-			then
-				echo 等待测速进程结束,进程数 $p
-				break
-			fi
-			echo 等待测速进程结束,进程数 $p
 			sleep 0.5
 		done
+		echo 等待测速进程结束,筛选出三个优选的IP
+		sleep 15
 		echo 测速完成
 		ls -S temp > ip.txt
 		rm -rf temp
