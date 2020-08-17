@@ -45601,9 +45601,10 @@ do
 			done
 			for i in `cat log.txt | tr '\r' '\n' | awk '{print $NF}' | sed '1,3d;$d' | grep M | sed 's/M//g'`
 			do
+				i=$(echo | awk '{print '$i'*10 }')
 				declare -i M
 				M=$i
-				M=M*1024*1024
+				M=M*1024*1024/10
 				echo $M >> speed.txt
 			done
 			declare -i max
@@ -45634,9 +45635,10 @@ do
 			done
 			for i in `cat log.txt | tr '\r' '\n' | awk '{print $NF}' | sed '1,3d;$d' | grep M | sed 's/M//g'`
 			do
+				i=$(echo | awk '{print '$i'*10 }')
 				declare -i M
 				M=$i
-				M=M*1024*1024
+				M=M*1024*1024/10
 				echo $M >> speed.txt
 			done
 			declare -i max
@@ -45667,9 +45669,10 @@ do
 			done
 			for i in `cat log.txt | tr '\r' '\n' | awk '{print $NF}' | sed '1,3d;$d' | grep M | sed 's/M//g'`
 			do
+				i=$(echo | awk '{print '$i'*10 }')
 				declare -i M
 				M=$i
-				M=M*1024*1024
+				M=M*1024*1024/10
 				echo $M >> speed.txt
 			done
 			declare -i max
@@ -45700,9 +45703,10 @@ do
 			done
 			for i in `cat log.txt | tr '\r' '\n' | awk '{print $NF}' | sed '1,3d;$d' | grep M | sed 's/M//g'`
 			do
+				i=$(echo | awk '{print '$i'*10 }')
 				declare -i M
 				M=$i
-				M=M*1024*1024
+				M=M*1024*1024/10
 				echo $M >> speed.txt
 			done
 			declare -i max
@@ -45733,9 +45737,10 @@ do
 			done
 			for i in `cat log.txt | tr '\r' '\n' | awk '{print $NF}' | sed '1,3d;$d' | grep M | sed 's/M//g'`
 			do
+				i=$(echo | awk '{print '$i'*10 }')
 				declare -i M
 				M=$i
-				M=M*1024*1024
+				M=M*1024*1024/10
 				echo $M >> speed.txt
 			done
 			declare -i max
@@ -45766,9 +45771,10 @@ do
 			done
 			for i in `cat log.txt | tr '\r' '\n' | awk '{print $NF}' | sed '1,3d;$d' | grep M | sed 's/M//g'`
 			do
+				i=$(echo | awk '{print '$i'*10 }')
 				declare -i M
 				M=$i
-				M=M*1024*1024
+				M=M*1024*1024/10
 				echo $M >> speed.txt
 			done
 			declare -i max
