@@ -1,6 +1,42 @@
 # better-cloudflare-ip
 
-适合中国大陆用户查找适合自己当前网络环境的优选Cloudflare Anycast IP
+查找适合自己当前网络环境的优选Cloudflare Anycast IP
+
+## 使用申明
+
+本项目侧重于研究任播技术中丢包率与网速的相互关系，仅供学习使用
+
+禁止使用范围准则如下
+
+a) 相关机构提示网页有威胁的，有非法信息提示的网站。
+
+b)医院类型网站（流产，皮肤病，性病等医院），未获得卫生部资质的网站。
+
+c)网站主体内容含有色情（视频交友，一夜情交友）、违法（办假证，贩卖仿真枪）、封建迷信、游戏私服、游戏外挂、网赚、两性、美女贴图和动漫贴图（尺度过大）、赌博（含贩卖赌博工具。）、博彩等内容。
+
+d)网站存在恶意流氓广告（存在非法内容视频链接，非法网页内容链接）。
+
+e)网站存在任何破坏或试图破坏网络安全的行为，以病毒、木马、恶意代码、钓鱼等方式，试图对网站、网络相关软硬件进行恶意扫描、非法侵入系统、非法获取数据等内容。
+
+f)网站内容存在版权风险的网站（视频，小说，音乐等网站）。
+
+g)网站含有药品销售、保健品销售，但未取得资质的，或严重夸大药效事实。
+
+h)网站主要业务为向非法网站提供支付、交易平台、担保，代理外国金融理财（炒股，炒现货，炒黄金）等服务的网站。
+
+i)网站中大量存在影响社会和谐稳定的内容的网站（涉嫌攻击国家，攻击领导人，攻击人民，言论煽动性质网站）。
+
+j)网站内容含有国家相关法律法规不允许的其他内容。
+
+k)网站内容含有VPN，网络代理等内容。
+
+l) 通过技术手段或非技术手段干扰百度所有产品正常运营的网站。
+
+m)网站内容为发布虚假不实消息行为，或侵害了他人的合法权益行为的网站。
+
+n) 获取网站内容需要通过登录等方式，无法直接查看造成内容无法审核的网站。
+
+o) 提供影视、软件和应用等下载服务的网站。
 
 ## Linux版本
 
@@ -75,12 +111,10 @@ curl https://proxy.freecdn.workers.dev/?url=https://raw.githubusercontent.com/ba
 
 下面是我自己用 Termux 测试的一段[演示视频](https://proxy.freecdn.workers.dev/?url=https://raw.githubusercontent.com/badafans/better-cloudflare-ip/master/termux.mp4)
 
-## 声明
+## 引用声明
 
 测速服务器用的文件是来自 Cloudflare 官方测速服务器提取出来的测速文件,官方测速地址 https://speed.cloudflare.com/
 
 其中 fping 是基于 GitHub 开源项目 https://github.com/schweikert/fping  4.2发行版修改而来，所有脚本均为本人原创内容，转载请注明出处！
 
 对于 Cloudflare Anycast 节点汇总，均为本人扫描 Cloudflare 公开节点汇总而来，Cloudflare IP Ranges 来自 https://www.cloudflare.com/zh-cn/ips/
-
-使用反馈，欢迎加入 Telegram 群组进行沟通 https://t.me/better_cloudflare_ip
