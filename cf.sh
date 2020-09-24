@@ -11,11 +11,12 @@ do
 	do
 		declare -i n
 		declare -i per
-		rm -rf icmp temp log.txt
+		rm -rf icmp temp log.txt anycast.txt
 		mkdir icmp
+		curl https://anycast.freecdn.workers.dev -s -# -o anycast.txt
 		n=0
-		m=$(curl https://anycast.freecdn.workers.dev -s | wc -l)
-		for i in `curl https://anycast.freecdn.workers.dev -s`
+		m=$(cat anycast.txt | wc -l)
+		for i in `cat anycast.txt`
 		do
 			ping -c 60 -i 0.2 -n -q $i > icmp/$n.log&
 			per=$n*100/$m
@@ -32,6 +33,19 @@ do
 					break
 				fi
 			done
+		done
+		rm -rf anycast.txt
+		while true
+		do
+			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
+			if [ $p -ne 0 ]
+			then
+				echo 等待 ICMP 进程结束:剩余进程数 $p
+				sleep 1
+			else
+				echo ICMP 丢包率测试完成
+				break
+			fi
 		done
 		cat icmp/*.log | sed -n '3~5p;4~5p' | sed -n '{N;s/\n/\t/p}' | cut -f1 -d'%' | awk '{print $2,$NF}' | sort -k 2 -n | awk '{print $1}' | sed '101,$d' > ip.txt
 		rm -rf icmp
