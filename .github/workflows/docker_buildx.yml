@@ -23,6 +23,6 @@ jobs:
               uses: ilteoood/docker_buildx@master
               with:
                 publish: true
-                imageName: bettercloudflareip
+                imageName: mingxiaojing/better-cloudflare-ip
                 dockerHubUser:  ${{ secrets.DOCKER_USERNAME }}
                 dockerHubPassword: ${{ secrets.DOCKER_PASSWORD }}
