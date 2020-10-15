@@ -11,14 +11,16 @@ do
 	do
 		declare -i n
 		declare -i per
+		declare -i count
 		rm -rf icmp temp log.txt anycast.txt
 		mkdir icmp
-		curl https://anycast.freecdn.workers.dev -s -# -o anycast.txt
+		curl https://anycast.freecdn.workers.dev -# -o anycast.txt
 		n=0
 		m=$(cat anycast.txt | wc -l)
+		count=(m+1)/50+1
 		for i in `cat anycast.txt`
 		do
-			ping -c 60 -i 0.2 -n -q $i > icmp/$n.log&
+			ping -c $count -i 0.2 -n -q $i > icmp/$n.log&
 			per=$n*100/$m
 			n=$[$n+1]
 			while true
@@ -47,9 +49,9 @@ do
 				break
 			fi
 		done
-		cat icmp/*.log | sed -n '3~5p;4~5p' | sed -n '{N;s/\n/\t/p}' | cut -f1 -d'%' | awk '{print $2,$NF}' | sort -k 2 -n | awk '{print $1}' | sed '101,$d' > ip.txt
+		cat icmp/*.log | sed -n '3~5p;4~5p' | sed -n '{N;s/\n/\t/p}' | cut -f1 -d'%' | awk '{print $2,$NF}' | sort -k 2 -n | awk '{print $1}' | sed '51,$d' > ip.txt
 		rm -rf icmp
-		echo 选取100个丢包率最少的IP地址下载测速
+		echo 选取50个丢包率最少的IP地址下载测速
 		mkdir temp
 		for i in `cat ip.txt`
 		do
