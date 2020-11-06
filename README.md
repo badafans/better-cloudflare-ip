@@ -106,8 +106,8 @@ curl https://proxy.freecdn.workers.dev/?url=https://raw.githubusercontent.com/ba
 
 ## 引用声明
 
-测速服务器用的文件是来自 Cloudflare 官方测速服务器提取出来的测速文件,官方测速地址 https://speed.cloudflare.com/
-
 其中 fping 是基于 GitHub 开源项目 https://github.com/schweikert/fping  4.2发行版修改而来，所有脚本均为本人原创内容，转载请注明出处！
 
 对于 Cloudflare Anycast 节点汇总，均为本人扫描 Cloudflare 公开节点汇总而来，Cloudflare IP Ranges 来自 https://www.cloudflare.com/zh-cn/ips/
+
+由于 speed.cloudflare.com 官方托管的CF Workers服务器资源有限(晚高峰容易出现error 1102:Workers exceeded resource limits)，现在已经更换为自建服务器 speed.udpfile.com ,请尽快更新至最新版本以免影响测速结果
