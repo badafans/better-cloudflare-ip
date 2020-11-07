@@ -56,7 +56,7 @@ do
 		for i in `cat ip.txt`
 		do
 			echo $i 启动测速
-			curl --resolve speed.udpfile.com:443:$i https://speed.udpfile.com/speed.jpg -o temp/$i -s --connect-timeout 2 --max-time 10&
+			curl --resolve speed.udpfile.com:443:$i https://speed.udpfile.com/cache.png -o temp/$i -s --connect-timeout 2 --max-time 10&
 			sleep 0.5
 		done
 		echo 等待测速进程结束,筛选出三个优选的IP
@@ -72,7 +72,7 @@ do
 			rm -rf ip.txt
 			echo 优选的IP地址为 $first - $second - $third
 			echo 第一次测试 $first
-			curl --resolve speed.udpfile.com:443:$first https://speed.udpfile.com/speed.jpg -o /dev/null --connect-timeout 5 --max-time 15 > log.txt 2>&1
+			curl --resolve speed.udpfile.com:443:$first https://speed.udpfile.com/cache.png -o /dev/null --connect-timeout 5 --max-time 15 > log.txt 2>&1
 			cat log.txt | tr '\r' '\n' | awk '{print $NF}' | sed '1,3d;$d' | grep -v 'k\|M' >> speed.txt
 			for i in `cat log.txt | tr '\r' '\n' | awk '{print $NF}' | sed '1,3d;$d' | grep k | sed 's/k//g'`
 			do
@@ -106,7 +106,7 @@ do
 			max=$[$max/1024]
 			echo 峰值速度 $max kB/s
 			echo 第二次测试 $first
-			curl --resolve speed.udpfile.com:443:$first https://speed.udpfile.com/speed.jpg -o /dev/null --connect-timeout 5 --max-time 15 > log.txt 2>&1
+			curl --resolve speed.udpfile.com:443:$first https://speed.udpfile.com/cache.png -o /dev/null --connect-timeout 5 --max-time 15 > log.txt 2>&1
 			cat log.txt | tr '\r' '\n' | awk '{print $NF}' | sed '1,3d;$d' | grep -v 'k\|M' >> speed.txt
 			for i in `cat log.txt | tr '\r' '\n' | awk '{print $NF}' | sed '1,3d;$d' | grep k | sed 's/k//g'`
 			do
@@ -140,7 +140,7 @@ do
 			max=$[$max/1024]
 			echo 峰值速度 $max kB/s
 			echo 第一次测试 $second
-			curl --resolve speed.udpfile.com:443:$second https://speed.udpfile.com/speed.jpg -o /dev/null --connect-timeout 5 --max-time 15 > log.txt 2>&1
+			curl --resolve speed.udpfile.com:443:$second https://speed.udpfile.com/cache.png -o /dev/null --connect-timeout 5 --max-time 15 > log.txt 2>&1
 			cat log.txt | tr '\r' '\n' | awk '{print $NF}' | sed '1,3d;$d' | grep -v 'k\|M' >> speed.txt
 			for i in `cat log.txt | tr '\r' '\n' | awk '{print $NF}' | sed '1,3d;$d' | grep k | sed 's/k//g'`
 			do
@@ -174,7 +174,7 @@ do
 			max=$[$max/1024]
 			echo 峰值速度 $max kB/s
 			echo 第二次测试 $second
-			curl --resolve speed.udpfile.com:443:$second https://speed.udpfile.com/speed.jpg -o /dev/null --connect-timeout 5 --max-time 15 > log.txt 2>&1
+			curl --resolve speed.udpfile.com:443:$second https://speed.udpfile.com/cache.png -o /dev/null --connect-timeout 5 --max-time 15 > log.txt 2>&1
 			cat log.txt | tr '\r' '\n' | awk '{print $NF}' | sed '1,3d;$d' | grep -v 'k\|M' >> speed.txt
 			for i in `cat log.txt | tr '\r' '\n' | awk '{print $NF}' | sed '1,3d;$d' | grep k | sed 's/k//g'`
 			do
@@ -208,7 +208,7 @@ do
 			max=$[$max/1024]
 			echo 峰值速度 $max kB/s
 			echo 第一次测试 $third
-			curl --resolve speed.udpfile.com:443:$third https://speed.udpfile.com/speed.jpg -o /dev/null --connect-timeout 5 --max-time 15 > log.txt 2>&1
+			curl --resolve speed.udpfile.com:443:$third https://speed.udpfile.com/cache.png -o /dev/null --connect-timeout 5 --max-time 15 > log.txt 2>&1
 			cat log.txt | tr '\r' '\n' | awk '{print $NF}' | sed '1,3d;$d' | grep -v 'k\|M' >> speed.txt
 			for i in `cat log.txt | tr '\r' '\n' | awk '{print $NF}' | sed '1,3d;$d' | grep k | sed 's/k//g'`
 			do
@@ -242,7 +242,7 @@ do
 			max=$[$max/1024]
 			echo 峰值速度 $max kB/s
 			echo 第二次测试 $third
-			curl --resolve speed.udpfile.com:443:$third https://speed.udpfile.com/speed.jpg -o /dev/null --connect-timeout 5 --max-time 15 > log.txt 2>&1
+			curl --resolve speed.udpfile.com:443:$third https://speed.udpfile.com/cache.png -o /dev/null --connect-timeout 5 --max-time 15 > log.txt 2>&1
 			cat log.txt | tr '\r' '\n' | awk '{print $NF}' | sed '1,3d;$d' | grep -v 'k\|M' >> speed.txt
 			for i in `cat log.txt | tr '\r' '\n' | awk '{print $NF}' | sed '1,3d;$d' | grep k | sed 's/k//g'`
 			do
