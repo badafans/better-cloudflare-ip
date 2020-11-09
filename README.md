@@ -60,6 +60,10 @@ o) 提供影视、软件和应用等下载服务的网站。
 + 在原始服务器的网站根目录下生成测试文件
 
     + dd if=/dev/zero of=cf_speed_test bs=1M count=100
+    
+    + 要能以 https://(cf中分配或者解析的域名)/cf_speed_test 访问并下载
+    
+    + 测试下载速度时将进行 15 秒的下载操作
 
 + 在脚本中配置 original_host 参数
 
