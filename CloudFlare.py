@@ -14,7 +14,7 @@ from multiprocessing import Manager, Pool
 
 import requests
 
-original_host = ['www.lyndi.tk', 'hidden-base-547e.jearol.workers.dev']
+original_host = []
 
 
 def main():
@@ -123,9 +123,9 @@ def check_speed_original(speed_test_ips_list, original_address):
 	for i in speed_test_ips_list:
 		print('开始对 {:15} 进行源地址速度测试'.format(i))
 		if platform.system() == 'Windows':
-			cmd = 'curl --resolve {1}:443:{0} https://{1}/test -o nul --connect-timeout 5 --max-time 15'.format(i, original_address)
+			cmd = 'curl --resolve {1}:443:{0} https://{1}/cf_speed_test -o nul --connect-timeout 5 --max-time 15'.format(i, original_address)
 		else:
-			cmd = 'curl --resolve {1}:443:{0} https://{1}/test -o /dev/null --connect-timeout 5 --max-time 15'.format(i, original_address)
+			cmd = 'curl --resolve {1}:443:{0} https://{1}/cf_speed_test -o /dev/null --connect-timeout 5 --max-time 15'.format(i, original_address)
 		p = subprocess.Popen(
 			cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.STDOUT)
 		ret = ''
@@ -152,7 +152,7 @@ def check_speed_original(speed_test_ips_list, original_address):
 		ret = float(ret)
 		cf_speed_test_ips_dict[i] = ret
 	print('\n源地址速度测试完成\n')
-	print('对 https://{}/test 进行的下载速度测试结果如下：\n'.format(original_address))
+	print('对 https://{}/cf_speed_test 进行的下载速度测试结果如下：\n'.format(original_address))
 	cf_speed_test_ips_list = sorted(cf_speed_test_ips_dict.items(), key=lambda x: x[1], reverse=True)
 	for i in cf_speed_test_ips_list:
 		ret = 'IP {:15} Speed {:10}k'.format(i[0], round(i[1] * 1.0 / 1024, 2))
@@ -163,6 +163,11 @@ def check_speed_original(speed_test_ips_list, original_address):
 
 
 if __name__ == '__main__':
-	start_time = time.time()
-	main()
-	print('累计测试时间： {} 秒'.format(int(time.time() - start_time)))
+	original_host = input('请输入测试地址，如果有多个地址请以半角空格分割：')
+	original_host = original_host.split(' ')
+	if len(original_host) > 0:
+		start_time = time.time()
+		main()
+		print('累计测试时间： {} 秒'.format(int(time.time() - start_time)))
+	else:
+		print('输入错误！请重新运行此脚本！')
