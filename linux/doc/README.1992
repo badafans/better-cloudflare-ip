@@ -1,0 +1,43 @@
+Original README (from 1992)
+
+        fping - A tool to quickly ping N number of hosts to determine
+        their reachability.
+
+             Roland J. Schemers III - Stanford University
+                   schemers@Stanford.EDU
+
+      fping is a ping(1) like program which uses the Internet Control
+      Message Protocol (ICMP) echo request to determine if a host is
+      up. fping is different from ping in that you can specify any
+      number of hosts on the command line, or specify a file containing
+      the lists of hosts to ping. Instead of trying one host until it
+      timeouts or replies, fping will send out a ping packet and move
+      on to the next host in a round-robin fashion. If a host replies,
+      it is noted and removed from the list of hosts to check. If a host
+      does not respond within a certain time limit and/or retry limit it 
+      will be considered unreachable. 
+
+Site
+      Stanford University has a large TCP/IP network with over 16,000 
+      assigned IP addresses and over 100 IP subnets.
+
+Problem and Issues
+
+      With a large a number of IP addresses in use, its becomes more and
+      more time consuming to check on which IP addresses are actively
+      in use, and which critical machines (routers, bridges, servers, etc)
+      are reachable. One example is we have a program which goes through
+      all of our routers arp caches looking for IP addresses that are in 
+      use. After finding a list of IP addresses that aren't in any arp
+      caches fping can then be used to see if these IP addresses really
+      aren't being used, or are just behind the routers. Checking 2500
+      hosts (99% of which are unreachable) via ping can take hours.
+       
+      fping was written to solve the problem of pinging N number of hosts
+      in an efficient manner. By sending out pings in a round-robin fashion
+      and checking on responses as they come in at random, a large number of 
+      hosts can be checked at once.
+
+      Unlike ping, fping is meant to be used in scripts and its
+      output is easy to parse.
+

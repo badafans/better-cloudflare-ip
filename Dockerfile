@@ -6,17 +6,18 @@ RUN apk add --no-cache --virtual .build-deps \
 	gcc \
 	g++ \
 	make  \
-	fortify-headers 
+    fortify-headers 
 
 WORKDIR /build
 
-COPY ./fping-4.2.tar.gz .
+COPY ./linux ./linux
 
-RUN tar -vxf fping-4.2.tar.gz \
-	&& (cd fping-4.2 \
-	&& ./configure \
-	&& make) \
- 	&& apk del .build-deps 
+RUN  cd  linux \
+	&& ls \
+	&& ./configure  \
+	&& make
+	
+RUN apk del .build-deps 
 
 FROM alpine:3.11
 
@@ -29,5 +30,5 @@ RUN apk add --no-cache --virtual .fping-rundeps \
 	bash
 WORKDIR /cloudflare
 
-COPY --from=builder /build/fping-4.2/src/fping .
-COPY --from=builder /build/fping-4.2/src/cf.sh .
+COPY --from=builder /build/linux/src/fping .
+COPY --from=builder /build/linux/src/cf.sh .

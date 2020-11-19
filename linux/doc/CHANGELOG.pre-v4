@@ -1,0 +1,627 @@
+2017-02-09  David Schweikert  <david@schweikert.ch>
+  * Version 3.16
+  * (feature) Support kernel-timestamping of received packets (#46)
+  * (feature) Simplify restrictions: only -i >= 1 and -p >= 10 are enforced now
+  * (bugfix) Fix option -m to return all IPs of a hostname
+  * (bugfix) Fix option -H (ttl) for IPv6
+  * (bugfix) Fix option -M (don't fragment) for IPv6
+  * (bugfix) Fix option -O (ToS) for IPv6
+  * (bugfix) Fix compatibility issue with AIX (#69, @blentzgh)
+  * (bugfix) Fix option -q not suppressing some ICMP error messages (#83)
+  * (bugfix) Fix option -M expecting an argument, when it shouldn't
+  * (bugfix) Fix minor issues found by Coverity Scan
+
+2017-01-11  David Schweikert  <david@schweikert.ch>
+  * Version 3.15
+  * (bugfix) Fix compiler errors on platforms other than Linux (related
+             to the new -M option, #109)
+  * Test suite fixes for macOS
+
+2017-01-10  David Schweikert  <david@schweikert.ch>
+  * Version 3.14
+  * (feature) Ignore network and broadcast for cidrs /31 and /32 (#102, Martin Topholm)
+  * (feature) New option '-M' to set the "Don't Fragment" flag (#91, Don Bowman)
+  * (feature) New option '-N' to output statistics for netdata (see: http://my-netdata.io/, #105, Costa Tsaousis)
+  * (feature) New option '-o' to calculate total outage time (#90, @jgerbeck)
+  * (bugfix) Exit code should be 2 when the hostname can't be resolved
+            (fixes #98, reported by @green-fox)
+  * (bugfix)  Fix issue compliling on RHEL/Centos 7 (#95, @jbackman)
+  * (bugfix) Lower -i limit to 1 instead of 10
+  * (bugfix) Improve interval preciseness of -Q reporting
+  * (bugfix) Fix occasional false positive in -Q reporting (#97)
+  * (bugfix) Solaris 10 portability fix (#107, Peter Bray)
+
+2015-10-21  David Schweikert  <david@schweikert.ch>
+  * Version 3.13
+  * (bugfix) Fix ICMP errors sometimes causing crashes with fping >= 3.11
+             (fixes #85, reported by Jamie Heilman and Bill Blough)
+
+2015-10-14  David Schweikert  <david@schweikert.ch>
+  * Version 3.12
+  * (bugfix) Fix fping6 -R (fixes #84, reported by Stuart Henderson)
+
+2015-10-12  David Schweikert  <david@schweikert.ch>
+  * Version 3.11
+  * (feature)  New option -R to use random bytes instead of NULLs (#72, Anthony DeRobertis)
+  * (feature)  Small documentation and performance improvements (Ryan Underwood)
+  * (bugfix)   Fix double entries with fping -u and unreachable hosts
+  * (internal) Use sockaddr_storage and simplify code, so that we can one day support both IPv4 and IPv6 with the same binary
+
+2014-05-03  David Schweikert  <david@schweikert.ch>
+  * Version 3.10
+  * Fix confusing error message with -g and IPv6 addresses (#58, reported by Axel Beckert)
+  * Allow option '-f' also for non-root (since setuid privileges are dropped)
+  * Do not retry twice DNS lookup on DNS lookup problem
+  * Remove support for NIS groups
+  * Better document -B backoff-factor and when it can be used (#33, Oleksiy Zagorskyi)
+  * More tests added
+
+2014-03-08  David Schweikert  <david@schweikert.ch>
+  * Version 3.9
+  * Fix random output on socket error (reported by Aleksandrs Saveljevs, #56)
+  * Support ppc64le architecture by including alpha libtool version
+    (reported by Amit Kumar Gupta and Aravinda B Thunug)
+  * Fix compilation problem on FreeBSD (#57)
+  * Initial test suite and continous intergration (with travis-ci.org / coveralls.io)
+  * Don't output usage information on error
+
+2013-11-08  David Schweikert  <david@schweikert.ch>
+  * Version 3.8
+  * Fix segmentation fault introduced in version 3.7 with loop mode (reported
+    by Vlad Glagolev, #55)
+
+2013-11-04  David Schweikert  <david@schweikert.ch>
+  * Version 3.7
+  * Allow running as non-root on Mac OS X by using non-privileged ICMP (#7)
+  * Remove unnecessary IPv6 socket options
+  * Fix again compatibility issue with FreeBSD (Shawn Chu)
+  * Fix fping hanging forever on permanent sendto failure (Shawn Chu)
+  * Fix duplicate echo reply packets causing early stop in count mode
+    (reported by Ramon Schwammberger, #53)
+
+2013-10-10  David Schweikert  <david@schweikert.ch>
+  * Version 3.6
+  * Fix loop issue after 65536 pings (reported by Peter Folk and GBert, #12)
+  * Minimum ping data size is now 0
+  * Removed setsockopt IPV6_CHECKSUM, which shouldn't be set and breaks
+    compiling on Solaris (reported by Juergen Arndt)
+  * Fix wrong min RTT value with -Q option (reported by Alexander Ivanov, #51)
+
+2013-05-22  David Schweikert  <david@schweikert.ch>
+  * Version 3.5
+  * Fix sprint_tm buffer size crash (reported by Japheth Cleaver)
+  * Addded -D flag to print timestamps (Toke Høiland-Jørgensen)
+  * Fix fping6 build on OS X 10.8 (unknown contributor)
+  * Fix compatibility issue with FreeBSD (Alexandre Raynaud, Jason Harris, #39)
+  * Fping.spec: fix setuid permissions and provides fping6 (Marcus Vinicius Ferreira)
+  * Re-create configure script with autoconf 2.69 for aarch64 support (Chuck Anderson, #45)
+
+2012-09-04  David Schweikert  <david@schweikert.ch>
+  * Version 3.4
+  * Revert "Output statistics to stdout instead of stderr", because it breaks
+    tools assuming the output goes to stderr
+
+2012-08-19  David Schweikert  <david@schweikert.ch>
+  * Version 3.3
+  * Do not output icmp errors with -q (#1)
+  * Add --enable-ipv4 and --enable-ipv6 options to configure (Niclas Zeising)
+  * Fix removing of unreachable hosts when doing loop (Thomas Liske, #13 #23)
+  * Fix -A for fping6 (reported by Matt LaPlante, #14)
+  * Fix "options inet6" breaking IPv4 name resolution (reported by Matt LaPlante, #17)
+  * Output statistics to stdout instead of stderr (suggested by Simon Leinen, #9)
+  * Set default data size to 56 bytes on all architectures (#18)
+  * Added contrib/fping.spec (Stephen Schaefer, #24)
+  * Convert man-page source to POD for easier maintenance
+  * Fix error message on DNS error for IPv6 hosts (#27)
+  * Fix -n flag in fping6 (#28)
+  * Man-page fix: TOS option typo (Thomas Liske, #23)
+  * Man-page fix: inconsistency in regards to numeric arguments (Robert Henney)
+  * Man-page fix: better description of option -q (#15)
+
+2012-05-29  David Schweikert  <david@schweikert.ch>
+  * Version 3.2
+  * Improve documentation for -g option (G.W. Haywood)
+  * Performance optimization for big select timeouts (#10, Andrey Bondarenko)
+  * Fix restart of select call after interrupt signal (#8, Boian Bonev)
+  * Fix infinite loop caused by linked list corruption (#11, Boian Bonev)
+
+2012-04-26  David Schweikert  <david@schweikert.ch>
+  * Version 3.1
+  * -g option (generate): exclude network and broadcast address for cidr
+    ranges (idea by Eric Brander)
+  * do not explicitely check if running as root, to make it possible to
+    install fping with linux capabilities instead of making it setuid
+    (setcap cap_net_raw+ep fping)
+  * ANSI C (C89) compiler now a requirement
+  * Portability fixes
+  * Reorganized source directory
+  * Bugfix: fix timeout issue on Solaris (Sandor Geller)
+  * Man-page fixes (Axel Beckert)
+  * Added -H option to specify number of hops (Paul Duda)
+  * Output usage information to stdout when called with -h (Paul Duda)
+
+2011-12-28  David Schweikert  <david@schweikert.ch>
+  * Version 3.0
+  * rewritten main loop for improved performance
+  * -T parameter (select timeout) now obsolete
+  * Maintenance taken over from unresponsive previous maintainer
+    (anybody please step up, if you disagree)
+  * New homepage: www.fping.org
+
+2009-12-21  Tobi Oetiker  <tobi@oetiker.ch>
+  * Version v2.4b2-to3-ipv6
+  * added -On option to set the TOS octet
+  * Removed unused variables from code
+  * updated to current autoconf standards
+  * Merged Debian changes (see below)
+
+----------------------------------------------------------------------
+
+fping (2.4b2-to-ipv6-16.1) unstable; urgency=low
+
+  * NMU during Moenchengladbach BSP
+  * Fixes FTBFS on kfreebsd (Closes: #555398)
+  * Fixes typo "Paramter" in binary
+
+ -- Axel Beckert <abe@deuxchevaux.org>  Sat, 23 Jan 2010 16:22:02 +0100
+
+fping (2.4b2-to-ipv6-16) unstable; urgency=low
+
+  * Fix the following bugs
+    - Network byte order sensitivity was missing completely.
+      Added hopefully all missing calls.
+    - The sequence numbering scheme used led to packet drops.
+      Changed it to a more senseful numbering scheme.
+    - Some minor C programming mistakes ('=' instead of '==').
+    Patch by Stephan Fuhrmann; closes: #502569
+  * Add support for command line select timeout setting
+    Patch by Marton Balint; closes: #502575
+  * Remove symlinks in /usr/sbin; closes: #377732
+  * Standards-Version is 3.8.0
+
+ -- Anibal Monsalve Salazar <anibal@debian.org>  Sat, 18 Oct 2008 12:04:52 +1100
+
+fping (2.4b2-to-ipv6-15) unstable; urgency=low
+
+  * Added interface binding (-I) for fping
+    Patch by Peter Naulls <peter@mushroomnetworks.com>
+    Closes: #439014
+  * Fixed a couple of typos in fping.8. Closes: #423180
+  * Added homepage control header
+  * Bumped Standards-Version to 3.7.3
+  * Fixed the following lintian issue:
+    - debian-rules-sets-DH_COMPAT
+
+ -- Anibal Monsalve Salazar <anibal@debian.org>  Mon, 03 Mar 2008 17:46:17 +1100
+
+fping (2.4b2-to-ipv6-13) unstable; urgency=low
+
+  * Fixed stdout flush problem, closes: #340146.
+    Patch by Bart Martens <bart.martens@advalvas.be>.
+
+ -- Anibal Monsalve Salazar <anibal@debian.org>  Fri, 30 Dec 2005 08:30:09 +1100
+
+fping (2.4b2-to-ipv6-12) unstable; urgency=low
+
+  * Fixed "problem with option -r (retry limit)", closes: #318402.
+    Patch by Qingning Huo <qingningh@lanware.co.uk>.
+
+ -- Anibal Monsalve Salazar <anibal@debian.org>  Sat, 08 Oct 2005 21:26:35 +1000
+
+fping (2.4b2-to-ipv6-11) unstable; urgency=low
+
+  * Fixed "would be useful to specify 'source address' like ping for multi
+    homed machines", closes: #198486.
+    Patch by Marc Haber <mh+debian-bugs@zugschlus.de>.
+
+ -- Anibal Monsalve Salazar <anibal@debian.org>  Thu, 02 Jun 2005 08:14:54 +1000
+
+fping (2.4b2-to-ipv6-10) unstable; urgency=low
+
+  * Fixed "unnecessary delay with the -c option after the last packet"
+    (Closes: #293856). Patch by Niko Tyni <ntyni@iki.fi>
+
+ -- Anibal Monsalve Salazar <anibal@debian.org>  Sun, 06 Feb 2005 23:25:57 +1100
+
+fping (2.4b2-to-ipv6-9) unstable; urgency=low
+
+  * Fixed "fping6 always does reverse lookup" (Closes: #273647).
+    Patch by Jeroen Massar and forwarded by Bernhard Schmidt <berni@birkenwald.de>
+
+ -- Anibal Monsalve Salazar <A.Monsalve.Salazar@IEEE.org>  Mon, 10 Jan 2005 00:01:32 +1100
+
+fping (2.4b2-to-ipv6-7) unstable; urgency=low
+
+  * Build fping in build/ipv[46] instead of build and build-ipv6.
+  * Made DNS errors non-fatal for IPv6 (closes: #198056).
+
+ -- Herbert Xu <herbert@debian.org>  Fri, 20 Jun 2003 21:36:30 +1000
+
+fping (2.4b2-to-ipv6-6) unstable; urgency=low
+
+  * Do not use incorrect linux.h file (closes: #85468).
+
+ -- Herbert Xu <herbert@debian.org>  Sat, 17 May 2003 14:13:11 +1000
+
+fping (2.4b2-to-ipv6-5) unstable; urgency=low
+
+  * Fixed yet another divide by zero bug (closes: #148445).
+
+ -- Herbert Xu <herbert@debian.org>  Tue,  4 Jun 2002 12:18:03 +1000
+
+fping (2.4b2-to-ipv6-4) unstable; urgency=low
+
+  * Made fping6 setuid (closes: #136386).
+  * Moved fping back into bin.
+  * Partially applied IPv6 patch to fix IPv6 checksums (closes: #136479).
+
+ -- Herbert Xu <herbert@debian.org>  Sun,  7 Apr 2002 20:36:56 +1000
+
+fping (2.4b2-to-ipv6-3) unstable; urgency=low
+
+  * Added compatibility symlink for fping (closes: #135203).
+
+ -- Herbert Xu <herbert@debian.org>  Sat, 23 Feb 2002 08:34:11 +1100
+
+fping (2.4b2-to-ipv6-2) unstable; urgency=low
+
+  * Fixed another divide by zero error (closes: #132370).
+
+ -- Herbert Xu <herbert@debian.org>  Thu,  7 Feb 2002 20:10:48 +1100
+
+fping (2.4b2-to-ipv6-1) unstable; urgency=low
+
+  * New upstream release.
+  * Install fping into sbin as done by upstream.
+
+ -- Herbert Xu <herbert@debian.org>  Fri,  1 Feb 2002 22:11:59 +1100
+
+fping (2.2b2-3) unstable; urgency=low
+
+  * Removed INSTALL file from package (closes: #84050).
+  * Fixed alignment bug.
+
+ -- Herbert Xu <herbert@debian.org>  Sat, 10 Feb 2001 19:25:18 +1100
+
+fping (2.2b2-2) unstable; urgency=low
+
+  * Made changes for dpkg-statoverride (closes: #83838).
+
+ -- Herbert Xu <herbert@debian.org>  Sun, 28 Jan 2001 21:53:05 +1100
+
+fping (2.2b2-1) unstable; urgency=low
+
+  * New upstream release.
+  * Fixed typo that prevented -d from working (closes: #83255).
+  * Drop root privileges after opening the socket (closes: #81589).
+  * Fixed the options [tip], they were out by a factor of 10
+    (Richard Kettlewell, closes: #83742).
+
+ -- Herbert Xu <herbert@debian.org>  Sun, 28 Jan 2001 00:09:41 +1100
+
+fping (2.2b1-2) unstable; urgency=low
+
+  * Fixed typo in control file, spotted by William Ono (closes: #49909).
+
+ -- Herbert Xu <herbert@debian.org>  Mon, 15 May 2000 12:27:03 +1000
+
+fping (2.2b1-1) unstable; urgency=low
+
+  * Initial release.
+  * Fixed divide by zero error (closes: #29902).
+
+ -- Herbert Xu <herbert@debian.org>  Sat, 30 Oct 1999 16:36:19 +1000
+---------------------------------------------------------------------------------
+
+Wed Jan 16 2002
+Jeroen Massar
+- Revision v2.4b2-to-IPv6
+   - Added IPv6 support.
+   - Added -I option for selecting source IPv4/IPv6 address.
+   - Makefile.in now generates a Makefile which will build both
+     fping (IPv4) and fping6 (IPv6). Thus it makes an fping (IPv4 only)
+     and an fping6 (IPv6 only).
+   - num_unreachable was counted twice when a sendto() generated errors.
+   - See http://unfix.org/projects/ipv6/
+
+Tue Mar 14 2001
+Jason Ewasiuk <jasone@remote.net>
+- Revision v2.4b1
+        - added -g option for generating IPs from a start to an end value
+                - two available options, generate IPs from start IP to end IP
+                  or from a passed netmask, such as 192.168.1.0/24
+
+Thu Feb 15 2001
+Jason Ewasiuk <jasone@remote.net>
+- Revision v2.3b1
+        - formatting changes to code layout (fping.c)
+        NOTE:  Best viewed with a tab stop of 4
+        - merged in changes from Debian c/o Herbert Xu
+        <herbert@gondor.apana.org.au>
+                - Compilation fix on alphas with glibc
+                - Alignment issues (note from JE:  in wait_for_reply())
+                - A typo with the time specified on the command line
+                (note from JE:  bug was using 10 instead of 100)
+                - Drop privileges after obtaining socket
+                (note from JE:  might be moot, since prog exits if
+                user is not root)
+        - touched all files in package to this date
+        - couple new #ifdefs added for future WIN32 support
+        (Haven't got to adding this yet, will take a lot of rewriting.)
+
+Fri Dec  8 10:33:13 2000  Roland Schemers  <schemers@stanford.edu>
+
+        * stop using sys_errlist and start using strerror
+        fixed bug in output of -C
+
+Wed Jan  8 11:18:37 1997  Roland Schemers  <schemers@stanford.edu>
+
+        * Created ChangeLog file. What follows was from the CHANGES file.
+
+* Revision 2.0  1994/10/31 21:26:23 morgan
+
+  Substantial rewrite, including new features:
+
+    support some traditional ping features:
+      loop mode
+      specify size of data packets
+      specify how many pings to send
+      show per-response data
+      interpret ICMPs other than ICMP Echo response
+
+  also
+
+    rewrote main loop completely
+    make timings in tenths of milliseconds
+    do exponential backoff on retries
+    port to more systems
+    add some debugging stuff
+    do better checking on whether received ICMP is for us
+
+* Revision 1.24  1993/12/10  23:11:39  schemers
+
+  commented out seteuid(getuid()) since it isn't needed
+
+* Revision 1.23  1993/12/10  18:33:41  schemers
+
+  Took out the -f option for non-root users. This can be enabled by
+  defining ENABLE_F_OPTION before compiling. There is a call to
+  access before opening the file, but there is a race condition.
+  Reading from stdin is much safer.
+
+
+* Revision 1.22  1993/11/16  19:49:24  schemers
+
+  Took out setuid(getuid()) and used access() system call to
+  check for access to the file specified with "-f".
+
+* Revision 1.21  1993/07/20  18:08:19  schemers
+
+  commented out the test to make sure the ping packet came from the
+  same IP address as the one we sent to. This could cause problems on
+  multi-homed hosts.
+
+* Revision 1.20  1993/02/23  00:16:38  schemers
+
+fixed syntax error (should have compiled before checking in...)
+
+* Revision 1.19  1993/02/23  00:15:15  schemers
+
+turned off printing of "is alive" when -a is specified.
+
+* Revision 1.18  1992/07/28  15:16:44  schemers
+
+added a fflush(stdout) call before the summary is sent to stderr, so
+everything shows up in the right order.
+
+* Revision 1.17  1992/07/23  03:29:42  schemers
+* Revision 1.16  1992/07/22  19:24:37  schemers
+
+Fixed declaration of timeval_diff. Didn't notice the problem because
+I use 'cc' in stead of gcc under Ultrix. Time to switch? :-)
+
+Modified file reaing so it would skip blank lines or lines starting
+with a '#'. Now you can do something like:
+
+fping -ad < /etc/hosts
+
+* Revision 1.15  1992/07/21  17:07:18  schemers
+
+Put in sanity checks so only root can specify "dangerous" options.
+Changed usage to show switchs in alphabetical order.
+* Revision 1.14  1992/07/21  16:40:52  schemers
+* Revision 1.13  1992/07/17  21:02:17  schemers
+
+Changed the default timeout to 2500 msec, and retry to 3. This was
+due to suggestions from people with slow (WAN) networks. The default
+1 sec timeout was too fast.
+
+
+Added '-e' option for showing elapsed (round-trip) times on pakets, and
+modified the -s option to include min, max, and average round-trip times,
+and over all elapsed time.
+
+Modified action taken when a error is returned from sendto. The action
+taken now considers the host unreachable and prints the hostname
+followed by the errno message. The program will not exit and will continue
+to try other hosts.
+
+* Revision 1.12  1992/07/17  16:38:54  schemers
+* Revision 1.11  1992/07/17  16:28:38  schemers
+
+ move socket create call so I could do a setuid(getuid()) before the
+ fopen call is made. Once the socket is created root privs aren't needed
+ to send stuff out on it.
+
+ moved num_timeout counter. It really was for debug purposes and didn't
+ make sense to the general public :-) Now it is the number of timeouts
+ (pings that didn't get received with the time limit).
+
+
+* Revision 1.10 1992/07/16  16:24:38  schemers
+* Revision 1.9  1992/07/16  16:00:04  schemers
+* Revision 1.8  1992/07/16  05:44:41  schemers
+
+Added _NO_PROTO stuff for older compilers, and _POSIX_SOURCE
+for unistd.h, and _POSIX_SOURCE for stdlib.h. Also added
+check for __cplusplus.
+
+Now compiles ok under Ultrix 3.1, and Sun4 using cc. Also compiled
+ok using g++ 2.2.2.
+
+Changed '-a' and '-u' flags to be mutually exclusive (makes sense, since
+specifiying both '-a' and '-u' is the same as not specifiying anything.
+Since '-a' and '-u' are mutually exclusive, these options now only print
+the hostname, and not the 'is alive' or 'is unreachable'  messages.
+This makes it much easier to do stuff like:
+
+#!/usr/local/bin/perl
+$hosts_to_backup=`cat /etc/hosts.backup|fping -a`;
+
+Since you don't have to strip off the 'is alive' messages.
+
+Changed usage to and stats to print to stderr instead of stdout.
+
+-----------------------------------------------------------------------------
+
+RCS header info from original fping.c package (no longer required)
+
+/*
+ ***************************************************
+ *
+ * Standard RCS Header information (see co(1))
+ *
+ * $Author: schemers $
+ *
+ * $Date: 1997/01/08 20:29:33 $
+ *
+ * $Revision: 2.2 $
+ *
+ * $Locker:  $
+ *
+ * $Source: /afs/ir/group/networking/src/fping/fping-2.2/src/RCS/fping.c,v $
+ *
+ * $State: Exp $
+ *
+ * $Log: fping.c,v $
+ *
+ * Revision 2.2  1997/01/08 20:29:33  schemers
+ * changes for autoconf/automake
+ *
+ * Revision 2.1  1997/01/08 19:07:18  schemers
+ * checked in RL "Bob"'s changes before configure'ing
+ *
+ * Revision 2.0  1994/10/31  21:26:23  schemers
+ * many changes by RL "Bob" Morgan
+ *   add timing data collection, loop mode, per-packet output, etc
+ *
+ * Revision 1.24  1993/12/10  23:11:39  schemers
+ * commented out seteuid(getuid()) since it isn't needed
+ *
+ * Revision 1.23  1993/12/10  18:33:41  schemers
+ * Took out the -f option for non-root users. This can be enabled by
+ * defining ENABLE_F_OPTION before compiling. There is a call to
+ * access before opening the file, but there is a race condition.
+ * Reading from stdin is much safer.
+ *
+ * Revision 1.22  1993/11/16  19:49:24  schemers
+ * Took out setuid(getuid()) and used access() system call to
+ * check for access to the file specified with "-f".
+ *
+ * Revision 1.21  1993/07/20  18:08:19  schemers
+ * commented out the test to make sure the ping packet came from the
+ * same IP address as the one we sent to. This could cause problems on
+ * multi-homed hosts.
+ *
+ * Revision 1.20  1993/02/23  00:16:38  schemers
+ * fixed syntax error (should have compiled before checking in...)
+ *
+ * Revision 1.19  1993/02/23  00:15:15  schemers
+ * turned off printing of "is alive" when -a is specified.
+ *
+ * Revision 1.18  1992/07/28  15:16:44  schemers
+ * added a fflush(stdout) call before the summary is sent to stderr, so
+ * everything shows up in the right order.
+ *
+ * Revision 1.17  1992/07/23  03:29:42  schemers
+ * fixed declaration of timeval_diff.
+ *
+ * Revision 1.16  1992/07/22  19:24:37  schemers
+ * Modified file reading so it would skip blanks lines or lines starting
+ * with a '#'. Now you can do something like:
+ *
+ * fping -ad < /etc/hosts
+ *
+ * Revision 1.15  1992/07/21  17:07:18  schemers
+ * Put in sanity checks so only root can specify "dangerous" options.
+ * Changed usage to show switchs in alphabetical order.
+ *
+ * Revision 1.14  1992/07/21  16:40:52  schemers
+ * Now when sendto returns an error, the host is considered unreachable and
+ * and the error message (from errno) is displayed.
+ *
+ * Revision 1.13  1992/07/17  21:02:17  schemers
+ * changed default timeout to 2500 msec (for WANs), and default try
+ * to 3. This gives 10 second overall timeout.
+ *
+ * Added -e option for showing elapsed (round-trip) time on packets
+ *
+ * Modified -s option to inlude to round-trip stats
+ *
+ * Added #ifndef DEFAULT_* stuff its easier to change the defaults
+ *
+ * Reorganized main loop.
+ *
+ * cleaned up timeval stuff. removed set_timeval and timeval_expired
+ * since they aren't needed anymore. Just use timeval_diff.
+ *
+ * Revision 1.12  1992/07/17  16:38:54  schemers
+ * move socket create call so I could do a setuid(getuid()) before the
+ * fopen call is made. Once the socket is created root privs aren't needed
+ * to send stuff out on it.
+ *
+ * Revision 1.11  1992/07/17  16:28:38  schemers
+ * moved num_timeout counter. It really was for debug purposes and didn't
+ * make sense to the general public :-) Now it is the number of timeouts
+ * (pings that didn't get received with the time limit).
+ *
+ * Revision 1.10  1992/07/16  16:24:38  schemers
+ * changed usage() to use fprintf(stderr,"...");
+ *
+ * Revision 1.9  1992/07/16  16:00:04  schemers
+ * Added _NO_PROTO stuff for older compilers, and _POSIX_SOURCE
+ * for unistd.h, and _POSIX_SOURCE for stdlib.h. Also added
+ * check for __cplusplus.
+ *
+ * Revision 1.8  1992/07/16  05:44:41  schemers
+ * changed -a and -u to only show hostname in results. This is
+ * for easier parsing. Also added -v flag
+ *
+ * Revision 1.7  1992/07/14  18:45:23  schemers
+ * initialized last_time in add_host function
+ *
+ * Revision 1.6  1992/07/14  18:32:40  schemers
+ * changed select to use FD_ macros
+ *
+ * Revision 1.5  1992/07/14  17:21:22  schemers
+ * standardized exit status codes
+ *
+ * Revision 1.4  1992/06/26  15:25:35  schemers
+ * changed name from rrping to fping
+ *
+ * Revision 1.3  1992/06/24  15:39:32  schemers
+ * added -d option for unreachable systems
+ *
+ * Revision 1.2  1992/06/23  03:01:23  schemers
+ * misc fixes from R.L. "Bob" Morgan
+ *
+ * Revision 1.1  1992/06/19  18:23:52  schemers
+ * Initial revision
+ *
+ *--------------------------------------------------
+ * Copyright (c) 1992, 1994, 1997 Board of Trustees
+ *            Leland Stanford Jr. University
+ ***************************************************
+ */
+
+
