@@ -12,6 +12,8 @@ WORKDIR /build
 
 COPY ./linux ./linux
 
+RUN chmod  -R 755 linux
+
 RUN  cd  linux \
 	&& ls \
 	&& ./configure  \
