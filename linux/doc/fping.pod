@@ -1,0 +1,291 @@
+=head1 NAME
+
+fping - send ICMP ECHO_REQUEST packets to network hosts
+
+=head1 SYNOPSIS
+
+B<fping> [ I<options> ] [ I<systems...> ]
+
+=head1 DESCRIPTION
+
+B<fping> is a program like B<ping> which uses the Internet Control Message
+Protocol (ICMP) echo request to determine if a target host is responding.
+B<fping> differs from B<ping> in that you can specify any number of targets on the
+command line, or specify a file containing the lists of targets to ping.
+Instead of sending to one target until it times out or replies, B<fping> will
+send out a ping packet and move on to the next target in a round-robin fashion.
+In the default mode, if a target replies, it is noted and removed from the list
+of targets to check; if a target does not respond within a certain time limit
+and/or retry limit it is designated as unreachable. B<fping> also supports
+sending a specified number of pings to a target, or looping indefinitely (as in
+B<ping> ). Unlike B<ping>, B<fping> is meant to be used in scripts, so its
+output is designed to be easy to parse.
+
+=head1 OPTIONS
+
+=over 5
+
+=item B<-4>, B<--ipv4>
+
+Restrict name resolution and IPs to IPv4 addresses.
+
+=item B<-6>, B<--ipv6>
+
+Restrict name resolution and IPs to IPv6 addresses.
+
+=item B<-a>, B<--alive>
+
+Show systems that are alive.
+
+=item B<-A>, B<--addr>
+
+Display targets by address rather than DNS name. Combined with -d, the output
+will be both the ip and (if available) the hostname.
+
+=item B<-b>, B<--size>=I<BYTES>
+
+Number of bytes of ping data to send.  The minimum size (normally 12) allows
+room for the data that B<fping> needs to do its work (sequence number,
+timestamp).  The reported received data size includes the IP header (normally
+20 bytes) and ICMP header (8 bytes), so the minimum total size is 40 bytes.
+Default is 56, as in B<ping>. Maximum is the theoretical maximum IP datagram
+size (64K), though most systems limit this to a smaller, system-dependent
+number.
+
+=item B<-B>, B<--backoff>=I<N>
+
+Backoff factor. In the default mode, B<fping> sends several requests to a
+target before giving up, waiting longer for a reply on each successive request.
+This parameter is the value by which the wait time (B<-t>) is multiplied on each
+successive request; it must be entered as a floating-point number (x.y). The
+default is 1.5.
+
+=item B<-c>, B<--count>=I<N>
+
+Number of request packets to send to each target.  In this mode, a line is
+displayed for each received response (this can suppressed with B<-q> or B<-Q>).
+Also, statistics about responses for each target are displayed when all
+requests have been sent (or when interrupted).
+
+=item B<-C>, B<--vcount>=I<N>
+
+Similar to B<-c>, but the per-target statistics are displayed in a format
+designed for automated response-time statistics gathering. For example:
+
+ $ fping -C 5 -q somehost
+ somehost : 91.7 37.0 29.2 - 36.8
+
+shows the response time in milliseconds for each of the five requests, with the
+C<-> indicating that no response was received to the fourth request.
+
+=item B<-d>, B<--rdns>
+
+Use DNS to lookup address of return ping packet. This allows you to give fping
+a list of IP addresses as input and print hostnames in the output. This is similar
+to option B<-n>/B<--name>, but will force a reverse-DNS lookup even if you give
+hostnames as target (NAME->IP->NAME).
+
+=item B<-D>, B<--timestamp>
+
+Add Unix timestamps in front of output lines generated with in looping or counting
+modes (B<-l>, B<-c>, or B<-C>).
+
+=item B<-e>, B<--elapsed>
+
+Show elapsed (round-trip) time of packets.
+
+=item B<-f>, B<--file>
+
+Read list of targets from a file.  This option can only be used by the root
+user. Regular users should pipe in the file via stdin:
+
+ $ fping < targets_file
+
+=item B<-g>, B<--generate> I<addr/mask>
+
+Generate a target list from a supplied IP netmask, or a starting and ending IP.
+Specify the netmask or start/end in the targets portion of the command line. If
+a network with netmask is given, the network and broadcast addresses will be
+excluded. ex. To ping the network 192.168.1.0/24, the specified command line
+could look like either:
+
+ $ fping -g 192.168.1.0/24
+
+or
+
+ $ fping -g 192.168.1.1 192.168.1.254
+
+=item B<-h>, B<--help>
+
+Print usage message.
+
+=item B<-H>, B<--ttl>=I<N>
+
+Set the IP TTL field (time to live hops).
+
+=item B<-i>, B<--interval>=I<MSEC>
+
+The minimum amount of time (in milliseconds) between sending a ping packet
+to any target (default is 10, minimum is 1).
+
+=item B<-I>, B<--iface>=I<IFACE>
+
+Set the interface (requires SO_BINDTODEVICE support).
+
+=item B<-l>, B<--loop>
+
+Loop sending packets to each target indefinitely. Can be interrupted with
+Ctrl-C; statistics about responses for each target are then displayed.
+
+=item B<-m>, B<--all>
+
+Send pings to each of a target host's multiple IP addresses (use of option '-A'
+is recommended).
+
+=item B<-M>, B<--dontfrag>
+
+Set the "Don't Fragment" bit in the IP header (used to determine/test the MTU).
+
+=item B<-n>, B<--name>
+
+If targets are specified as IP addresses, do a reverse-DNS lookup on them
+to
+
+=item B<-N>, B<--netdata>
+
+Format output for netdata (-l -Q are required). See: L<http://my-netdata.io/>
+
+=item B<-o>, B<--outage>
+
+Calculate "outage time" based on the number of lost pings and the interval used (useful for network convergence tests).
+
+=item B<-O>, B<--tos>=I<N>
+
+Set the typ of service flag (TOS). I<N> can be either decimal or hexadecimal
+(0xh) format.
+
+=item B<-p>, B<--period>=I<MSEC>
+
+In looping or counting modes (B<-l>, B<-c>, or B<-C>), this parameter sets
+the time in milliseconds that B<fping> waits between successive packets to
+an individual target. Default is 1000 and minimum is 10.
+
+=item B<-q>, B<--quiet>
+
+Quiet. Don't show per-probe results, but only the final summary. Also don't
+show ICMP error messages.
+
+=item B<-Q>, B<--squiet>=I<SECS>
+
+Like B<-q>, but show summary results every n seconds.
+
+=item B<-r>, B<--retry>=I<N>
+
+Retry limit (default 3). This is the number of times an attempt at pinging
+a target will be made, not including the first try.
+
+=item B<-R>, B<--random>
+
+Instead of using all-zeros as the packet data, generate random bytes.
+Use to defeat, e.g., link data compression.
+
+=item B<-s>, B<--src>
+
+Print cumulative statistics upon exit.
+
+=item B<-S>, B<--src>=I<addr>
+
+Set source address.
+
+=item B<-t>, B<--timeout>=I<MSEC>
+
+Initial target timeout in milliseconds. In the default, non-loop mode, the
+default timeout is 500ms, and it represents the amount of time that B<fping>
+waits for a response to its first request. Successive timeouts are multiplied
+by the backoff factor specified with B<-B>.
+
+In loop/count mode, the default timeout is automatically adjusted to match
+the "period" value (but not more than 2000ms). You can still adjust the timeout
+value with this option, if you wish to, but note that setting a value larger
+than "period" produces inconsistent results, because the timeout value can
+be respected only for the last ping.
+
+Also note that any received replies that are larger than the timeout value, will
+be discarded.
+
+=item B<-T> I<n>
+
+Ignored (for compatibility with fping 2.4).
+
+=item B<-u>, B<--unreach>
+
+Show targets that are unreachable.
+
+=item B<-v>, B<--version>
+
+Print B<fping> version information.
+
+=item B<-x>, B<--reachable>=I<N>
+
+Given a list of hosts, this mode checks if number of reachable hosts is >= N
+and exits true in that case.
+
+=back
+
+=head1 EXAMPLES
+
+Generate 20 pings to two hosts in ca. 1 second (i.e. one ping every 50 ms to
+each host), and report every ping RTT at the end:
+
+ $ fping --quiet --interval=1 --vcount=20 --period=50 127.0.0.1 127.0.0.2
+
+=head1 AUTHORS
+
+=over 4
+
+=item *
+
+Roland J. Schemers III, Stanford University, concept and versions 1.x
+
+=item *
+
+RL "Bob" Morgan, Stanford University, versions 2.x
+
+=item *
+
+David Papp, versions 2.3x and up
+
+=item *
+
+David Schweikert, versions 3.0 and up
+
+=back
+
+B<fping website: L<http://www.fping.org>>
+
+=head1 DIAGNOSTICS
+
+Exit status is 0 if all the hosts are reachable, 1 if some hosts
+were unreachable, 2 if any IP addresses were not found, 3 for invalid command
+line arguments, and 4 for a system call failure.
+
+=head1 RESTRICTIONS
+
+If fping was configured with C<--enable-safe-limits>, the following values are
+not allowed for non-root users:
+
+=over 4
+
+=item *
+
+B<-i> I<n>, where I<n> < 1 msec
+
+=item *
+
+B<-p> I<n>, where I<n> < 10 msec
+
+=back
+
+=head1 SEE ALSO
+
+C<ping(8)>
