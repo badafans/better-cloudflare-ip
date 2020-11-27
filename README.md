@@ -106,6 +106,13 @@ curl https://proxy.freecdn.workers.dev/?url=https://raw.githubusercontent.com/ba
 
 6.由于Android termux本身难以支持root权限，整套ICMP丢包测试逻辑完全重新架构，不依赖与fping，所以整体测试相对较为耗时
 
+## Docker版本
+``` bash
+docker run -itd --restart=always  --name CIP mingxiaojing/better-cloudflare-ip:latest
+
+docker exec -it CIP /bin/bash cf.sh
+```
+
 ## 引用声明
 
 其中 fping 是基于 GitHub 开源项目 https://github.com/schweikert/fping  4.2发行版修改而来，所有脚本均为本人原创内容，转载请注明出处！
