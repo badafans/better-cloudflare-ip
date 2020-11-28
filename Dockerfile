@@ -35,4 +35,4 @@ WORKDIR /cloudflare
 COPY --from=builder /build/linux/src/fping .
 COPY --from=builder /build/linux/src/cf.sh .
 RUN chmod +x fping \
-     && RUN chmod +x linux
+     &&  chmod +x linux
