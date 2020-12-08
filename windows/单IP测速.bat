@@ -4,17 +4,15 @@ cd %~dp0
 color A
 setlocal enabledelayedexpansion
 cls
-curl --ipv4 https://service.freecdn.workers.dev -o data.txt -#
-for /f "delims=" %%a in ('findstr /C:"domain" data.txt') do (
-set domain=%%a
-set domain=!domain:domain:=!
-)
-for /f "delims=" %%a in ('findstr /C:"file" data.txt') do (
-set file=%%a
-set file=!file:file:=!
-)
-del data.txt
 set /p a=请输入优选 IP :
+curl --ipv4 --resolve update.freecdn.workers.dev:443:%a% https://update.freecdn.workers.dev -o temp.txt -#
+for /f "tokens=2 delims==" %%a in ('findstr /C:"domain" temp.txt') do (
+set domain=%%a
+)
+for /f "tokens=2 delims==" %%a in ('findstr /C:"file" temp.txt') do (
+set file=%%a
+)
+del temp.txt
 title  正在测试 %a%
 curl --resolve !domain!:443:%a% https://!domain!/!file! -o nul
 pause
