@@ -12,34 +12,31 @@ do
 		declare -i n
 		declare -i per
 		declare -i count
-		rm -rf icmp temp log.txt data.txt anycast.txt
+		rm -rf icmp temp log.txt anycast.txt temp.txt
 		mkdir icmp
-		curl --ipv4 https://service.freecdn.workers.dev -# -o data.txt
-		publicip=$(cat data.txt | grep publicip: | cut -f 2- -d':')
-		domain=$(cat data.txt | grep domain: | cut -f 2- -d':')
-		file=$(cat data.txt | grep file: | cut -f 2- -d':')
-		url=$(cat data.txt | grep url: | cut -f 2- -d':')
-		version=$(cat data.txt | grep version: | cut -f 2- -d':')
-		if [ "$version" != "20201108" ]
+		datafile="./data.txt"
+		if [[ ! -f "$datafile" ]]
 		then
-			echo 发现新版本: $version
-			echo 更新地址: $url
-			echo 更新后才可以使用
-			exit
+			echo 获取CF节点IP
+			curl --retry 3 https://update.freecdn.workers.dev -o data.txt -#
 		fi
+		domain=$(cat data.txt | grep domain= | cut -f 2- -d'=')
+		file=$(cat data.txt | grep file= | cut -f 2- -d'=')
+		databaseold=$(cat data.txt | grep database= | cut -f 2- -d'=')
 		n=0
 		count=$(($RANDOM%5))
-		for i in `cat data.txt | sed '1,5d'`
+		for i in `cat data.txt | sed '1,7d'`
 		do
 			if [ $n -eq $count ]
 			then
-				echo $i>>anycast.txt
+				randomip=$(($RANDOM%256))
+				echo 生成随机IP $i$randomip
+				echo $i$randomip>>anycast.txt
 				count+=4
 			else
 				n+=1
 			fi
 		done
-		rm -rf data.txt
 		n=0
 		m=$(cat anycast.txt | wc -l)
 		count=m/30+1
@@ -308,6 +305,29 @@ done
 	start_seconds=$(date --date="$starttime" +%s)
 	end_seconds=$(date --date="$endtime" +%s)
 	clear
+	curl --ipv4 --resolve update.freecdn.workers.dev:443:$anycast --retry 3 -s -X POST -d '"CF-IP":"'$anycast'","Speed":"'$max'"' 'https://update.freecdn.workers.dev' -o temp.txt
+	publicip=$(cat temp.txt | grep publicip= | cut -f 2- -d'=')
+	colo=$(cat temp.txt | grep colo= | cut -f 2- -d'=')
+	url=$(cat temp.txt | grep url= | cut -f 2- -d'=')
+	url=$(cat temp.txt | grep url= | cut -f 2- -d'=')
+	app=$(cat temp.txt | grep app= | cut -f 2- -d'=')
+	databasenew=$(cat temp.txt | grep database= | cut -f 2- -d'=')
+	if [ "$app" != "20201208" ]
+	then
+		echo 发现新版本程序: $app
+		echo 更新地址: $url
+		echo 更新后才可以使用
+		exit
+	fi
+	if [ "$databasenew" != "$databaseold" ]
+	then
+		echo 发现新版本数据库: $databasenew
+		mv temp.txt data.txt
+		echo 数据库 $databasenew 已经自动更新完毕
+	fi
+	rm -rf temp.txt
 	echo 优选IP $anycast 满足 $bandwidth Mbps带宽需求
 	echo 峰值速度 $max kB/s
-	echo 出口IP $publicip 总计用时 $((end_seconds-start_seconds)) 秒
+	echo 公网IP $publicip
+	echo 数据中心 $colo
+	echo 总计用时 $((end_seconds-start_seconds)) 秒

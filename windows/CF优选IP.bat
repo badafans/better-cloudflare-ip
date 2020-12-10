@@ -11,38 +11,25 @@ if %time:~3,1% EQU 0 (set /a startM=%time:~4,1%) else (set /a startM=%time:~3,2%
 if %time:~6,1% EQU 0 (set /a startS=%time:~7,1%) else (set /a startS=%time:~6,2%)
 goto start
 :start
-title 获取CF节点IP
-del data.txt ip.txt CR.txt CRLF.txt cut.txt speed.txt
+del ip.txt CR.txt CRLF.txt cut.txt speed.txt temp.txt
 RD /S /Q temp
 cls
-curl --ipv4 https://service.freecdn.workers.dev -o data.txt -#
-for /f "delims=" %%a in ('findstr /C:"publicip" data.txt') do (
-set publicip=%%a
-set publicip=!publicip:publicip:=!
-)
-for /f "delims=" %%a in ('findstr /C:"domain" data.txt') do (
+if not exist "data.txt" title 获取CF节点IP&curl --retry 3 https://update.freecdn.workers.dev -o data.txt -#
+for /f "tokens=2 delims==" %%a in ('findstr /C:"domain" data.txt') do (
 set domain=%%a
-set domain=!domain:domain:=!
 )
-for /f "delims=" %%a in ('findstr /C:"file" data.txt') do (
+for /f "tokens=2 delims==" %%a in ('findstr /C:"file" data.txt') do (
 set file=%%a
-set file=!file:file:=!
 )
-for /f "delims=" %%a in ('findstr /C:"url" data.txt') do (
-set url=%%a
-set url=!url:url:=!
+for /f "tokens=2 delims==" %%a in ('findstr /C:"database" data.txt') do (
+set databaseold=%%a
 )
-for /f "delims=" %%a in ('findstr /C:"version" data.txt') do (
-set version=%%a
-set version=!version:version:=!
-if !version! NEQ 20201108 (echo 发现新版本: !version! & echo 更新地址: !url! & title 更新后才可以使用 & echo 按任意键退出程序 & pause>nul & exit)
-)
+title 生成CF节点IP
 set /a i=%random%%%5
 set /a n=0
-for /f "skip=5" %%a in (data.txt) do (
-if !n! EQU !i! (echo %%a>>ip.txt & set /a i+=4) else (set /a n+=1)
+for /f "skip=7" %%a in (data.txt) do (
+if !n! EQU !i! (set /a randomip=!random!%%256&echo 生成随机IP %%a!randomip!&echo %%a!randomip!>>ip.txt&set /a i+=4) else (set /a n+=1)
 )
-del data.txt
 for /f "tokens=2 delims=:" %%a in ('find /c /v "" ip.txt') do (
 set /a count=%%a
 set /a count=count/30+1
@@ -91,13 +78,13 @@ dir /o:-s /b > ../ip.txt
 cd ..
 set /a n=0
 for /f "delims=" %%a in (ip.txt) do (
-set /a n+=1 & if !n!==1 set "a=%%a")
+set /a n+=1&if !n!==1 set "a=%%a")
 set /a n=0
 for /f "delims=" %%a in (ip.txt) do (
-set /a n+=1 & if !n!==2 set "b=%%a")
+set /a n+=1&if !n!==2 set "b=%%a")
 set /a n=0
 for /f "delims=" %%a in (ip.txt) do (
-set /a n+=1 & if !n!==3 set "c=%%a")
+set /a n+=1&if !n!==3 set "c=%%a")
 for /f "delims=" %%a in ('dir temp /b /a-d^| find /v /c "&#@"') do (
 		if %%a GEQ 3 (
 		chcp 936
@@ -146,7 +133,7 @@ set /a Max=0
 for /f "tokens=1,2" %%a in ('type "speed.txt"') do (
 if %%a GEQ !Max! set /a Max=%%a
 )
-if !Max! GEQ !Speed! (cls & echo 优选IP !a! 满足 %Bandwidth% Mbps带宽需求 & echo 峰值速度 !Max! kB/s & goto end) else (goto two)
+if !Max! GEQ !Speed! (cls&set anycast=!a!&goto end) else (goto two)
 :two
 chcp 936
 del CRLF.txt cut.txt speed.txt
@@ -187,7 +174,7 @@ set /a Max=0
 for /f "tokens=1,2" %%a in ('type "speed.txt"') do (
 if %%a GEQ !Max! set /a Max=%%a
 )
-if !Max! GEQ !Speed! (cls & echo 优选IP !a! 满足 %Bandwidth% Mbps带宽需求 & echo 峰值速度 !Max! kB/s & goto end) else (goto three)
+if !Max! GEQ !Speed! (cls&set anycast=!a!&goto end) else (goto three)
 :three
 chcp 936
 del CRLF.txt cut.txt speed.txt
@@ -228,7 +215,7 @@ set /a Max=0
 for /f "tokens=1,2" %%a in ('type "speed.txt"') do (
 if %%a GEQ !Max! set /a Max=%%a
 )
-if !Max! GEQ !Speed! (cls & echo 优选IP !b! 满足 %Bandwidth% Mbps带宽需求 & echo 峰值速度 !Max! kB/s & goto end) else (goto four)
+if !Max! GEQ !Speed! (cls&set anycast=!b!&goto end) else (goto four)
 :four
 chcp 936
 del CRLF.txt cut.txt speed.txt
@@ -269,7 +256,7 @@ set /a Max=0
 for /f "tokens=1,2" %%a in ('type "speed.txt"') do (
 if %%a GEQ !Max! set /a Max=%%a
 )
-if !Max! GEQ !Speed! (cls & echo 优选IP !b! 满足 %Bandwidth% Mbps带宽需求 & echo 峰值速度 !Max! kB/s & goto end) else (goto five)
+if !Max! GEQ !Speed! (cls&set anycast=!b!&goto end) else (goto five)
 :five
 chcp 936
 del CRLF.txt cut.txt speed.txt
@@ -310,7 +297,7 @@ set /a Max=0
 for /f "tokens=1,2" %%a in ('type "speed.txt"') do (
 if %%a GEQ !Max! set /a Max=%%a
 )
-if !Max! GEQ !Speed! (cls & echo 优选IP !c! 满足 %Bandwidth% Mbps带宽需求 & echo 峰值速度 !Max! kB/s & goto end) else (goto six)
+if !Max! GEQ !Speed! (cls&set anycast=!c!&goto end) else (goto six)
 :six
 chcp 936
 del CRLF.txt cut.txt speed.txt
@@ -351,7 +338,7 @@ set /a Max=0
 for /f "tokens=1,2" %%a in ('type "speed.txt"') do (
 if %%a GEQ !Max! set /a Max=%%a
 )
-if !Max! GEQ !Speed! (cls & echo 优选IP !c! 满足 %Bandwidth% Mbps带宽需求 & echo 峰值速度 !Max! kB/s & goto end) else (goto start)
+if !Max! GEQ !Speed! (cls&set anycast=!c!&goto end) else (goto start)
 :end
 set /a stopH=%time:~0,2%
 if %time:~3,1% EQU 0 (set /a stopM=%time:~4,1%) else (set /a stopM=%time:~3,2%)
@@ -359,7 +346,28 @@ if %time:~6,1% EQU 0 (set /a stopS=%time:~7,1%) else (set /a stopS=%time:~6,2%)
 set /a starttime=%startH%*3600+%startM%*60+%startS%
 set /a stoptime=%stopH%*3600+%stopM%*60+%stopS%
 if %starttime% GTR %stoptime% (set /a alltime=86400-%starttime%+%stoptime%) else (set /a alltime=%stoptime%-%starttime%)
-echo 出口IP !publicip! 总计用时 %alltime% 秒
+curl --ipv4 --resolve update.freecdn.workers.dev:443:!anycast! --retry 3 -s -X POST -d """CF-IP"":""!anycast!"",""Speed"":""!Max!""" "https://update.freecdn.workers.dev" -o temp.txt
+for /f "tokens=2 delims==" %%a in ('findstr /C:"publicip" temp.txt') do (
+set publicip=%%a
+)
+for /f "tokens=2 delims==" %%a in ('findstr /C:"colo" temp.txt') do (
+set colo=%%a
+)
+for /f "tokens=2 delims==" %%a in ('findstr /C:"url" temp.txt') do (
+set url=%%a
+)
+for /f "tokens=2 delims==" %%a in ('findstr /C:"app" temp.txt') do (
+set app=%%a
+if !app! NEQ 20201208 (echo 发现新版本程序: !app!&echo 更新地址: !url!&title 更新后才可以使用&echo 按任意键退出程序&pause>nul&exit)
+)
+for /f "tokens=2 delims==" %%a in ('findstr /C:"database" temp.txt') do (
+set databasenew=%%a
+if !databasenew! NEQ !databaseold! (echo 发现新版本数据库: !databasenew!&move /Y temp.txt data.txt>nul&echo 数据库 !databasenew! 已经自动更新完毕)
+)
+echo 优选IP !anycast! 满足 %Bandwidth% Mbps带宽需求&echo 峰值速度 !Max! kB/s
+echo 公网IP !publicip! 
+echo 数据中心 !colo!
+echo 总计用时 %alltime% 秒
 del ip.txt CR.txt CRLF.txt cut.txt speed.txt temp.txt
 RD /S /Q temp
 echo 按任意键关闭
