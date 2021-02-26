@@ -14,7 +14,7 @@ goto start
 del ip.txt CR.txt CRLF.txt cut.txt speed.txt temp.txt
 RD /S /Q temp
 cls
-if not exist "data.txt" title 获取CF节点IP&curl --retry 3 https://update.freecdn.workers.dev -o data.txt -#
+if not exist "data.txt" title 获取CF节点IP&curl --retry 3 https://update.udpfile.com -o data.txt -#
 for /f "tokens=2 delims==" %%a in ('findstr /C:"domain" data.txt') do (
 set domain=%%a
 )
@@ -346,7 +346,7 @@ if %time:~6,1% EQU 0 (set /a stopS=%time:~7,1%) else (set /a stopS=%time:~6,2%)
 set /a starttime=%startH%*3600+%startM%*60+%startS%
 set /a stoptime=%stopH%*3600+%stopM%*60+%stopS%
 if %starttime% GTR %stoptime% (set /a alltime=86400-%starttime%+%stoptime%) else (set /a alltime=%stoptime%-%starttime%)
-curl --ipv4 --resolve update.freecdn.workers.dev:443:!anycast! --retry 3 -s -X POST -d """CF-IP"":""!anycast!"",""Speed"":""!Max!""" "https://update.freecdn.workers.dev" -o temp.txt
+curl --ipv4 --resolve update.udpfile.com:443:!anycast! --retry 3 -s -X POST -d "!anycast!-!Max!" "https://update.udpfile.com" -o temp.txt
 for /f "tokens=2 delims==" %%a in ('findstr /C:"publicip" temp.txt') do (
 set publicip=%%a
 )
@@ -358,7 +358,7 @@ set url=%%a
 )
 for /f "tokens=2 delims==" %%a in ('findstr /C:"app" temp.txt') do (
 set app=%%a
-if !app! NEQ 20201208 (echo 发现新版本程序: !app!&echo 更新地址: !url!&title 更新后才可以使用&echo 按任意键退出程序&pause>nul&exit)
+if !app! NEQ 20210226 (echo 发现新版本程序: !app!&echo 更新地址: !url!&title 更新后才可以使用&echo 按任意键退出程序&pause>nul&exit)
 )
 for /f "tokens=2 delims==" %%a in ('findstr /C:"database" temp.txt') do (
 set databasenew=%%a

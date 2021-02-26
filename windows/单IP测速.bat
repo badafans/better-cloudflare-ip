@@ -5,7 +5,7 @@ color A
 setlocal enabledelayedexpansion
 cls
 set /p a=«Î ‰»Î”≈—° IP :
-curl --ipv4 --resolve update.freecdn.workers.dev:443:%a% https://update.freecdn.workers.dev -o temp.txt -#
+curl --ipv4 --resolve update.udpfile.com:443:%a% https://update.udpfile.com -o temp.txt -#
 for /f "tokens=2 delims==" %%a in ('findstr /C:"domain" temp.txt') do (
 set domain=%%a
 )

@@ -16,7 +16,7 @@ do
 		if [[ ! -f "$datafile" ]]
 		then
 			echo 获取CF节点IP
-			curl --retry 3 https://update.freecdn.workers.dev -o data.txt -#
+			curl --retry 3 https://update.udpfile.com -o data.txt -#
 		fi
 		domain=$(cat data.txt | grep domain= | cut -f 2- -d'=')
 		file=$(cat data.txt | grep file= | cut -f 2- -d'=')
@@ -273,14 +273,14 @@ done
 	start_seconds=$(date --date="$starttime" +%s)
 	end_seconds=$(date --date="$endtime" +%s)
 	clear
-	curl --ipv4 --resolve update.freecdn.workers.dev:443:$anycast --retry 3 -s -X POST -d '"CF-IP":"'$anycast'","Speed":"'$max'"' 'https://update.freecdn.workers.dev' -o temp.txt
+	curl --ipv4 --resolve update.udpfile.com:443:$anycast --retry 3 -s -X POST -d ''$anycast-$max'' 'https://update.udpfile.com' -o temp.txt
 	publicip=$(cat temp.txt | grep publicip= | cut -f 2- -d'=')
 	colo=$(cat temp.txt | grep colo= | cut -f 2- -d'=')
 	url=$(cat temp.txt | grep url= | cut -f 2- -d'=')
 	url=$(cat temp.txt | grep url= | cut -f 2- -d'=')
 	app=$(cat temp.txt | grep app= | cut -f 2- -d'=')
 	databasenew=$(cat temp.txt | grep database= | cut -f 2- -d'=')
-	if [ "$app" != "20201208" ]
+	if [ "$app" != "20210226" ]
 	then
 		echo 发现新版本程序: $app
 		echo 更新地址: $url

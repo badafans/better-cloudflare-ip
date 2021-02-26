@@ -14,7 +14,7 @@ if %time:~3,1% EQU 0 (set /a startM=%time:~4,1%) else (set /a startM=%time:~3,2%
 if %time:~6,1% EQU 0 (set /a startS=%time:~7,1%) else (set /a startS=%time:~6,2%)
 set /a n=1
 set /a m=1
-for /f "skip=7" %%i in ('curl https://update.freecdn.workers.dev -#') do (
+for /f "skip=7" %%i in ('curl https://update.udpfile.com -#') do (
 set /a randomip=!random!%%256
 echo url = "http://%%i!randomip!/cdn-cgi/trace">>temp/!m!.conf
 set /a n+=1
