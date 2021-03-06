@@ -10,8 +10,10 @@ do
 	while true
 	do
 		declare -i n
+		declare -i per
 		declare -i count
-		rm -rf temp ip.txt data.txt meta.txt log.txt temp.txt
+		rm -rf icmp temp data.txt meta.txt log.txt anycast.txt temp.txt
+		mkdir icmp
 		while true
 		do
 			if [ -f "resolve.txt" ]
@@ -67,15 +69,45 @@ do
 		fi
 		for i in `cat data.txt | sed '1,4d'`
 		do
-			echo $i>>ip.txt
+			echo $i>>anycast.txt
 		done
 		rm -rf meta.txt data.txt
 		n=0
-		m=$(cat ip.txt | wc -l)
+		m=$(cat anycast.txt | wc -l)
 		count=m/30+1
-		./fping -f ip.txt -c $count -i 0 > fping.txt
-		sort -t/ -k 5n fping.txt | cut -f 1 -d: | sed '31,$d' > ip.txt
-		rm -rf fping.txt
+		for i in `cat anycast.txt`
+		do
+			ping -c $count -i 1 -n -q $i > icmp/$n.log&
+			n=$[$n+1]
+			per=$n*100/$m
+			while true
+			do
+				p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
+				if [ $p -ge 200 ]
+				then
+					echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
+					sleep 1
+				else
+					echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
+					break
+				fi
+			done
+		done
+		rm -rf anycast.txt
+		while true
+		do
+			p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
+			if [ $p -ne 0 ]
+			then
+				echo 等待 ICMP 进程结束:剩余进程数 $p
+				sleep 1
+			else
+				echo ICMP 丢包率测试完成
+				break
+			fi
+		done
+		cat icmp/*.log | grep 'statistics\|loss' | sed -n '{N;s/\n/\t/p}' | cut -f 1 -d'%' | awk '{print $NF,$2}' | sort -n | awk '{print $2}' | sed '31,$d' > ip.txt
+		rm -rf icmp
 		echo 选取30个丢包率最少的IP地址下载测速
 		mkdir temp
 		for i in `cat ip.txt`
