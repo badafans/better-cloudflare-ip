@@ -38,9 +38,31 @@ n) 获取网站内容需要通过登录等方式，无法直接查看造成内�
 
 o) 提供影视、软件和应用等下载服务的网站。
 
+
+## 用户数据安全声明
+
+1.从20210307版本以后，所有平台的版本都需要上传用户部分非敏感数据到服务器（Anycast IP、峰值速度、用户AS自治域、用户META城市归属）
+
+2.用户上传的数据用来做模型分析建立关系数据库，建立精准IP推送的模型（类似机器学习）
+
+3.人人为我，我为人人的原则！数据提交的样本越多，同一运营商级别下的匹配程度越高（快速出结果）
+
+4.服务端不会保存任何关系用户的其它无效数据，只为提高数据精确程度设计的定向性算法（避免大海捞针）
+
+5.服务端程序目前不会对外开源，涉及到算法模型结构等问题，后续版本会不断改进算法模型（此项目的侧重点）
+
+6.对于担心用户数据安全问题的，请自觉使用20210307以前的版本（无法使用大数据分析模型带来优质的IP）
+
+
+## Windows版本
+
+windows批处理全自动无门槛操作
+
+fping-4.2 for win32 修改版（基于 msys2.0 修改编译）点击下载[Windows版本](https://proxy.freecdn.workers.dev/?url=https://github.com/badafans/better-cloudflare-ip/releases/latest/download/windows.zip)
+
 ## Linux版本
 
-linux shell脚本，自动化筛选
+linux shell脚本+fping
 
 具体使用流程，需要编译里面 fping 4.2 修改版本，另外需要系统安装curl支持。
 
@@ -64,50 +86,24 @@ cd src
 sudo ./cf.sh
 ```
 
-1.根据你当前带宽设置一个期望的CF速度的大小，比如说家里宽带100兆，如果想要CF单线程下载速度达到20兆的宽带效果，直接输入数值 20 并按回车键
-
-2.等待程序全自动测试结束，找到符合条件的 IP 会在控制台窗口里面输出结果
-
-3.如果你当前网络环境非常差，建议调低期望的带宽值，不然程序会一直停留在查找筛选的过程中
-
-4.外置的 anycast ip 数量根据现有可用路由动态调整，每次测试提取其中的1280分之1，运气好的话五十多秒钟就能获取到自己想要的优选 IP
-
-## Windows版本
-
-windows批处理全自动无门槛操作，自动化筛选
-
-fping-4.2 for win32 修改版（基于 msys2.0 修改编译）点击下载[Windows版本](https://proxy.freecdn.workers.dev/?url=https://github.com/badafans/better-cloudflare-ip/releases/latest/download/windows.zip)
-
-1.解压后运行 CF优选IP.bat 批处理文件（可能需要管理员权限运行，对于 Windows 7 用户或者 cmd 命令行里面不支持curl命令的，需要先解压curl.exe到当前目录）
-
-2.根据你当前带宽设置一个期望的CF速度的大小，比如说家里宽带100兆，如果想要CF单线程下载速度达到20兆的宽带效果，直接输入数值 20 并按回车键
-
-3.等待程序全自动测试结束，找到符合条件的 IP 会在控制台窗口里面输出结果（可以结合里面的单IP测速的批处理来做校验测试）
-
-4.如果你当前网络环境非常差，建议调低期望的带宽值，不然程序会一直停留在查找筛选的过程中
-
-5.外置的 anycast ip 数量根据现有可用路由动态调整，每次测试提取其中的1280分之1，运气好的话一分多钟就能获取到自己想要的优选 IP
-
 ## Android版本
 
-1.安装termux，完整复制下方链接粘贴到termux并回车
+安装termux，完整复制下方链接粘贴到termux并回车，后续运行只需输入./cf.sh并回车即可
 
 ``` bash
 curl https://proxy.freecdn.workers.dev/?url=https://raw.githubusercontent.com/badafans/better-cloudflare-ip/master/shell/cf.sh -o cf.sh && chmod +x cf.sh && ./cf.sh
 ```
 
-2.根据你当前带宽设置一个期望的CF速度的大小，比如说家里宽带100兆，如果想要CF单线程下载速度达到20兆的宽带效果，直接输入数值 20 并按回车键
+## OpenWrt版本
 
-3.等待程序全自动测试结束，找到符合条件的 IP 会在控制台窗口里面输出结果
+完整复制下方链接粘贴到openwrt shell并回车，后续运行只需输入./cf-openwrt.sh并回车即可
 
-4.如果你当前网络环境非常差，建议调低期望的带宽值，不然程序会一直停留在查找筛选的过程中
-
-5.外置的 anycast ip 数量根据现有可用路由动态调整，每次测试提取其中的1280分之1，运气好的话一分多钟就能获取到自己想要的优选 IP
-
-6.由于Android termux本身难以支持root权限，整套ICMP丢包测试逻辑完全重新架构，不依赖与fping，所以整体测试相对较为耗时
+``` bash
+curl https://proxy.freecdn.workers.dev/?url=https://raw.githubusercontent.com/badafans/better-cloudflare-ip/master/shell/cf-openwrt.sh -o cf-openwrt.sh && chmod +x cf-openwrt.sh && ./cf-openwrt.sh
+```
 
 ## 引用声明
 
 其中 fping 是基于 GitHub 开源项目 https://github.com/schweikert/fping  4.2发行版修改而来，所有脚本均为本人原创内容，转载请注明出处！
 
-对于 Cloudflare Anycast 节点汇总，均为本人扫描 Cloudflare 公开节点汇总而来，Cloudflare IP Ranges 来自 https://www.cloudflare.com/zh-cn/ips/
+对于 Cloudflare Anycast 节点汇总，定期扫描 Cloudflare 公开节点汇总而来，Cloudflare IP Ranges 来自 https://www.cloudflare.com/zh-cn/ips/
