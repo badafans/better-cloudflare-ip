@@ -69,7 +69,7 @@ do
 		done
 		rm -rf meta.txt data.txt
 		./fping -f ip.txt -c 10 -i 0 > fping.txt
-		sort -t/ -k 5n -k 8n fping.txt | cut -f 1 -d: | sed '21,$d' > ip.txt
+		sort -t/ -n -k 5 -k 8 fping.txt | cut -f 1 -d: | sed '21,$d' > ip.txt
 		rm -rf fping.txt
 		echo 选取20个丢包率最少的IP地址下载测速
 		mkdir temp
