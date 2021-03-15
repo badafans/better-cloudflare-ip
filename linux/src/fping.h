@@ -11,7 +11,7 @@
 void crash_and_burn( char *message );
 void errno_crash_and_burn( char *message );
 int in_cksum( unsigned short *p, int n );
-int random_data_flag;
+extern int random_data_flag;
 
 /* socket.c */
 int  open_ping_socket_ipv4();
