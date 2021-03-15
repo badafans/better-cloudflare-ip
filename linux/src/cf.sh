@@ -56,7 +56,7 @@ do
 		file=$(cat data.txt | grep file= | cut -f 2- -d'=')
 		url=$(cat data.txt | grep url= | cut -f 2- -d'=')
 		app=$(cat data.txt | grep app= | cut -f 2- -d'=')
-		if [ "$app" != "20210308" ]
+		if [ "$app" != "20210315" ]
 		then
 			echo 发现新版本程序: $app
 			echo 更新地址: $url
@@ -68,7 +68,7 @@ do
 			echo $i>>ip.txt
 		done
 		rm -rf meta.txt data.txt
-		./fping -f ip.txt -c 10 -i 0 > fping.txt
+		./fping -f ip.txt -c 20 -i 0 > fping.txt
 		sort -t/ -n -k 5 -k 8 fping.txt | cut -f 1 -d: | sed '21,$d' > ip.txt
 		rm -rf fping.txt
 		echo 选取20个丢包率最少的IP地址下载测速
@@ -165,9 +165,9 @@ do
 			echo 峰值速度 $max kB/s
 			if [ $max1 -ge $max2 ]
 			then
-				curl --ipv4 --resolve service.udpfile.com:443:$first --retry 3 -s -X POST -d ''20210308-$first-$max1'' "https://service.udpfile.com?asn="$asn"&city="$city"" -o /dev/null --connect-timeout 5 --max-time 10
+				curl --ipv4 --resolve service.udpfile.com:443:$first --retry 3 -s -X POST -d ''20210315-$first-$max1'' "https://service.udpfile.com?asn="$asn"&city="$city"" -o /dev/null --connect-timeout 5 --max-time 10
 			else
-				curl --ipv4 --resolve service.udpfile.com:443:$first --retry 3 -s -X POST -d ''20210308-$first-$max2'' "https://service.udpfile.com?asn="$asn"&city="$city"" -o /dev/null --connect-timeout 5 --max-time 10
+				curl --ipv4 --resolve service.udpfile.com:443:$first --retry 3 -s -X POST -d ''20210315-$first-$max2'' "https://service.udpfile.com?asn="$asn"&city="$city"" -o /dev/null --connect-timeout 5 --max-time 10
 			fi
 			echo 第一次测试 $second
 			curl --resolve $domain:443:$second https://$domain/$file -o /dev/null --connect-timeout 5 --max-time 10 > log.txt 2>&1
@@ -243,9 +243,9 @@ do
 			echo 峰值速度 $max kB/s
 			if [ $max1 -ge $max2 ]
 			then
-				curl --ipv4 --resolve service.udpfile.com:443:$second --retry 3 -s -X POST -d ''20210308-$second-$max1'' "https://service.udpfile.com?asn="$asn"&city="$city"" -o /dev/null --connect-timeout 5 --max-time 10
+				curl --ipv4 --resolve service.udpfile.com:443:$second --retry 3 -s -X POST -d ''20210315-$second-$max1'' "https://service.udpfile.com?asn="$asn"&city="$city"" -o /dev/null --connect-timeout 5 --max-time 10
 			else
-				curl --ipv4 --resolve service.udpfile.com:443:$second --retry 3 -s -X POST -d ''20210308-$second-$max2'' "https://service.udpfile.com?asn="$asn"&city="$city"" -o /dev/null --connect-timeout 5 --max-time 10
+				curl --ipv4 --resolve service.udpfile.com:443:$second --retry 3 -s -X POST -d ''20210315-$second-$max2'' "https://service.udpfile.com?asn="$asn"&city="$city"" -o /dev/null --connect-timeout 5 --max-time 10
 			fi
 			echo 第一次测试 $third
 			curl --resolve $domain:443:$third https://$domain/$file -o /dev/null --connect-timeout 5 --max-time 10 > log.txt 2>&1
@@ -321,9 +321,9 @@ do
 			echo 峰值速度 $max kB/s
 			if [ $max1 -ge $max2 ]
 			then
-				curl --ipv4 --resolve service.udpfile.com:443:$third --retry 3 -s -X POST -d ''20210308-$third-$max1'' "https://service.udpfile.com?asn="$asn"&city="$city"" -o /dev/null --connect-timeout 5 --max-time 10
+				curl --ipv4 --resolve service.udpfile.com:443:$third --retry 3 -s -X POST -d ''20210315-$third-$max1'' "https://service.udpfile.com?asn="$asn"&city="$city"" -o /dev/null --connect-timeout 5 --max-time 10
 			else
-				curl --ipv4 --resolve service.udpfile.com:443:$third --retry 3 -s -X POST -d ''20210308-$third-$max2'' "https://service.udpfile.com?asn="$asn"&city="$city"" -o /dev/null --connect-timeout 5 --max-time 10
+				curl --ipv4 --resolve service.udpfile.com:443:$third --retry 3 -s -X POST -d ''20210315-$third-$max2'' "https://service.udpfile.com?asn="$asn"&city="$city"" -o /dev/null --connect-timeout 5 --max-time 10
 			fi
 		fi
 	done
@@ -336,7 +336,7 @@ done
 	start_seconds=$(date --date="$starttime" +%s)
 	end_seconds=$(date --date="$endtime" +%s)
 	clear
-	curl --ipv4 --resolve service.udpfile.com:443:$anycast --retry 3 -s -X POST -d ''20210308-$anycast-$max'' "https://service.udpfile.com?asn="$asn"&city="$city"" -o temp.txt
+	curl --ipv4 --resolve service.udpfile.com:443:$anycast --retry 3 -s -X POST -d ''20210315-$anycast-$max'' "https://service.udpfile.com?asn="$asn"&city="$city"" -o temp.txt
 	publicip=$(cat temp.txt | grep publicip= | cut -f 2- -d'=')
 	colo=$(cat temp.txt | grep colo= | cut -f 2- -d'=')
 	rm -rf temp.txt
