@@ -71,7 +71,7 @@ linux shell脚本+fping
 具体编译使用流程如下
  
  ```bash
-curl https://github.com/badafans/better-cloudflare-ip/releases/latest/download/linux.tar.gz -o linux.tar.gz
+curl -L https://github.com/badafans/better-cloudflare-ip/releases/latest/download/linux.tar.gz -o linux.tar.gz
 
 tar -vxf linux.tar.gz
 
