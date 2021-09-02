@@ -14,22 +14,33 @@ goto start
 del data.txt ip.txt CR.txt CRLF.txt cut.txt speed.txt meta.txt
 RD /S /Q temp
 cls
+set LF=^
+
+
 if exist "resolve.txt" goto resolve
 if not exist "resolve.txt" goto dnsresolve
 :dnsresolve
 title DNS解析获取CF节点IP
-curl --ipv4 --retry 3 -v https://speed.cloudflare.com/__down>meta.txt 2>&1
-for /f "tokens=3 delims= " %%i in ('findstr "cf-meta-asn:" meta.txt') do (
-set asn=%%i
+for %%i in ("!LF!") do (
+	for /f "delims=" %%a in ('curl --ipv4 --retry 3 -s https://speed.cloudflare.com/meta') do (
+	set str=%%a
+	set str=!str:{=!
+	set str=!str:}=!
+	set str=!str:"=!
+	echo !str:,=%%~i!
+	)
+)>meta.txt
+for /f "tokens=2 delims=:" %%i in ('findstr "asn:" meta.txt') do (
+	set asn=%%i
 )
-for /f "tokens=3 delims= " %%i in ('findstr "cf-meta-city:" meta.txt') do (
-set city=%%i
+for /f "tokens=2 delims=:" %%i in ('findstr "city:" meta.txt') do (
+	set city=%%i
 )
-for /f "tokens=3 delims= " %%i in ('findstr "cf-meta-latitude:" meta.txt') do (
-set latitude=%%i
+for /f "tokens=2 delims=:" %%i in ('findstr "latitude:" meta.txt') do (
+	set latitude=%%i
 )
-for /f "tokens=3 delims= " %%i in ('findstr "cf-meta-longitude:" meta.txt') do (
-set longitude=%%i
+for /f "tokens=2 delims=:" %%i in ('findstr "longitude:" meta.txt') do (
+	set longitude=%%i
 )
 curl --ipv4 --retry 3 https://service.udpfile.com?asn=%asn%^&city=%city% -o data.txt -#
 goto getip
@@ -38,18 +49,26 @@ for /f "delims=" %%i in (resolve.txt) do (
 set resolveip=%%i
 )
 title 指向解析获取CF节点IP
-curl --ipv4 --resolve speed.cloudflare.com:443:%resolveip% --retry 3 -v https://speed.cloudflare.com/__down>meta.txt 2>&1
-for /f "tokens=3 delims= " %%i in ('findstr "cf-meta-asn:" meta.txt') do (
-set asn=%%i
+for %%i in ("!LF!") do (
+	for /f "delims=" %%a in ('curl --ipv4 --resolve speed.cloudflare.com:443:%resolveip% --retry 3 -s https://speed.cloudflare.com/meta') do (
+	set str=%%a
+	set str=!str:{=!
+	set str=!str:}=!
+	set str=!str:"=!
+	echo !str:,=%%~i!
+	)
+)>meta.txt
+for /f "tokens=2 delims=:" %%i in ('findstr "asn:" meta.txt') do (
+	set asn=%%i
 )
-for /f "tokens=3 delims= " %%i in ('findstr "cf-meta-city:" meta.txt') do (
-set city=%%i
+for /f "tokens=2 delims=:" %%i in ('findstr "city:" meta.txt') do (
+	set city=%%i
 )
-for /f "tokens=3 delims= " %%i in ('findstr "cf-meta-latitude:" meta.txt') do (
-set latitude=%%i
+for /f "tokens=2 delims=:" %%i in ('findstr "latitude:" meta.txt') do (
+	set latitude=%%i
 )
-for /f "tokens=3 delims= " %%i in ('findstr "cf-meta-longitude:" meta.txt') do (
-set longitude=%%i
+for /f "tokens=2 delims=:" %%i in ('findstr "longitude:" meta.txt') do (
+	set longitude=%%i
 )
 curl --ipv4 --resolve service.udpfile.com:443:%resolveip% --retry 3 https://service.udpfile.com?asn=%asn%^&city=%city% -o data.txt -#
 if not exist "data.txt" goto start
@@ -70,7 +89,7 @@ set url=%%a
 )
 for /f "tokens=2 delims==" %%a in ('findstr /C:"app" data.txt') do (
 set app=%%a
-if !app! NEQ 20210825 (echo 发现新版本程序: !app!&echo 更新地址: !url!&title 更新后才可以使用&echo 按任意键退出程序&pause>nul&exit)
+if !app! NEQ 20210903 (echo 发现新版本程序: !app!&echo 更新地址: !url!&title 更新后才可以使用&echo 按任意键退出程序&pause>nul&exit)
 )
 del data.txt
 title 测试 ICMP 丢包率
@@ -248,7 +267,7 @@ if !max! GEQ !speed! (cls&set anycast=!a!&goto end) else (goto three)
 chcp 936
 del CRLF.txt cut.txt speed.txt
 cls
-if !max1! GEQ !max2! (curl --ipv4 --resolve service.udpfile.com:443:!a! --retry 3 -s -X POST -d "20210825-!a!-!max1!" https://service.udpfile.com?asn=%asn%^&city=%city% -o nul --connect-timeout 5 --max-time 10) else (curl --ipv4 --resolve service.udpfile.com:443:!a! --retry 3 -s -X POST -d "20210825-!a!-!max2!" https://service.udpfile.com?asn=%asn%^&city=%city% -o nul --connect-timeout 5 --max-time 10)
+if !max1! GEQ !max2! (curl --ipv4 --resolve service.udpfile.com:443:!a! --retry 3 -s -X POST -d "20210903-!a!-!max1!" https://service.udpfile.com?asn=%asn%^&city=%city% -o nul --connect-timeout 5 --max-time 10) else (curl --ipv4 --resolve service.udpfile.com:443:!a! --retry 3 -s -X POST -d "20210903-!a!-!max2!" https://service.udpfile.com?asn=%asn%^&city=%city% -o nul --connect-timeout 5 --max-time 10)
 echo 第二次测试 !a! 不满足带宽需求,峰值速度 !max! kB/s
 echo 第一次测试 !b!
 curl --resolve !domain!:443:!b! https://!domain!/!file! -o nul --connect-timeout 5 --max-time 10 > CR.txt 2>&1
@@ -333,7 +352,7 @@ if !max! GEQ !speed! (cls&set anycast=!b!&goto end) else (goto five)
 chcp 936
 del CRLF.txt cut.txt speed.txt
 cls
-if !max1! GEQ !max2! (curl --ipv4 --resolve service.udpfile.com:443:!b! --retry 3 -s -X POST -d "20210825-!b!-!max1!" https://service.udpfile.com?asn=%asn%^&city=%city% -o nul --connect-timeout 5 --max-time 10) else (curl --ipv4 --resolve service.udpfile.com:443:!b! --retry 3 -s -X POST -d "20210825-!b!-!max2!" https://service.udpfile.com?asn=%asn%^&city=%city% -o nul --connect-timeout 5 --max-time 10)
+if !max1! GEQ !max2! (curl --ipv4 --resolve service.udpfile.com:443:!b! --retry 3 -s -X POST -d "20210903-!b!-!max1!" https://service.udpfile.com?asn=%asn%^&city=%city% -o nul --connect-timeout 5 --max-time 10) else (curl --ipv4 --resolve service.udpfile.com:443:!b! --retry 3 -s -X POST -d "20210903-!b!-!max2!" https://service.udpfile.com?asn=%asn%^&city=%city% -o nul --connect-timeout 5 --max-time 10)
 echo 第二次测试 !b! 不满足带宽需求,峰值速度 !max! kB/s
 echo 第一次测试 !c!
 curl --resolve !domain!:443:!c! https://!domain!/!file! -o nul --connect-timeout 5 --max-time 10 > CR.txt 2>&1
@@ -419,7 +438,7 @@ chcp 936
 del CRLF.txt cut.txt speed.txt
 cls
 echo 第二次测试 !c! 不满足带宽需求,峰值速度 !max! kB/s
-if !max1! GEQ !max2! (curl --ipv4 --resolve service.udpfile.com:443:!c! --retry 3 -s -X POST -d "20210825-!c!-!max1!" https://service.udpfile.com?asn=%asn%^&city=%city% -o nul --connect-timeout 5 --max-time 10) else (curl --ipv4 --resolve service.udpfile.com:443:!c! --retry 3 -s -X POST -d "20210825-!c!-!max2!" https://service.udpfile.com?asn=%asn%^&city=%city% -o nul --connect-timeout 5 --max-time 10)
+if !max1! GEQ !max2! (curl --ipv4 --resolve service.udpfile.com:443:!c! --retry 3 -s -X POST -d "20210903-!c!-!max1!" https://service.udpfile.com?asn=%asn%^&city=%city% -o nul --connect-timeout 5 --max-time 10) else (curl --ipv4 --resolve service.udpfile.com:443:!c! --retry 3 -s -X POST -d "20210903-!c!-!max2!" https://service.udpfile.com?asn=%asn%^&city=%city% -o nul --connect-timeout 5 --max-time 10)
 goto start
 :end
 set /a realbandwidth=max/128
@@ -429,7 +448,7 @@ if %time:~6,1% EQU 0 (set /a stopS=%time:~7,1%) else (set /a stopS=%time:~6,2%)
 set /a starttime=%startH%*3600+%startM%*60+%startS%
 set /a stoptime=%stopH%*3600+%stopM%*60+%stopS%
 if %starttime% GTR %stoptime% (set /a alltime=86400-%starttime%+%stoptime%) else (set /a alltime=%stoptime%-%starttime%)
-curl --ipv4 --resolve service.udpfile.com:443:!anycast! --retry 3 -s -X POST -d "20210825-!anycast!-!max!" https://service.udpfile.com?asn=%asn%^&city=%city% -o data.txt
+curl --ipv4 --resolve service.udpfile.com:443:!anycast! --retry 3 -s -X POST -d "20210903-!anycast!-!max!" https://service.udpfile.com?asn=%asn%^&city=%city% -o data.txt
 for /f "tokens=2 delims==" %%a in ('findstr /C:"publicip" data.txt') do (
 set publicip=%%a
 )
