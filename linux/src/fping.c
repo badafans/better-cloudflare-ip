@@ -1794,7 +1794,7 @@ int receive_packet(int socket,
     }
 
 #if HAVE_SO_TIMESTAMP
-    /* ancilliary data */
+    /* ancillary data */
     for (cmsg = CMSG_FIRSTHDR(&recv_msghdr);
          cmsg != NULL;
          cmsg = CMSG_NXTHDR(&recv_msghdr, cmsg)) {
