@@ -9,12 +9,14 @@ function main(){
     if [[  -z "$test_ip" ]]; then
         echo "Usage: $0 <ip>"
         exit 1
+    # IP是否为IPV4
     elif [[ "$test_ip" != "${test_ip#*[0-9].[0-9]}" ]]; then
         :
+    # IP是否为IPV6
     elif [[ "$test_ip" != "${test_ip#*:[0-9a-fA-F]}" ]]; then
         :
     else
-        echo "Unrecognized IP format '$1'"
+        echo "Unrecognized IP format '${test_ip}'"
         exit 1
     fi
 
