@@ -11,6 +11,7 @@ do
 	do
 		declare -i m
 		declare -i n
+		declare -i p
 		declare -i per
 		rm -rf icmp temp data.txt meta.txt log.txt anycast.txt temp.txt speed.txt
 		mkdir icmp
@@ -77,15 +78,16 @@ do
 		for i in `cat anycast.txt`
 		do
 			ping -c 20 -i 1 -n -q $i > icmp/$n.log&
-			n=$[$n+1]
-			per=$n*100/$m
+			n=n+1
+			p=p+1
+			per=n*100/m
 			while true
 			do
-				p=$(ps -ef | grep ping | grep -v "grep" | wc -l)
 				if [ $p -ge 100 ]
 				then
 					echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 					sleep 1
+					p=$(ps | grep ping | grep -v "grep" | wc -l)
 				else
 					echo 正在测试 ICMP 丢包率:进程数 $p,已完成 $per %
 					break
@@ -95,13 +97,14 @@ do
 		rm -rf anycast.txt
 		while true
 		do
-			p=$(ps | grep ping | grep -v "grep" | wc -l)
 			if [ $p -ne 0 ]
 			then
 				echo 等待 ICMP 进程结束:剩余进程数 $p
 				sleep 1
+				p=$(ps | grep ping | grep -v "grep" | wc -l)
 			else
 				echo ICMP 丢包率测试完成
+				sleep 1
 				break
 			fi
 		done
