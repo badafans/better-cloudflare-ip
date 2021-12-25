@@ -6,7 +6,7 @@ function bettercloudflareip (){
 declare -i bandwidth
 declare -i speed
 read -p "请设置期望的带宽大小(默认0,单位 Mbps):" bandwidth
-read -p "请设置RTT测试进程数(默认25,最大100):" tasknum
+read -p "请设置RTT测试进程数(默认25,最大50):" tasknum
 if [ -z "$tasknum" ]
 then
 	tasknum=25
@@ -16,10 +16,10 @@ then
 	echo 进程数不能为0,自动设置为默认值
 	tasknum=25
 fi
-if [ $tasknum -gt 100 ]
+if [ $tasknum -gt 50 ]
 then
 	echo 超过最大进程限制,自动设置为最大值
-	tasknum=100
+	tasknum=50
 fi
 speed=bandwidth*128*1024
 starttime=$(date +'%Y-%m-%d %H:%M:%S')

@@ -36,9 +36,9 @@ goto :eof
 set /a tasknum=25
 set /a bandwidth=0
 set /p bandwidth=请设置期望的带宽大小(默认%bandwidth%,单位 Mbps):
-set /p tasknum=请设置RTT测试进程数(默认%tasknum%,最大100):
+set /p tasknum=请设置RTT测试进程数(默认%tasknum%,最大50):
 if %tasknum% EQU 0 (set /a tasknum=25&echo 进程数不能为0,自动设置为默认值)
-if %tasknum% GTR 100 (set /a tasknum=100&echo 超过最大进程限制,自动设置为最大值)
+if %tasknum% GTR 50 (set /a tasknum=50&echo 超过最大进程限制,自动设置为最大值)
 set /a speed=bandwidth*128
 set /a startH=%time:~0,2%
 if %time:~3,1% EQU 0 (set /a startM=%time:~4,1%) else (set /a startM=%time:~3,2%)
