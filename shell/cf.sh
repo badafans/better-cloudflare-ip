@@ -137,21 +137,50 @@ do
 		declare -i n
 		rm -rf rtt data.txt meta.txt log.txt anycast.txt temp.txt speed.txt
 		mkdir rtt
-		if [ ! -f "$ips.txt" ]
-		then
-			echo DNS防污染解析
-			curl --$ips -v --retry 3 -s https://speed.cloudflare.com/cdn-cgi/trace>data.txt 2>&1
-			grep Connected data.txt | awk -F'(' '{print $2}' | awk -F')' '{print $1}'>$ips.txt
-		fi
-		echo 指向解析获取CF节点IP
-		echo 如果长时间无法获取CF节点IP,重新运行程序并选择清空缓存
-		resolveip=$(cat $ips.txt)
-		curl --$ips --resolve speed.cloudflare.com:443:$resolveip --retry 3 -s https://speed.cloudflare.com/meta | sed -e 's/{//g' -e 's/}//g' -e 's/"//g' -e 's/,/\n/g'>meta.txt
-		asn=$(grep asn: meta.txt | awk -F: '{print $2}')
-		city=$(grep city: meta.txt | awk -F: '{print $2}')
-		latitude=$(grep latitude: meta.txt | awk -F: '{print $2}')
-		longitude=$(grep longitude: meta.txt | awk -F: '{print $2}')
-		curl --$ips --resolve service.anycast.eu.org:443:$resolveip --retry 3 https://service.anycast.eu.org -o data.txt -#
+		while true
+		do
+			if [ ! -f "$ips.txt" ]
+			then
+				echo DNS解析获取CF $ips 节点
+				echo 如果域名被污染,请手动创建 $ips.txt 做解析
+				while true
+				do
+					if [ ! -f "meta.txt" ]
+					then
+						curl --$ips --retry 3 -s https://speed.cloudflare.com/meta | sed -e 's/{//g' -e 's/}//g' -e 's/"//g' -e 's/,/\n/g'>meta.txt
+					else
+						asn=$(grep asn: meta.txt | awk -F: '{print $2}')
+						city=$(grep city: meta.txt | awk -F: '{print $2}')
+						latitude=$(grep latitude: meta.txt | awk -F: '{print $2}')
+						longitude=$(grep longitude: meta.txt | awk -F: '{print $2}')
+						curl --$ips --retry 3 https://service.anycast.eu.org -o data.txt -#
+						break
+					fi
+				done
+			else
+				echo 指向解析获取CF节点IP
+				echo 如果长时间无法获取CF $ips 节点,重新运行程序并选择清空缓存
+				resolveip=$(cat $ips.txt)
+				while true
+				do
+					if [ ! -f "meta.txt" ]
+					then
+						curl --$ips --resolve speed.cloudflare.com:443:$resolveip --retry 3 -s https://speed.cloudflare.com/meta | sed -e 's/{//g' -e 's/}//g' -e 's/"//g' -e 's/,/\n/g'>meta.txt
+					else
+						asn=$(grep asn: meta.txt | awk -F: '{print $2}')
+						city=$(grep city: meta.txt | awk -F: '{print $2}')
+						latitude=$(grep latitude: meta.txt | awk -F: '{print $2}')
+						longitude=$(grep longitude: meta.txt | awk -F: '{print $2}')
+						curl --$ips --resolve service.anycast.eu.org:443:$resolveip --retry 3 https://service.anycast.eu.org -o data.txt -#
+						break
+					fi
+				done
+			fi
+			if [ -f "data.txt" ]
+			then
+				break
+			fi
+		done
 		domain=$(grep domain= data.txt | cut -f 2- -d'=')
 		file=$(grep file= data.txt | cut -f 2- -d'=')
 		url=$(grep url= data.txt | cut -f 2- -d'=')

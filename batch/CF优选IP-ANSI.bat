@@ -56,19 +56,40 @@ if exist "!ips!.txt" goto resolve
 if not exist "!ips!.txt" goto dnsresolve
 
 :dnsresolve
-echo DNS防污染解析
-curl --!ips! -v --retry 3 -s https://speed.cloudflare.com/cdn-cgi/trace>data.txt 2>&1
-for /f "tokens=2 delims=(" %%i in ('findstr Connected data.txt') do (
-set resolveip=%%i
+echo DNS解析获取CF !ips! 节点
+echo 如果域名被污染,请手动创建 !ips!.txt 做解析
+for %%i in ("!LF!") do (
+	for /f "delims=" %%a in ('curl --!ips! --retry 3 -s https://speed.cloudflare.com/meta') do (
+	set str=%%a
+	set str=!str:{=!
+	set str=!str:}=!
+	set str=!str:"=!
+	echo !str:,=%%~i!
+	)
+)>meta.txt
+if not exist "meta.txt" goto start
+for /f "tokens=2 delims=:" %%i in ('findstr "asn:" meta.txt') do (
+	set asn=%%i
 )
-for /f "tokens=1 delims=)" %%i in ('echo !resolveip!') do (
-set resolveip=%%i
+for /f "tokens=2 delims=:" %%i in ('findstr "city:" meta.txt') do (
+	set city=%%i
 )
-goto resolve
+for /f "tokens=2 delims=:" %%i in ('findstr "latitude:" meta.txt') do (
+	set latitude=%%i
+)
+for /f "tokens=2 delims=:" %%i in ('findstr "longitude:" meta.txt') do (
+	set longitude=%%i
+)
+curl --!ips! --retry 3 https://service.anycast.eu.org -o data.txt -#
+if not exist "data.txt" goto start
+goto checkupdate
 
 :resolve
-echo 指向解析获取CF节点IP
-echo 如果长时间无法获取CF节点IP,重新运行程序并选择清空缓存
+for /f "delims=" %%i in (!ips!.txt) do (
+set resolveip=%%i
+)
+echo 指向解析获取CF !ips! 节点
+echo 如果长时间无法获取CF !ips! 节点,重新运行程序并选择清空缓存
 for %%i in ("!LF!") do (
 	for /f "delims=" %%a in ('curl --!ips! --resolve speed.cloudflare.com:443:!resolveip! --retry 3 -s https://speed.cloudflare.com/meta') do (
 	set str=%%a
@@ -78,6 +99,7 @@ for %%i in ("!LF!") do (
 	echo !str:,=%%~i!
 	)
 )>meta.txt
+if not exist "meta.txt" goto start
 for /f "tokens=2 delims=:" %%i in ('findstr "asn:" meta.txt') do (
 	set asn=%%i
 )
@@ -91,6 +113,7 @@ for /f "tokens=2 delims=:" %%i in ('findstr "longitude:" meta.txt') do (
 	set longitude=%%i
 )
 curl --!ips! --resolve service.anycast.eu.org:443:!resolveip! --retry 3 https://service.anycast.eu.org -o data.txt -#
+if not exist "data.txt" goto start
 goto checkupdate
 
 :checkupdate
