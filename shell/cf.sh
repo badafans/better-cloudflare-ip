@@ -158,7 +158,7 @@ do
 					fi
 				done
 			else
-				echo 指向解析获取CF节点IP
+				echo 指向解析获取CF $ips 节点
 				echo 如果长时间无法获取CF $ips 节点,重新运行程序并选择清空缓存
 				resolveip=$(cat $ips.txt)
 				while true
