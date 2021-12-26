@@ -144,7 +144,7 @@ do
 			grep Connected data.txt | awk -F'(' '{print $2}' | awk -F')' '{print $1}'>$ips.txt
 		fi
 		echo 指向解析获取CF节点IP
-		echo 如果长时间无法CF节点IP,重新运行程序并选择清空缓存
+		echo 如果长时间无法获取CF节点IP,重新运行程序并选择清空缓存
 		resolveip=$(cat $ips.txt)
 		curl --$ips --resolve speed.cloudflare.com:443:$resolveip --retry 3 -s https://speed.cloudflare.com/meta | sed -e 's/{//g' -e 's/}//g' -e 's/"//g' -e 's/,/\n/g'>meta.txt
 		asn=$(grep asn: meta.txt | awk -F: '{print $2}')

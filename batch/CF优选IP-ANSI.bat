@@ -68,7 +68,7 @@ goto resolve
 
 :resolve
 echo 指向解析获取CF节点IP
-echo 如果长时间无法CF节点IP,重新运行程序并选择清空缓存
+echo 如果长时间无法获取CF节点IP,重新运行程序并选择清空缓存
 for %%i in ("!LF!") do (
 	for /f "delims=" %%a in ('curl --!ips! --resolve speed.cloudflare.com:443:!resolveip! --retry 3 -s https://speed.cloudflare.com/meta') do (
 	set str=%%a
