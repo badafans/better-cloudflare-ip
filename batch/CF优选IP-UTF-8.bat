@@ -236,7 +236,7 @@ set x=!x:~0,2!
 set y=%%i
 set y=!y:~3,1!
 set /a x=!x%!*1024
-set /a x=!y%!*1024/10
+set /a y=!y%!*1024/10
 set /a z=x+y
 echo !z! >> speed.txt
 )
