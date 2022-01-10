@@ -62,7 +62,6 @@ do
 			curl --resolve www.cloudflare.com:443:$ip https://www.cloudflare.com/cdn-cgi/trace -o /dev/null -s --connect-timeout 1 -w "$ip"_%{time_connect}_"HTTP"%{http_code}"\n">>rtt/$1-$n.log
 			t=$[$t+1]
 		else
-			ipaddr=$(cat rtt/$1-$n.log | awk 'NR==1' | awk -F_ '{print $1}')
 			getrtt=$(grep HTTP200 rtt/$1-$n.log | wc -l)
 			if [ $getrtt == 0 ]
 			then
@@ -80,12 +79,12 @@ do
 			getrtt=5-getrtt
 			if [ $avgms -lt 10 ]
 			then
-				echo $getrtt 00$avgms $ipaddr>rtt/$1-$n.log
+				echo $getrtt 00$avgms $ip>rtt/$1-$n.log
 			elif [ $avgms -ge 10 ] && [ $avgms -lt 100 ]
 			then
-				echo $getrtt 0$avgms $ipaddr>rtt/$1-$n.log
+				echo $getrtt 0$avgms $ip>rtt/$1-$n.log
 			else
-				echo $getrtt $avgms $ipaddr>rtt/$1-$n.log
+				echo $getrtt $avgms $ip>rtt/$1-$n.log
 			fi
 			n=$[$n+1]
 			t=1
