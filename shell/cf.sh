@@ -241,7 +241,7 @@ do
 		do
 			if [ $a == $b ]
 			then
-				break				
+				break
 			else
 				rtt $a &
 			fi
