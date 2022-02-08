@@ -45,11 +45,7 @@ o) 提供影视、软件和应用等下载服务的网站。
 
 ## Windows批处理版本
 
-Windows 7用户使用ANSI编码版本
-
-Windows 8及以上版本用户使用UTF-8编码版本
-
-注:ANSI编码版本也可以Windows全平台通用，部分Windows系统的BUG会导致控制台输出乱码
+请下载Release版本使用,不要使用Git Clone下载(会出现乱码)
 
 点击下载[Windows版本](https://proxy.freecdn.workers.dev/?url=https://github.com/badafans/better-cloudflare-ip/releases/latest/download/batch.zip)
 

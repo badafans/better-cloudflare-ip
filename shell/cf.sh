@@ -1,6 +1,6 @@
 #!/bin/bash
 # better-cloudflare-ip
-version=20211226
+version=20220208
 
 function bettercloudflareip (){
 declare -i bandwidth
@@ -30,7 +30,7 @@ endtime=$(date +'%Y-%m-%d %H:%M:%S')
 start_seconds=$(date --date="$starttime" +%s)
 end_seconds=$(date --date="$endtime" +%s)
 clear
-curl --$ips --resolve service.anycast.eu.org:443:$anycast --retry 3 -s -X POST https://service.anycast.eu.org -o temp.txt
+curl --$ips --resolve service.baipiao.eu.org:443:$anycast --retry 3 -s -X POST https://service.baipiao.eu.org -o temp.txt
 publicip=$(grep publicip= temp.txt | cut -f 2- -d'=')
 colo=$(grep colo= temp.txt | cut -f 2- -d'=')
 rm -rf temp.txt
@@ -38,8 +38,9 @@ echo $anycast>$ips.txt
 echo 优选IP $anycast
 echo 公网IP $publicip
 echo 自治域 AS$asn
+echo 运营商 $isp
 echo 经纬度 $longitude,$latitude
-echo META城市 $city
+echo 位置信息 $city,$region,$country
 echo 设置带宽 $bandwidth Mbps
 echo 实测带宽 $realbandwidth Mbps
 echo 峰值速度 $max kB/s
@@ -146,13 +147,16 @@ do
 				do
 					if [ ! -f "meta.txt" ]
 					then
-						curl --$ips --retry 3 -s https://speed.cloudflare.com/meta | sed -e 's/{//g' -e 's/}//g' -e 's/"//g' -e 's/,/\n/g'>meta.txt
+						curl --$ips --retry 3 -s https://service.baipiao.eu.org/meta -o meta.txt
 					else
-						asn=$(grep asn: meta.txt | awk -F: '{print $2}')
-						city=$(grep city: meta.txt | awk -F: '{print $2}')
-						latitude=$(grep latitude: meta.txt | awk -F: '{print $2}')
-						longitude=$(grep longitude: meta.txt | awk -F: '{print $2}')
-						curl --$ips --retry 3 https://service.anycast.eu.org -o data.txt -#
+						asn=$(grep asn= meta.txt | cut -f 2- -d'=')
+						isp=$(grep isp= meta.txt | cut -f 2- -d'=')
+						country=$(grep country= meta.txt | cut -f 2- -d'=')
+						region=$(grep region= meta.txt | cut -f 2- -d'=')
+						city=$(grep city= meta.txt | cut -f 2- -d'=')
+						longitude=$(grep longitude= meta.txt | cut -f 2- -d'=')
+						latitude=$(grep latitude= meta.txt | cut -f 2- -d'=')
+						curl --$ips --retry 3 https://service.baipiao.eu.org -o data.txt -#
 						break
 					fi
 				done
@@ -164,13 +168,16 @@ do
 				do
 					if [ ! -f "meta.txt" ]
 					then
-						curl --$ips --resolve speed.cloudflare.com:443:$resolveip --retry 3 -s https://speed.cloudflare.com/meta | sed -e 's/{//g' -e 's/}//g' -e 's/"//g' -e 's/,/\n/g'>meta.txt
+						curl --$ips --resolve service.baipiao.eu.org:443:$resolveip --retry 3 -s https://service.baipiao.eu.org/meta -o meta.txt
 					else
-						asn=$(grep asn: meta.txt | awk -F: '{print $2}')
-						city=$(grep city: meta.txt | awk -F: '{print $2}')
-						latitude=$(grep latitude: meta.txt | awk -F: '{print $2}')
-						longitude=$(grep longitude: meta.txt | awk -F: '{print $2}')
-						curl --$ips --resolve service.anycast.eu.org:443:$resolveip --retry 3 https://service.anycast.eu.org -o data.txt -#
+						asn=$(grep asn= meta.txt | cut -f 2- -d'=')
+						isp=$(grep isp= meta.txt | cut -f 2- -d'=')
+						country=$(grep country= meta.txt | cut -f 2- -d'=')
+						region=$(grep region= meta.txt | cut -f 2- -d'=')
+						city=$(grep city= meta.txt | cut -f 2- -d'=')
+						longitude=$(grep longitude= meta.txt | cut -f 2- -d'=')
+						latitude=$(grep latitude= meta.txt | cut -f 2- -d'=')
+						curl --$ips --resolve service.baipiao.eu.org:443:$resolveip --retry 3 https://service.baipiao.eu.org -o data.txt -#
 						break
 					fi
 				done
@@ -310,7 +317,7 @@ done
 
 function singletest (){
 read -p "请输入需要测速的IP: " testip
-curl --resolve service.anycast.eu.org:443:$testip https://service.anycast.eu.org -o temp.txt -#
+curl --resolve service.baipiao.eu.org:443:$testip https://service.baipiao.eu.org -o temp.txt -#
 domain=$(grep domain= temp.txt | cut -f 2- -d'=')
 file=$(grep file= temp.txt | cut -f 2- -d'=')
 rm -rf temp.txt
@@ -352,7 +359,7 @@ do
 	then
 		ips=ipv4
 		selfmode=1
-		read -p "请输入C类自定义IPV4(格式 1.1.1):" selfip
+		read -p "请输入C类自定义IPV4(格式 104.16.16):" selfip
 		bettercloudflareip
 		break
 	fi
