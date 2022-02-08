@@ -50,9 +50,6 @@ exit
 :start
 del data.txt ip.txt CR.txt CRLF.txt cut.txt speed.txt meta.txt>nul 2>&1
 RD /S /Q rtt>nul 2>&1
-set LF=^
-
-
 if exist "!ips!.txt" goto resolve
 if not exist "!ips!.txt" goto dnsresolve
 
