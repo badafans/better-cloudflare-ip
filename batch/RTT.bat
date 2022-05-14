@@ -4,7 +4,7 @@ cd "%~dp0"
 goto cloudflare
 :rtt
 if !a! LEQ 5 (
-curl --resolve www.cloudflare.com:443:%1 https://www.cloudflare.com/cdn-cgi/trace -o nul -s --connect-timeout 1 -w "%1"_%%{time_connect}_"HTTP"%%{http_code}"\n">>rtt/!c!-!b!.log
+curl --resolve www.cloudflare.com:443:%1 https://www.cloudflare.com/cdn-cgi/trace -o nul -s --connect-timeout 1 --max-time 3 -w "%1"_%%{time_connect}_"HTTP"%%{http_code}"\n">>rtt/!c!-!b!.log
 set /a a=a+1
 goto rtt
 ) else (

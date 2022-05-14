@@ -1,12 +1,16 @@
 #!/bin/bash
 # better-cloudflare-ip
-version=20220208
+version=20220514
 
 function bettercloudflareip (){
 declare -i bandwidth
 declare -i speed
-read -p "请设置期望的带宽大小(默认0,单位 Mbps):" bandwidth
+read -p "请设置期望的带宽大小(默认最小1,单位 Mbps):" bandwidth
 read -p "请设置RTT测试进程数(默认25,最大50):" tasknum
+if [ $bandwidth -eq 0 ]
+then
+	bandwidth=1
+fi
 if [ -z "$tasknum" ]
 then
 	tasknum=25
@@ -60,7 +64,7 @@ do
 	do
 		if [ $t -le 5 ]
 		then
-			curl --resolve www.cloudflare.com:443:$ip https://www.cloudflare.com/cdn-cgi/trace -o /dev/null -s --connect-timeout 1 -w "$ip"_%{time_connect}_"HTTP"%{http_code}"\n">>rtt/$1-$n.log
+			curl --resolve www.cloudflare.com:443:$ip https://www.cloudflare.com/cdn-cgi/trace -o /dev/null -s --connect-timeout 1 --max-time 3 -w "$ip"_%{time_connect}_"HTTP"%{http_code}"\n">>rtt/$1-$n.log
 			t=$[$t+1]
 		else
 			getrtt=$(grep HTTP200 rtt/$1-$n.log | wc -l)
@@ -260,9 +264,9 @@ do
 			n=$(ls rtt | grep txt | grep -v "grep" | wc -l)
 			if [ $n -ne 0 ]
 			then
-				echo 等待RTT测试结束,剩余进程数 $n
+				echo $(date +'%H:%M:%S') 等待RTT测试结束,剩余进程数 $n
 			else
-				echo RTT测试完成
+				echo $(date +'%H:%M:%S') RTT测试完成
 				break
 			fi
 		done
@@ -308,7 +312,6 @@ do
 			fi
 		else
 			echo 当前所有IP都存在RTT丢包
-			tasknum=10
 		fi
 	done
 		break
