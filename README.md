@@ -55,7 +55,7 @@ Windows 8及以上版本用户推荐使用UTF-8编码版本
 
 注:ANSI编码版本可以Windows全平台通用，部分Windows系统的BUG会导致控制台输出乱码
 
-点击下载[Windows版本](https://proxy.freecdn.ml/?url=https://github.com/badafans/better-cloudflare-ip/releases/latest/download/batch.zip)
+点击下载[Windows版本](https://github.com/badafans/better-cloudflare-ip/releases/latest/download/batch.zip)
 
 ## Linux版本
 
@@ -64,7 +64,7 @@ Windows 8及以上版本用户推荐使用UTF-8编码版本
 目前已经测试 Termux、OpenWrt、Ubuntu、Debian、CentOS、MacOS、Raspbian、Armbian
 
 ``` bash
-curl https://proxy.freecdn.ml/?url=https://raw.githubusercontent.com/badafans/better-cloudflare-ip/master/shell/cf.sh -o cf.sh && chmod +x cf.sh && ./cf.sh
+curl https://raw.githubusercontent.com/badafans/better-cloudflare-ip/master/shell/cf.sh -o cf.sh && chmod +x cf.sh && ./cf.sh
 ```
 
 ## 引用声明
