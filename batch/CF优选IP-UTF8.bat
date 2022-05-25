@@ -3,7 +3,7 @@ chcp 65001>nul
 cd "%~dp0"
 color A
 setlocal enabledelayedexpansion
-set version=20220514
+set version=20220525
 
 :main
 cls
@@ -20,7 +20,7 @@ goto main
 
 :singletest
 set /p ip=请输入需要测速的IP:
-curl --resolve service.baipiao.eu.org:443:!ip! https://service.baipiao.eu.org -o temp.txt -#
+curl --resolve service.baipiaocf.ml:443:!ip! https://service.baipiaocf.ml -o temp.txt -#
 for /f "tokens=2 delims==" %%i in ('findstr "domain=" temp.txt') do (
 set domain=%%i
 )
@@ -57,7 +57,7 @@ if not exist "!ips!.txt" goto dnsresolve
 :dnsresolve
 echo DNS解析获取CF !ips! 节点
 echo 如果域名被污染,请手动创建 !ips!.txt 做解析
-curl --!ips! --retry 3 -s https://service.baipiao.eu.org/meta -o meta.txt
+curl --!ips! --retry 3 -s https://service.baipiaocf.ml/meta -o meta.txt
 if not exist "meta.txt" goto start
 for /f "tokens=2 delims==" %%i in ('findstr "asn=" meta.txt') do (
 	set asn=%%i
@@ -80,7 +80,7 @@ for /f "tokens=2 delims==" %%i in ('findstr "longitude=" meta.txt') do (
 for /f "tokens=2 delims==" %%i in ('findstr "latitude=" meta.txt') do (
 	set latitude=%%i
 )
-curl --!ips! --retry 3 https://service.baipiao.eu.org -o data.txt -#
+curl --!ips! --retry 3 https://service.baipiaocf.ml -o data.txt -#
 if not exist "data.txt" goto start
 goto checkupdate
 
@@ -90,7 +90,7 @@ set resolveip=%%i
 )
 echo 指向解析获取CF !ips! 节点
 echo 如果长时间无法获取CF !ips! 节点,重新运行程序并选择清空缓存
-curl --!ips! --resolve service.baipiao.eu.org:443:!resolveip! --retry 3 -s https://service.baipiao.eu.org/meta -o meta.txt
+curl --!ips! --resolve service.baipiaocf.ml:443:!resolveip! --retry 3 -s https://service.baipiaocf.ml/meta -o meta.txt
 if not exist "meta.txt" goto start
 for /f "tokens=2 delims==" %%i in ('findstr "asn=" meta.txt') do (
 	set asn=%%i
@@ -113,7 +113,7 @@ for /f "tokens=2 delims==" %%i in ('findstr "longitude=" meta.txt') do (
 for /f "tokens=2 delims==" %%i in ('findstr "latitude=" meta.txt') do (
 	set latitude=%%i
 )
-curl --!ips! --resolve service.baipiao.eu.org:443:!resolveip! --retry 3 https://service.baipiao.eu.org -o data.txt -#
+curl --!ips! --resolve service.baipiaocf.ml:443:!resolveip! --retry 3 https://service.baipiaocf.ml -o data.txt -#
 if not exist "data.txt" goto start
 goto checkupdate
 
@@ -262,7 +262,7 @@ if %time:~6,1% EQU 0 (set /a stopS=%time:~7,1%) else (set /a stopS=%time:~6,2%)
 set /a starttime=%startH%*3600+%startM%*60+%startS%
 set /a stoptime=%stopH%*3600+%stopM%*60+%stopS%
 if %starttime% GTR %stoptime% (set /a alltime=86400-%starttime%+%stoptime%) else (set /a alltime=%stoptime%-%starttime%)
-curl --!ips! --resolve service.baipiao.eu.org:443:!anycast! --retry 3 -s -X POST https://service.baipiao.eu.org -o data.txt
+curl --!ips! --resolve service.baipiaocf.ml:443:!anycast! --retry 3 -s -X POST https://service.baipiaocf.ml -o data.txt
 for /f "tokens=2 delims==" %%i in ('findstr "publicip=" data.txt') do (
 set publicip=%%i
 )

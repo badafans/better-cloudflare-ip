@@ -1,6 +1,6 @@
 #!/bin/bash
 # better-cloudflare-ip
-version=20220514
+version=20220525
 
 function bettercloudflareip (){
 declare -i bandwidth
@@ -34,7 +34,7 @@ endtime=$(date +'%Y-%m-%d %H:%M:%S')
 start_seconds=$(date --date="$starttime" +%s)
 end_seconds=$(date --date="$endtime" +%s)
 clear
-curl --$ips --resolve service.baipiao.eu.org:443:$anycast --retry 3 -s -X POST https://service.baipiao.eu.org -o temp.txt
+curl --$ips --resolve service.baipiaocf.ml:443:$anycast --retry 3 -s -X POST https://service.baipiaocf.ml -o temp.txt
 publicip=$(grep publicip= temp.txt | cut -f 2- -d'=')
 colo=$(grep colo= temp.txt | cut -f 2- -d'=')
 rm -rf temp.txt
@@ -151,7 +151,7 @@ do
 				do
 					if [ ! -f "meta.txt" ]
 					then
-						curl --$ips --retry 3 -s https://service.baipiao.eu.org/meta -o meta.txt
+						curl --$ips --retry 3 -s https://service.baipiaocf.ml/meta -o meta.txt
 					else
 						asn=$(grep asn= meta.txt | cut -f 2- -d'=')
 						isp=$(grep isp= meta.txt | cut -f 2- -d'=')
@@ -160,7 +160,7 @@ do
 						city=$(grep city= meta.txt | cut -f 2- -d'=')
 						longitude=$(grep longitude= meta.txt | cut -f 2- -d'=')
 						latitude=$(grep latitude= meta.txt | cut -f 2- -d'=')
-						curl --$ips --retry 3 https://service.baipiao.eu.org -o data.txt -#
+						curl --$ips --retry 3 https://service.baipiaocf.ml -o data.txt -#
 						break
 					fi
 				done
@@ -172,7 +172,7 @@ do
 				do
 					if [ ! -f "meta.txt" ]
 					then
-						curl --$ips --resolve service.baipiao.eu.org:443:$resolveip --retry 3 -s https://service.baipiao.eu.org/meta -o meta.txt
+						curl --$ips --resolve service.baipiaocf.ml:443:$resolveip --retry 3 -s https://service.baipiaocf.ml/meta -o meta.txt
 					else
 						asn=$(grep asn= meta.txt | cut -f 2- -d'=')
 						isp=$(grep isp= meta.txt | cut -f 2- -d'=')
@@ -181,7 +181,7 @@ do
 						city=$(grep city= meta.txt | cut -f 2- -d'=')
 						longitude=$(grep longitude= meta.txt | cut -f 2- -d'=')
 						latitude=$(grep latitude= meta.txt | cut -f 2- -d'=')
-						curl --$ips --resolve service.baipiao.eu.org:443:$resolveip --retry 3 https://service.baipiao.eu.org -o data.txt -#
+						curl --$ips --resolve service.baipiaocf.ml:443:$resolveip --retry 3 https://service.baipiaocf.ml -o data.txt -#
 						break
 					fi
 				done
@@ -320,7 +320,7 @@ done
 
 function singletest (){
 read -p "请输入需要测速的IP: " testip
-curl --resolve service.baipiao.eu.org:443:$testip https://service.baipiao.eu.org -o temp.txt -#
+curl --resolve service.baipiaocf.ml:443:$testip https://service.baipiaocf.ml -o temp.txt -#
 domain=$(grep domain= temp.txt | cut -f 2- -d'=')
 file=$(grep file= temp.txt | cut -f 2- -d'=')
 rm -rf temp.txt
