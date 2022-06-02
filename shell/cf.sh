@@ -224,11 +224,21 @@ do
 		fi
 		rm -rf meta.txt data.txt
 		ipnum=$(cat anycast.txt | wc -l)
+		if [ $tasknum == 0 ]
+		then
+			tasknum=1
+		fi
 		if [ $ipnum -lt $tasknum ]
 		then
-			tasknum=ipnum
+			 iplist=1
 		fi
-		iplist=ipnum/tasknum
+		doubletasknum=$[$tasknum*2]
+		if [ $ipnum -lt $doubletasknum ]
+		then
+			iplist=2
+		else
+			iplist=ipnum/tasknum
+		fi
 		declare -i a=1
 		declare -i b=1
 		for i in `cat anycast.txt`
@@ -261,7 +271,7 @@ do
 		while true
 		do
 			sleep 2
-			n=$(ls rtt | grep txt | grep -v "grep" | wc -l)
+			n=$(ls rtt | grep txt | wc -l)
 			if [ $n -ne 0 ]
 			then
 				echo $(date +'%H:%M:%S') 等待RTT测试结束,剩余进程数 $n

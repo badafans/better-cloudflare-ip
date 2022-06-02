@@ -151,8 +151,9 @@ mkdir rtt
 for /f "tokens=2 delims=:" %%i in ('find /c /v "" ip.txt') do (
 set /a ipnum=%%i
 )
-if !tasknum! GTR !ipnum! set /a tasknum=ipnum
-set /a iplist=ipnum/tasknum
+if !tasknum! GTR !ipnum! set /a iplist=1
+set /a doubletasknum=tasknum*2
+if !ipnum! LSS !doubletasknum! (set /a iplist=2) else (set /a iplist=ipnum/tasknum)
 set /a a=1
 set /a b=1
 for /f "delims=" %%i in (ip.txt) do (
@@ -165,7 +166,7 @@ title RTT²âÊÔÖÐ
 goto rtttest
 
 :rtttest
-if !a! NEQ !b! (start /b RTT.bat !a!>nul&set /a a=a+1&goto rtttest) else (goto rttstatus)
+if !a! NEQ !b! (start /b rtt.bat !a!>nul&set /a a=a+1&goto rtttest) else (goto rttstatus)
 
 :rttstatus
 timeout /T 2 /NOBREAK>nul
