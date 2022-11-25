@@ -2,7 +2,7 @@
 
 查找适合自己当前网络环境的优选Cloudflare Anycast IP
 
-默认强制推送最新版本！如果旧版本不想被更新，请自行修改版本号为最新版本！
+旧版本即将停止服务，后续版本如果没有明显BUG也不再更新!
 
 ## 使用申明
 
@@ -45,6 +45,16 @@ o) 提供影视、软件和应用等下载服务的网站。
 
 此版本不需要用户上传任何数据到服务器，服务器仅提供IP地址池维护以及下发！
 
+## 用户自定义数据
+
+用户可自定义ips-v4.txt和ips-v6.txt的IP地址段，如果使用数据更新将会覆盖本地自定义的数据
+
+自定义ips-v4.txt的内容格式为 x.x.x.x或者x.x.x.x/x的CIDR写法，默认提取.前三位
+
+自定义ips-v6.txt的内容格式为 x:x:x:x:x:x:x:x或者x:x:x:x:x:x:x:x/x的CIDR写法，默认提取:前三位
+
+更多自定义玩法待用户自己发现
+
 ## Windows批处理版本
 
 请下载Release版本使用,不要使用Git Clone下载(会出现乱码)
@@ -61,7 +71,7 @@ Windows 8及以上版本用户推荐使用UTF-8编码版本
 
 完整复制下方链接粘贴到控制台并回车，后续运行只需输入./cf.sh并回车即可
 
-目前已经测试 Termux、OpenWrt、Ubuntu、Debian、CentOS、MacOS、Raspbian、Armbian
+目前已经测试 Termux、OpenWrt、Ubuntu、Debian、CentOS、MacOS、Raspbian、Armbian、iSH
 
 ``` bash
 curl https://raw.githubusercontent.com/badafans/better-cloudflare-ip/master/shell/cf.sh -o cf.sh && chmod +x cf.sh && ./cf.sh
