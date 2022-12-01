@@ -6,6 +6,7 @@ cls
 goto notice
 :notice
 echo 如果这些下面这些文件下载失败,可以手动访问网址下载保存至同级目录
+
 echo https://www.baipiao.eu.org/cloudflare/colo 另存为 colo.txt
 echo https://www.baipiao.eu.org/cloudflare/url 另存为 url.txt
 echo https://www.baipiao.eu.org/cloudflare/ips-v4 另存为 ips-v4.txt
@@ -105,7 +106,7 @@ if !ips! EQU ipv4 (echo 正在生成 !ips!&goto getv4) else (echo 正在生成 !
 for /f "delims=" %%i in (%filename%) do (
 set !random!_%%i=randomsort
 )
-for /f "tokens=2,3,4 delims=_.=" %%i in ('set ^| findstr =randomsort ^| sort') do (
+for /f "tokens=2,3,4 delims=_.=" %%i in ('set ^| findstr =randomsort ^| sort /m 10240') do (
 call :randomcidrv4
 if not defined %%i.%%j.%%k.!cidr! set %%i.%%j.%%k.!cidr!=anycastip&set /a n+=1
 if !n! EQU 100 goto rtt
@@ -116,7 +117,7 @@ goto getv4
 for /f "delims=" %%i in (%filename%) do (
 set !random!_%%i=randomsort
 )
-for /f "tokens=2,3,4 delims=_:=" %%i in ('set ^| findstr =randomsort ^| sort') do (
+for /f "tokens=2,3,4 delims=_:=" %%i in ('set ^| findstr =randomsort ^| sort /m 10240') do (
 call :randomcidrv6
 if not defined %%i:%%j:%%k:!cidr! set %%i:%%j:%%k:!cidr!=anycastip&set /a n+=1
 if !n! EQU 100 goto rtt
