@@ -90,11 +90,11 @@ do
 				n=1
 				break
 			else
-				avgms=$[$(echo $rsp | awk -F_ '{printf ("%d\n",$1*1000000)}')+$avgms]
+				avgms=$[$(echo $rsp | awk -F_ '{printf ("%d\n",$1*1000)}')+$avgms]
 				n=$[$n+1]
 			fi
 		else
-			avgms=$[$avgms/3000]
+			avgms=$[$avgms/3]
 			if [ $avgms -lt 10 ]
 			then
 				echo 00$avgms $ip >> rtt/$1.log
@@ -134,11 +134,11 @@ do
 				n=1
 				break
 			else
-				avgms=$[$(echo $rsp | awk -F_ '{printf ("%d\n",$1*1000000)}')+$avgms]
+				avgms=$[$(echo $rsp | awk -F_ '{printf ("%d\n",$1*1000)}')+$avgms]
 				n=$[$n+1]
 			fi
 		else
-			avgms=$[$avgms/3000]
+			avgms=$[$avgms/3]
 			if [ $avgms -lt 10 ]
 			then
 				echo 00$avgms $ip >> rtt/$1.log
